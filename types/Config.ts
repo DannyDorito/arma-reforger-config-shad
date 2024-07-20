@@ -1,48 +1,39 @@
-import { Dictionary } from "./Dictionary";
-
-export interface Config
-{
-  dedicatedServerId: string;
-  region: string;
-  gameHostBindAddress: string;
-  gameHostBindPort: number;
-  gameHostRegisterBindAddress: string;
-  gameHostRegisterPort: number;
-  adminPassword: string;
+export type Config = {
+  bindAddress: string;
+  bindPort: number;
+  publicAddress: string;
+  publicPort: number;
+  a2s: A2s;
+  rcon: Rcon;
   game: Game;
   operating: Operating;
-  a2sQueryEnabled: boolean;
-  steamQueryPort: number;
-  isDefault: boolean | undefined;
 }
 
-export interface Operating
-{
+export type Operating = {
   lobbyPlayerSynchronise: boolean;
 }
 
-export interface Game
-{
+export type Game = {
   name: string;
   password: string;
+  passwordAdmin: string;
+  admins: string[];
   scenarioId: string;
-  playerCountLimit: number;
-  autoJoinable: boolean;
+  maxPlayers: number;
   visible: boolean;
-  supportedGameClientTypes: string[];
+  crossPlatform: boolean;
+  supportedPlatforms: string[];
   gameProperties: GameProperties;
   mods: Mod[];
 }
 
-export interface Mod
-{
+export type Mod = {
   modId: string;
   name: string;
   version: string;
 }
 
-export interface GameProperties
-{
+export type GameProperties = {
   serverMaxViewDistance: number;
   serverMinGrassDistance: number;
   networkViewDistance: number;
@@ -54,7 +45,23 @@ export interface GameProperties
   missionHeader: MissionHeader;
 }
 
-export interface MissionHeader
-{
-  headers: Dictionary<number> | undefined;
+export type MissionHeader = {
+  m_iPlayerCount: number;
+  m_eEditableGameFlags: number;
+  m_eDefaultGameFlags: number;
+  other: string;
+}
+
+export type Rcon = {
+  address: string;
+  port: number;
+  password: string;
+  permission: string;
+  blacklist: any[];
+  whitelist: any[];
+}
+
+export type A2s = {
+  address: string;
+  port: number;
 }
