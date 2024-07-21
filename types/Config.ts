@@ -1,67 +1,74 @@
-export type Config = {
-  bindAddress: string;
-  bindPort: number;
-  publicAddress: string;
-  publicPort: number;
-  a2s: A2s;
-  rcon: Rcon;
-  game: Game;
-  operating: Operating;
+export class Config {
+
+  bindAddress: string = "";
+  bindPort: number = 2001;
+  publicAddress: string = "";
+  publicPort: number = 2001;
+  a2s: A2s = new A2s();
+  rcon: Rcon = new Rcon();
+  game: Game = new Game();
+  operating: Operating = new Operating();
 }
 
-export type Operating = {
-  lobbyPlayerSynchronise: boolean;
+export class Operating {
+  lobbyPlayerSynchronise: boolean = true;
+  disableNavmeshStreaming: boolean | string[] = false;
+  disableServerShutdown: boolean = false;
+  disableAI: boolean = false;
+  playerSaveTime: number = 120;
+  aiLimit: number = -1;
+  slotReservationTimeout: number = 60;
 }
 
-export type Game = {
-  name: string;
-  password: string;
-  passwordAdmin: string;
-  admins: string[];
-  scenarioId: string;
-  maxPlayers: number;
-  visible: boolean;
-  crossPlatform: boolean;
-  supportedPlatforms: string[];
-  gameProperties: GameProperties;
-  mods: Mod[];
+export class Game {
+  name: string = "";
+  password: string = "";
+  passwordAdmin: string = "";
+  admins: string[] = [];
+  scenarioId: string= "";
+  maxPlayers: number = 64;
+  visible: boolean = true;
+  crossPlatform: boolean = false;
+  supportedPlatforms: Platform[] = [Platform.PLATFORM_PC];
+  gameProperties: GameProperties = new GameProperties();
+  mods: Mod[] = [];
 }
 
-export type Mod = {
-  modId: string;
-  name: string;
-  version: string;
+export enum Platform {
+  "PLATFORM_PC",
+  "PLATFORM_XBL"
 }
 
-export type GameProperties = {
-  serverMaxViewDistance: number;
-  serverMinGrassDistance: number;
-  networkViewDistance: number;
-  disableThirdPerson: boolean;
-  fastValidation: boolean;
-  battlEye: boolean;
-  VONDisableUI: boolean;
-  VONDisableDirectSpeechUI: boolean;
-  missionHeader: MissionHeader;
+export class Mod {
+  modId: string = "";
+  name: string = "";
+  version?: string;
 }
 
-export type MissionHeader = {
-  m_iPlayerCount: number;
-  m_eEditableGameFlags: number;
-  m_eDefaultGameFlags: number;
-  other: string;
+export class GameProperties {
+  serverMaxViewDistance: number = 1600;
+  serverMinGrassDistance: number = 0;
+  networkViewDistance: number = 1500;
+  disableThirdPerson: boolean = false;
+  fastValidation: boolean = true;
+  battlEye: boolean = true;
+  VONDisableUI: boolean = false;
+  VONDisableDirectSpeechUI: boolean = false;
+  VONCanTransmitCrossFaction: boolean = false;
+  missionHeader: string = "{}";
 }
 
-export type Rcon = {
-  address: string;
-  port: number;
-  password: string;
-  permission: string;
-  blacklist: any[];
-  whitelist: any[];
+export class Rcon {
+  address: string = "";
+  port: number = 19999;
+  password: string = "";
+  maxClients: number = 16;
+  permission: "admin" | "monitor" = "admin";
+  blacklist: string[] = [];
+  whitelist: string[] = [];
 }
 
-export type A2s = {
-  address: string;
-  port: number;
+export class A2s {
+  address: string = "";
+  port: number = 17777;
 }
