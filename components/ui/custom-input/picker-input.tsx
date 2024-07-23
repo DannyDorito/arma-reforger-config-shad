@@ -3,9 +3,9 @@ import { CaretSortIcon } from "@radix-ui/react-icons";
 import { Popover, PopoverTrigger, PopoverContent } from "@radix-ui/react-popover";
 import { Command, CheckIcon } from "lucide-react";
 import { useState } from "react";
-import { PickerInputProps } from "./props/PickerInputProps";
-import { Button } from "./ui/button";
-import { CommandEmpty, CommandGroup, CommandInput, CommandItem } from "./ui/command";
+import { Button } from "../button";
+import { PickerInputProps } from "@/components/props/PickerInputProps";
+import { CommandEmpty, CommandGroup, CommandInput, CommandItem } from "../command";
 
 export const PickerInput = (props: PickerInputProps) => {
   const [value, setValue] = useState("");
