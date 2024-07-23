@@ -39,6 +39,7 @@
 			"battlEye": true,
 			"VONDisableUI": true,
 			"VONDisableDirectSpeechUI": true,
+			"VONCanTransmitCrossFaction": true,
 			"missionHeader": {
 				"m_iPlayerCount": 40,
 				"m_eEditableGameFlags": 6,
@@ -60,6 +61,11 @@
 		]
 	},
 	"operating": {
-		"lobbyPlayerSynchronise": true
+		"lobbyPlayerSynchronise": true,
+		"disableNavmeshStreaming": false,
+		"disableServerShutdown": false,
+		"disableAI": false,
+		"playerSaveTime": 120,
+		"slotReservationTimeout": 60
 	}
 }

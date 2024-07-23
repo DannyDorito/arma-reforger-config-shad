@@ -1,5 +1,4 @@
 export class Config {
-
   bindAddress: string = "";
   bindPort: number = 2001;
   publicAddress: string = "";
@@ -9,6 +8,7 @@ export class Config {
   game: Game = new Game();
   operating: Operating = new Operating();
 }
+
 
 export class Operating {
   lobbyPlayerSynchronise: boolean = true;
@@ -55,7 +55,7 @@ export class GameProperties {
   VONDisableUI: boolean = false;
   VONDisableDirectSpeechUI: boolean = false;
   VONCanTransmitCrossFaction: boolean = false;
-  missionHeader: string = "{}";
+  missionHeader: string[] = [];
 }
 
 export class Rcon {
