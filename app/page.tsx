@@ -78,7 +78,12 @@ export default function Home() {
                 <CardDescription>Upload and edit your config.json file here!</CardDescription>
               </CardHeader>
               <CardContent>
-                <Input id="config" accept="application/json" type="file" onChange={(event) => handleUploadJson(event.target.files)} />
+                <Input
+                  id="config"
+                  accept="application/json"
+                  type="file"
+                  onChange={(event) => handleUploadJson(event.target.files)}
+                  style={{ cursor: 'pointer'}}/>
               </CardContent>
               <CardFooter className="flex justify-between">
                 <Button variant="outline" size="icon">
