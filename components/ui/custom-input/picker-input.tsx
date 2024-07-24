@@ -1,11 +1,20 @@
 import { cn } from "@/lib/utils";
 import { CaretSortIcon } from "@radix-ui/react-icons";
-import { Popover, PopoverTrigger, PopoverContent } from "@radix-ui/react-popover";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@radix-ui/react-popover";
 import { Command, CheckIcon } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../button";
 import { PickerInputProps } from "@/components/props/PickerInputProps";
-import { CommandEmpty, CommandGroup, CommandInput, CommandItem } from "../command";
+import {
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from "../command";
 
 export const PickerInput = (props: PickerInputProps) => {
   const [value, setValue] = useState("");
@@ -34,8 +43,8 @@ export const PickerInput = (props: PickerInputProps) => {
                 key={x}
                 value={x}
                 onSelect={(currentValue) => {
-                  setValue(currentValue === x ? "" : currentValue)
-                  props.setOpen(false)
+                  setValue(currentValue === x ? "" : currentValue);
+                  props.setOpen(false);
                 }}
               >
                 {props.name}
@@ -51,5 +60,5 @@ export const PickerInput = (props: PickerInputProps) => {
         </Command>
       </PopoverContent>
     </Popover>
-  )
-}
+  );
+};

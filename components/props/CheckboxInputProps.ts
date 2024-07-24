@@ -4,4 +4,5 @@ export interface SwitchInputProps
   name?: string,
   key: string,
   placeholder?: string
+  change: ( v: boolean ) => void;
 }

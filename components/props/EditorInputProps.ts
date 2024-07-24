@@ -6,5 +6,7 @@ export interface EditorInputProps
   placeholder?: string,
   min?: number,
   max?: number
+  change: ( v: string ) => void;
+  disabled?: boolean;
 }
 

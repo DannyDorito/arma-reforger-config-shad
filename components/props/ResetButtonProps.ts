@@ -1,3 +1,4 @@
-export interface ResetButtonProps {
+export interface ResetButtonProps
+{
   click: () => void;
 }

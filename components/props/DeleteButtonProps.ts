@@ -1,3 +1,4 @@
-export interface DeleteButtonProps {
+export interface DeleteButtonProps
+{
   click: () => void;
 }

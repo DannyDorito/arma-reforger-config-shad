@@ -1,3 +1,4 @@
-export interface HelpButtonProps {
+export interface HelpButtonProps
+{
   parameterName: string
 }

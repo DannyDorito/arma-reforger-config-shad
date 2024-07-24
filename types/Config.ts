@@ -1,4 +1,5 @@
-export class Config {
+export class Config
+{
   bindAddress: string = "";
   bindPort: number = 2001;
   publicAddress: string = "";
@@ -9,8 +10,8 @@ export class Config {
   operating: Operating = new Operating();
 }
 
-
-export class Operating {
+export class Operating
+{
   lobbyPlayerSynchronise: boolean = true;
   disableNavmeshStreaming: boolean | string[] = false;
   disableServerShutdown: boolean = false;
@@ -20,32 +21,36 @@ export class Operating {
   slotReservationTimeout: number = 60;
 }
 
-export class Game {
+export class Game
+{
   name: string = "";
   password: string = "";
   passwordAdmin: string = "";
   admins: string[] = [];
-  scenarioId: string= "";
+  scenarioId: string = "";
   maxPlayers: number = 64;
   visible: boolean = true;
   crossPlatform: boolean = false;
-  supportedPlatforms: Platform[] = [Platform.PLATFORM_PC];
+  supportedPlatforms: Platform[] = [ Platform.PLATFORM_PC ];
   gameProperties: GameProperties = new GameProperties();
   mods: Mod[] = [];
 }
 
-export enum Platform {
-  "PLATFORM_PC",
-  "PLATFORM_XBL"
+export enum Platform
+{
+  PLATFORM_PC = "PLATFORM_PC",
+  PLATFORM_XBL = "PLATFORM_XBL",
 }
 
-export class Mod {
+export class Mod
+{
   modId: string = "";
   name: string = "";
   version?: string;
 }
 
-export class GameProperties {
+export class GameProperties
+{
   serverMaxViewDistance: number = 1600;
   serverMinGrassDistance: number = 0;
   networkViewDistance: number = 1500;
@@ -58,7 +63,8 @@ export class GameProperties {
   missionHeader: string[] = [];
 }
 
-export class Rcon {
+export class Rcon
+{
   address: string = "";
   port: number = 19999;
   password: string = "";
@@ -68,7 +74,8 @@ export class Rcon {
   whitelist: string[] = [];
 }
 
-export class A2s {
+export class A2s
+{
   address: string = "";
   port: number = 17777;
 }
