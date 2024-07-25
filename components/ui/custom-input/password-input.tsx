@@ -22,6 +22,7 @@ export const PasswordInput = (props: PasswordInputProps) => {
             onChange={(e) => props.change(e.target.value)}
             placeholder={props.placeholder}
             autoComplete="false"
+            aria-label={`Input for ${props.name}`}
           ></Input>
           <Button variant="outline" onClick={() => setShow(!show)}>
             {show ? (

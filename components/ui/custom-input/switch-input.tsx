@@ -14,6 +14,7 @@ export const SwitchInput = (props: SwitchInputProps) => {
           checked={props.parameter}
           onCheckedChange={(e) => props.change(e)}
           disabled={props.disabled}
+          aria-label={`Input for ${props.name}`}
         />
       </TableCell>
     </>

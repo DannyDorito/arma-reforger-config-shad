@@ -15,12 +15,12 @@ export const HelpButton = (props: HelpButtonProps) => {
       size="icon"
       suppressHydrationWarning
       key={`${props.parameterName}-help`}
-      aria-label={`Open help wiki for ${props.parameterName}`}
     >
       <Link
         href={helpLink(props.parameterName)}
         rel="noopener noreferrer"
         target="_blank"
+        aria-label={`Open help wiki for ${props.parameterName}`}
       >
         <OpenInNewWindowIcon className="h-[1.2rem] w-[1.2rem]" />
       </Link>

@@ -19,7 +19,7 @@ import {
 export const PickerInput = (props: PickerInputProps) => {
   const [value, setValue] = useState("");
   return (
-    <Popover open={props.open} onOpenChange={props.setOpen}>
+    <Popover open={props.open} onOpenChange={props.setOpen} aria-label={`Input for ${props.name}`}>
       <PopoverTrigger asChild>
         <Button
           variant="outline"

@@ -35,6 +35,7 @@ export const EditorInput = (props: EditorInputProps) => {
           }}
           placeholder={props.placeholder}
           disabled={props.disabled}
+          aria-label={`Input for ${props.name}`}
         ></Input>
         {error && (
           <Alert variant="destructive">

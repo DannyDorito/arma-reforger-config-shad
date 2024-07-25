@@ -21,6 +21,7 @@ export const MultiSelectInput = (props: MultiSelectInputProps) => {
           }}
           emptyIndicator={<p>No results found.</p>}
           disabled={props.disabled}
+          aria-label={`Input for ${props.name}`}
         />
       </TableCell>
     </>

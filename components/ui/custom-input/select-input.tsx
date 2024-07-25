@@ -19,6 +19,7 @@ export const SelectInput = (props: SelectInputProps) => {
         <Select
           disabled={props.disabled}
           onValueChange={(v) => props.change(v)}
+          aria-label={`Input for ${props.name}`}
         >
           <SelectTrigger>
             <SelectValue placeholder={props.selected} />
