@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { HelpButtonProps } from "./props/HelpButtonProps";
-import { Button } from "./ui/button";
 import { OpenInNewWindowIcon } from "@radix-ui/react-icons";
+import { HelpButtonProps } from "@/components/props/HelpButtonProps";
+import { Button } from "../button";
 
 const helpLink = (parameter: string) =>
   `https://community.bistudio.com/wiki/Arma_Reforger:Server_Config#${parameter}`;
@@ -15,6 +15,7 @@ export const HelpButton = (props: HelpButtonProps) => {
       size="icon"
       suppressHydrationWarning
       key={`${props.parameterName}-help`}
+      aria-label={`Open help wiki for ${props.parameterName}`}
     >
       <Link
         href={helpLink(props.parameterName)}

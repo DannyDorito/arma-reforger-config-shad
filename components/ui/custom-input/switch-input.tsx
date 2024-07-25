@@ -13,6 +13,7 @@ export const SwitchInput = (props: SwitchInputProps) => {
           id={props.name}
           checked={props.parameter}
           onCheckedChange={(e) => props.change(e)}
+          disabled={props.disabled}
         />
       </TableCell>
     </>

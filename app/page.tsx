@@ -1,9 +1,10 @@
 "use client";
 
-import { Editor } from "@/components/editor";
+import { Loading } from "@/components/loading";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import { GitHubButton } from "@/components/ui/buttons/github-button";
 import {
   Card,
   CardContent,
@@ -15,12 +16,16 @@ import {
 import { Input } from "@/components/ui/input";
 import { Config } from "@/types/Config";
 import {
+  DownloadIcon,
   ExclamationTriangleIcon,
-  GitHubLogoIcon,
   TrashIcon,
 } from "@radix-ui/react-icons";
-import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useState } from "react";
+
+const Editor = dynamic(() => import('../components/editor').then(editor => editor.Editor), {
+  loading: () => <Loading />
+});
 
 export default function Home() {
   const [config, setConfig] = useState<Config>({} as Config);
@@ -92,18 +97,11 @@ export default function Home() {
                 type="file"
                 onChange={(event) => handleUploadJson(event.target.files)}
                 style={{ cursor: "pointer" }}
+                aria-label="Upload .json file"
               />
             </CardContent>
             <CardFooter className="flex justify-between">
-              <Button variant="outline" size="icon">
-                <Link
-                  href="https://github.com/DannyDorito/arma-reforger-config-shad"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <GitHubLogoIcon className="h-[1.2rem] w-[1.2rem]"></GitHubLogoIcon>
-                </Link>
-              </Button>
+              <GitHubButton />
               <ThemeToggle />
             </CardFooter>
             {error && (
@@ -120,19 +118,6 @@ export default function Home() {
               <CardTitle className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-4xl text-center">
                 ARMA Reforger Server Config Editor
               </CardTitle>
-              <div className="flex justify-evenly">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => setConfig({} as Config)}
-                >
-                  <TrashIcon className="h-[1.2rem] w-[1.2rem]" />
-                  <span className="sr-only">
-                    Clear changes and pick a new file
-                  </span>
-                </Button>
-                <ThemeToggle />
-              </div>
             </CardHeader>
             <CardContent>
               <Editor
@@ -141,10 +126,28 @@ export default function Home() {
                 setConfig={setConfig}
               ></Editor>
             </CardContent>
-            <CardFooter className="flex justify-evenly">
-              <Button onClick={() => handleDownload()}>
-                Download {fileName}
+            <CardFooter className="flex justify-between">
+              <GitHubButton />
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setConfig({} as Config)}
+                aria-label="Clear changes and pick a new file"
+              >
+                <TrashIcon className="h-[1.2rem] w-[1.2rem]" />
+                <span className="sr-only">
+                  Clear changes and pick a new file
+                </span>
               </Button>
+              <Button
+                onClick={() => handleDownload()}
+                variant="outline"
+                size="icon"
+                aria-label="Download file"
+              >
+                <DownloadIcon className="h-[1.2rem] w-[1.2rem]" />
+              </Button>
+              <ThemeToggle />
             </CardFooter>
           </Card>
         )}

@@ -5,4 +5,5 @@ export interface SwitchInputProps
   key: string,
   placeholder?: string
   change: ( v: boolean ) => void;
+  disabled?: boolean;
 }
