@@ -1,6 +1,18 @@
-import { ExclamationTriangleIcon, Pencil2Icon, PlusIcon, TrashIcon } from "@radix-ui/react-icons";
+import {
+  ExclamationTriangleIcon,
+  Pencil2Icon,
+  PlusIcon,
+  TrashIcon,
+} from "@radix-ui/react-icons";
 import { Button } from "./button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./card";
 import { Input } from "./input";
 import { Skeleton } from "./skeleton";
 import dynamic from "next/dynamic";
@@ -94,7 +106,7 @@ export const UploadCard = (props: UploadCardProps) => {
             accept="application/json"
             type="file"
             onChange={(event) => handleUploadJson(event.target.files)}
-            style={{ cursor: "pointer" }}
+            className="cursor-pointer"
             aria-label="Upload .json file"
           />
           <Button
@@ -107,10 +119,7 @@ export const UploadCard = (props: UploadCardProps) => {
             <TrashIcon className="h-[1.2rem] w-[1.2rem] red"></TrashIcon>
           </Button>
         </div>
-        <div
-          className="flex justify-center space-y-1.5 px-6"
-          style={{ paddingTop: "1.5rem" }}
-        >
+        <div className="flex justify-center space-y-1.5 px-6 p-top-1-5">
           <Turnstile
             siteKey={turnstileSiteKey}
             options={{
@@ -125,7 +134,7 @@ export const UploadCard = (props: UploadCardProps) => {
           />
         </div>
         {error && (
-          <div className="flex justify-center" style={{ paddingTop: "1.5rem" }}>
+          <div className="flex justify-center p-top-1-5">
             <Alert variant="destructive">
               <ExclamationTriangleIcon className="h-4 w-4" />
               <AlertTitle>Error</AlertTitle>
