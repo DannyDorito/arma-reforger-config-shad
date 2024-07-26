@@ -41,7 +41,7 @@ export const Editor = (props: EditorProps) => {
   const [current, setCurrent] = useState<string>("Base");
 
   const currentFormatting = (page: string) =>
-    current === page ? "font-normal text-foreground" : "";
+    current === page ? "red" : "";
 
   return (
     <>
@@ -122,7 +122,7 @@ export const Editor = (props: EditorProps) => {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <h3 className="scroll-m-20 font-extrabold tracking-tight lg:text-2xl">
+      <h3 className="scroll-m-20 font-extrabold tracking-tight lg:text-2xl red">
         {current}
       </h3>
       {current === "Base" && (

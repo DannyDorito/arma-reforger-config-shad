@@ -13,7 +13,6 @@ export const HelpButton = (props: HelpButtonProps) => {
     <Button
       variant="outline"
       size="icon"
-      suppressHydrationWarning
       key={`${props.parameterName}-help`}
     >
       <Link

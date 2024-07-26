@@ -59,6 +59,10 @@
   }
 }
 
+.red {
+  color: #dc2626;
+}
+
 @layer base {
   * {
     @apply border-border;

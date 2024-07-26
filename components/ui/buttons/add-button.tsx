@@ -7,7 +7,6 @@ export const AddButton = (props: AddButtonProps) => {
     <Button
       variant="outline"
       size="icon"
-      suppressHydrationWarning
       key={`Add-${props.name}}`}
       aria-label={`Add new ${props.name}`}
       onClick={props.add}
