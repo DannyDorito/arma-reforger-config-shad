@@ -1,7 +1,10 @@
+import { cn } from "@/lib/utils";
+import { SymbolIcon } from "@radix-ui/react-icons";
+
 export const Loading = () => {
   return (
-    <h2 className="scroll-m-20 font-extrabold tracking-tight lg:text-2xl text-center">
-      Loading...
-    </h2>
+    <div className="flex justify-center">
+      <SymbolIcon className={cn("animate-spin", 'h-[1.2rem] w-[1.2rem]')}></SymbolIcon>
+    </div>
   );
 };

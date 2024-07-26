@@ -10,6 +10,7 @@ export const ResetButton = (props: ResetButtonProps) => {
       size="icon"
       onClick={props.click}
       aria-label="Reset to default value"
+      disabled={props.disabled}
     >
       <ResetIcon className="h-[1.2rem] w-[1.2rem]" />
       <span className="sr-only">Reset to default value</span>

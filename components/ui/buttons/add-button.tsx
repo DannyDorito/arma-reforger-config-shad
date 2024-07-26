@@ -1,5 +1,5 @@
 import { AddButtonProps } from "@/components/props/AddButtonProps";
-import { PlusCircledIcon } from "@radix-ui/react-icons";
+import { PlusIcon } from "@radix-ui/react-icons";
 import { Button } from "../button";
 
 export const AddButton = (props: AddButtonProps) => {
@@ -12,7 +12,7 @@ export const AddButton = (props: AddButtonProps) => {
       aria-label={`Add new ${props.name}`}
       onClick={props.add}
     >
-      <PlusCircledIcon className="h-[1.2rem] w-[1.2rem]" />
+      <PlusIcon className="h-[1.2rem] w-[1.2rem]" />
     </Button>
   );
 };

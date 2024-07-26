@@ -20,18 +20,48 @@ export const ModsTable = (props: ModsTableProps) => {
               <EditorInput
                 key={index.toString() + "ModID"}
                 parameter={mod.modId}
-                change={(v) => console.log("TODO:")}
+                change={(v) => {
+                  const mods = props.config.game?.mods;
+                  mods[index].modId = v;
+                  props.setConfig({
+                    ...props.config,
+                    game: {
+                      ...props.config.game,
+                      mods: mods,
+                    },
+                  });
+                }}
               />
               <EditorInput
                 key={index.toString() + "ModName"}
                 parameter={mod.name}
-                change={(v) => console.log("TODO:")}
+                change={(v) => {
+                  const mods = props.config.game?.mods;
+                  mods[index].name = v;
+                  props.setConfig({
+                    ...props.config,
+                    game: {
+                      ...props.config.game,
+                      mods: mods,
+                    },
+                  });
+                }}
               />
               <EditorInput
                 key={index.toString() + "ModVersion"}
                 parameter={mod.version}
                 placeholder="Latest"
-                change={(v) => console.log("TODO:")}
+                change={(v) => {
+                  const mods = props.config.game?.mods;
+                  mods[index].version = v;
+                  props.setConfig({
+                    ...props.config,
+                    game: {
+                      ...props.config.game,
+                      mods: mods,
+                    },
+                  });
+                }}
               />
               <TableCell>
                 <DeleteButton
