@@ -2,7 +2,7 @@
 
 import { EditorProps } from "./props/EditorProps";
 import { useState } from "react";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import {
   Breadcrumb,
   BreadcrumbItem,

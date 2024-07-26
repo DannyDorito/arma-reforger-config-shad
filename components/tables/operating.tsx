@@ -6,6 +6,8 @@ import { SwitchInput } from "../ui/custom-input/switch-input";
 import { Table, TableBody, TableCell, TableRow } from "../ui/table";
 import { EditorInput } from "../ui/custom-input/editor-input";
 import { OperatingTableProps } from "../props/OperatingTableProps";
+import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
+import { Alert, AlertTitle } from "../ui/alert";
 
 export const OperatingTable = (props: OperatingTableProps) => {
   return (
@@ -44,7 +46,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
           </TableCell>
         </TableRow>
         <TableRow>
-          {typeof props.config.operating?.disableNavmeshStreaming ===
+          {/* {typeof props.config.operating?.disableNavmeshStreaming ===
           "boolean" ? (
             <SwitchInput
               parameter={
@@ -73,9 +75,17 @@ export const OperatingTable = (props: OperatingTableProps) => {
               change={() => console.log("TODO: Disable Navmesh Streaming")}
               disabled={true}
             />
-          )}
+          )} */}
+          <TableCell>Disable Navmesh Streaming</TableCell>
+          <TableCell>
+            <Alert variant="destructive">
+              <ExclamationTriangleIcon className="h-4 w-4" />
+              <AlertTitle>Currently cannot edit, coming soon!</AlertTitle>
+            </Alert>
+          </TableCell>
           <TableCell>
             <ResetButton
+              disabled={true}
               click={() =>
                 props.setConfig({
                   ...props.config,
