@@ -8,6 +8,7 @@ import { EditorInput } from "../ui/custom-input/editor-input";
 import { OperatingTableProps } from "../props/OperatingTableProps";
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import { Alert, AlertTitle } from "../ui/alert";
+import Link from "next/link";
 
 export const OperatingTable = (props: OperatingTableProps) => {
   return (
@@ -80,7 +81,18 @@ export const OperatingTable = (props: OperatingTableProps) => {
           <TableCell>
             <Alert variant="destructive">
               <ExclamationTriangleIcon className="h-4 w-4" />
-              <AlertTitle>Currently cannot edit, coming soon!</AlertTitle>
+              <AlertTitle>
+                Currently cannot edit&nbsp;
+                <Link
+                  href="https://github.com/DannyDorito/arma-reforger-config-shad/issues/5"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Cannot edit Disable Navmesh Streaming issue tracker on GitHub"
+                  className="underline"
+                >
+                  track progress!
+                </Link>
+              </AlertTitle>
             </Alert>
           </TableCell>
           <TableCell>

@@ -8,6 +8,7 @@ import { Table, TableBody, TableCell, TableRow } from "../ui/table";
 import { SwitchInput } from "../ui/custom-input/switch-input";
 import { Alert, AlertTitle } from "../ui/alert";
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
   return (
@@ -366,7 +367,18 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           <TableCell>
             <Alert variant="destructive">
               <ExclamationTriangleIcon className="h-4 w-4" />
-              <AlertTitle>Currently cannot edit, coming soon!</AlertTitle>
+              <AlertTitle>
+                Currently cannot edit&nbsp;
+                <Link
+                  href="https://github.com/DannyDorito/arma-reforger-config-shad/issues/4"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Cannot edit mission header issue tracker on GitHub"
+                  className="underline"
+                >
+                  track progress!
+                </Link>
+              </AlertTitle>
             </Alert>
           </TableCell>
           <TableCell>
