@@ -1,15 +1,15 @@
 import { cn } from "@/lib/utils";
-import { CaretSortIcon } from "@radix-ui/react-icons";
+import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
 import {
   Popover,
   PopoverTrigger,
   PopoverContent,
 } from "@radix-ui/react-popover";
-import { Command, CheckIcon } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../button";
 import { PickerInputProps } from "@/components/props/PickerInputProps";
 import {
+  Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
