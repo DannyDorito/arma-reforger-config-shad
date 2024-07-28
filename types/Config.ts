@@ -13,7 +13,7 @@ export class Config
 export class Operating
 {
   lobbyPlayerSynchronise: boolean = true;
-  disableNavmeshStreaming: boolean | string[] = false;
+  disableNavmeshStreaming: string[] | null = null;
   disableServerShutdown: boolean = false;
   disableAI: boolean = false;
   playerSaveTime: number = 120;
