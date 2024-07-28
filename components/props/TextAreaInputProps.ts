@@ -1,7 +1,7 @@
 export interface TextAreaInputProps
 {
   parameter: string;
-  key: string,
+  id: string,
   placeholder?: string,
   change: ( v: string ) => void;
 }

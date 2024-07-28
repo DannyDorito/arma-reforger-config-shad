@@ -23,7 +23,7 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
       } catch {}
     },
     placeholder: props.placeholder,
-    id: props.key,
+    id: props.id,
   });
 
   useEffect(() => {

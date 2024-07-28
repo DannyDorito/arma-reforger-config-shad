@@ -356,7 +356,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
         <TableRow>
           <TableCell>Mission Header</TableCell>
           <TextAreaInput
-            key="gameProperties.missionHeader"
+            id="gameProperties.missionHeader"
             parameter={JSON.stringify(
               props.config.game?.gameProperties.missionHeader,
               undefined,
