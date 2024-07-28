@@ -62,7 +62,7 @@
 	},
 	"operating": {
 		"lobbyPlayerSynchronise": true,
-		"disableNavmeshStreaming": false,
+		"disableNavmeshStreaming": [{ "asd" : "a"}],
 		"disableServerShutdown": false,
 		"disableAI": false,
 		"playerSaveTime": 120,

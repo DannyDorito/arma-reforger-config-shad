@@ -6,9 +6,7 @@ import { SwitchInput } from "../ui/custom-input/switch-input";
 import { Table, TableBody, TableCell, TableRow } from "../ui/table";
 import { EditorInput } from "../ui/custom-input/editor-input";
 import { OperatingTableProps } from "../props/OperatingTableProps";
-import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
-import { Alert, AlertTitle } from "../ui/alert";
-import Link from "next/link";
+import { TextAreaInput } from "../ui/custom-input/textarea-input";
 
 export const OperatingTable = (props: OperatingTableProps) => {
   return (
@@ -44,72 +42,6 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
             />
             <HelpButton parameterName="lobbyPlayerSynchronise" />
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          {/* {typeof props.config.operating?.disableNavmeshStreaming ===
-          "boolean" ? (
-            <SwitchInput
-              parameter={
-                props.config.operating?.disableNavmeshStreaming as boolean
-              }
-              name="Disable Navmesh Streaming"
-              key="operating.disableNavmeshStreaming"
-              disabled={true}
-              change={(v) =>
-                props.setConfig({
-                  ...props.config,
-                  operating: {
-                    ...props.config.operating,
-                    disableNavmeshStreaming: v,
-                  },
-                })
-              }
-            />
-          ) : (
-            <EditorInput
-              parameter={
-                props.config.operating?.disableNavmeshStreaming as string[]
-              }
-              name="Disable Navmesh Streaming"
-              key="operating.disableNavmeshStreaming"
-              change={() => console.log("TODO: Disable Navmesh Streaming")}
-              disabled={true}
-            />
-          )} */}
-          <TableCell>Disable Navmesh Streaming</TableCell>
-          <TableCell>
-            <Alert variant="destructive">
-              <ExclamationTriangleIcon className="h-4 w-4" />
-              <AlertTitle>
-                Currently cannot edit&nbsp;
-                <Link
-                  href="https://github.com/DannyDorito/arma-reforger-config-shad/issues/5"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  aria-label="Cannot edit Disable Navmesh Streaming issue tracker on GitHub"
-                  className="underline"
-                >
-                  track progress!
-                </Link>
-              </AlertTitle>
-            </Alert>
-          </TableCell>
-          <TableCell>
-            <ResetButton
-              disabled={true}
-              click={() =>
-                props.setConfig({
-                  ...props.config,
-                  operating: {
-                    ...props.config.operating,
-                    disableNavmeshStreaming: new Operating()
-                      .disableNavmeshStreaming,
-                  },
-                })
-              }
-            />
-            <HelpButton parameterName="disableNavmeshStreaming" />
           </TableCell>
         </TableRow>
         <TableRow>
@@ -262,6 +194,45 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
             />
             <HelpButton parameterName="slotReservationTimeout" />
+          </TableCell>
+        </TableRow>{" "}
+        <TableRow>
+          <TableCell>Disable Navmesh Streaming</TableCell>
+          <TextAreaInput
+            id="operating.disableNavmeshStreaming"
+            parameter={
+              props.config.operating?.disableNavmeshStreaming === null
+                ? "null"
+                : JSON.stringify(
+                    props.config.operating?.disableNavmeshStreaming,
+                    undefined,
+                    4
+                  )
+            }
+            change={(v) =>
+              props.setConfig({
+                ...props.config,
+                operating: {
+                  ...props.config.operating,
+                  disableNavmeshStreaming: v.split("\r\n"),
+                },
+              })
+            }
+          />
+          <TableCell>
+            <ResetButton
+              click={() =>
+                props.setConfig({
+                  ...props.config,
+                  operating: {
+                    ...props.config.operating,
+                    disableNavmeshStreaming: new Operating()
+                      .disableNavmeshStreaming,
+                  },
+                })
+              }
+            />
+            <HelpButton parameterName="disableNavmeshStreaming" />
           </TableCell>
         </TableRow>
       </TableBody>
