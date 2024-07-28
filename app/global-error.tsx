@@ -20,18 +20,20 @@ export default function GlobalError({
   return (
     <html>
       <body>
-        <Card>
-          <CardHeader>
-            <CardTitle className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-4xl text-center">
-              Something went wrong!
-            </CardTitle>
-            <CardDescription>Something went wrong!</CardDescription>
-          </CardHeader>
-        </Card>
-        <CardContent>{error.message}</CardContent>
-        <CardFooter className="flex justify-evenly">
-          <Button onClick={() => reset()}>Try again</Button>
-        </CardFooter>
+        <div className="flex min-h-screen flex-col items-center justify-evenly p-24">
+          <Card>
+            <CardHeader>
+              <CardTitle className="scroll-m-20 text-2xl font-extrabold tracking-tight lg:text-2xl">
+                Something went wrong!
+              </CardTitle>
+              <CardDescription>Something went wrong!</CardDescription>
+            </CardHeader>
+            <CardContent>{error.message}</CardContent>
+            <CardFooter className="flex justify-evenly">
+              <Button onClick={() => reset()}>Try again</Button>
+            </CardFooter>
+          </Card>
+        </div>
       </body>
     </html>
   );
