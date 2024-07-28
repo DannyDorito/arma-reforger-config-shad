@@ -6,9 +6,7 @@ import { CustomTableHeader } from "../table-header";
 import { EditorInput } from "../ui/custom-input/editor-input";
 import { Table, TableBody, TableCell, TableRow } from "../ui/table";
 import { SwitchInput } from "../ui/custom-input/switch-input";
-import { Alert, AlertTitle } from "../ui/alert";
-import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
+import { TextAreaInput } from "../ui/custom-input/textarea-input";
 
 export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
   return (
@@ -356,34 +354,29 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           </TableCell>
         </TableRow>
         <TableRow>
-          {/* <EditorInput
-            parameter={props.config.game?.gameProperties.missionHeader.toString()}
-            name="Mission Header"
-            key="gameProperties.missionHeader"
-            disabled={true}
-            change={(v) => console.log("TODO:")}
-          /> */}
           <TableCell>Mission Header</TableCell>
-          <TableCell>
-            <Alert variant="destructive">
-              <ExclamationTriangleIcon className="h-4 w-4" />
-              <AlertTitle>
-                Currently cannot edit&nbsp;
-                <Link
-                  href="https://github.com/DannyDorito/arma-reforger-config-shad/issues/4"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  aria-label="Cannot edit mission header issue tracker on GitHub"
-                  className="underline"
-                >
-                  track progress!
-                </Link>
-              </AlertTitle>
-            </Alert>
-          </TableCell>
+          <TextAreaInput
+            key="gameProperties.missionHeader"
+            parameter={JSON.stringify(
+              props.config.game?.gameProperties.missionHeader,
+              undefined,
+              4
+            )}
+            change={(v) =>
+              props.setConfig({
+                ...props.config,
+                game: {
+                  ...props.config.game,
+                  gameProperties: {
+                    ...props.config.game?.gameProperties,
+                    missionHeader: v,
+                  },
+                },
+              })
+            }
+          />
           <TableCell>
             <ResetButton
-              disabled={true}
               click={() =>
                 props.setConfig({
                   ...props.config,
