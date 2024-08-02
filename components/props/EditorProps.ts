@@ -6,4 +6,5 @@ export interface EditorProps
   config: Config;
   fileName: string;
   setConfig: Dispatch<SetStateAction<Config>>;
+  current: string;
 }

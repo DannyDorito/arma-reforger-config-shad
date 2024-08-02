@@ -19,17 +19,25 @@ export default function Home() {
   const [file, setFile] = useState<File | undefined>(undefined);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-evenly p-24">
+    <>
       {Object.keys(config).length === 0 ? (
-        <UploadCard
-          setConfig={setConfig}
-          setFile={setFile}
-          setFileName={setFileName}
-          file={file}
-        />
+        <main className="flex min-h-screen items-center justify-evenly p-24">
+          <UploadCard
+            setConfig={setConfig}
+            setFile={setFile}
+            setFileName={setFileName}
+            file={file}
+          />
+        </main>
       ) : (
-        <EditorCard config={config} fileName={fileName} setConfig={setConfig} />
+        <main className="flex min-h-screen justify-evenly p-24">
+          <EditorCard
+            config={config}
+            fileName={fileName}
+            setConfig={setConfig}
+          />
+        </main>
       )}
-    </main>
+    </>
   );
 }
