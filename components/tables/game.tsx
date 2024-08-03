@@ -28,6 +28,7 @@ export const GameTable = (props: GameTableProps) => {
                 game: { ...props.config.game, name: v },
               })
             }
+            required={true}
           />
           <TableCell>
             <ResetButton
@@ -79,6 +80,7 @@ export const GameTable = (props: GameTableProps) => {
                 game: { ...props.config.game, passwordAdmin: v },
               })
             }
+            required={true}
           />
           <TableCell>
             <ResetButton

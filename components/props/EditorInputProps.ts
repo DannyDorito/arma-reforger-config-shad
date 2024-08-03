@@ -8,5 +8,6 @@ export interface EditorInputProps
   max?: number
   change: ( v: string ) => void;
   disabled?: boolean;
+  required?: boolean;
 }
 

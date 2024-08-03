@@ -20,7 +20,7 @@ export const EditorInput = (props: EditorInputProps) => {
   return (
     <>
       {props.name && (
-        <TableCell className="font-medium">{props.name}</TableCell>
+        <TableCell className="font-medium">{props.name}{props.required && <span className="red">&nbsp;*</span>}</TableCell>
       )}
       <TableCell>
         <Input
@@ -37,6 +37,7 @@ export const EditorInput = (props: EditorInputProps) => {
           disabled={props.disabled}
           aria-label={`Input for ${props.name}`}
         ></Input>
+
         {error && (
           <Alert variant="destructive">
             <ExclamationTriangleIcon className="h-4 w-4" />

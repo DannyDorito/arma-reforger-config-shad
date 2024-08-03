@@ -17,7 +17,7 @@ export const PasswordInput = (props: PasswordInputProps) => {
   return (
     <>
       <TableCell hidden={!props.name} className="font-medium">
-        {props.name}
+        {props.name}{props.required && <span className="red">&nbsp;*</span>}
       </TableCell>
       <TableCell>
         <div className="flex w-full items-center space-x-2">

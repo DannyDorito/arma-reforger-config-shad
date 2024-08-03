@@ -18,6 +18,7 @@ export const BaseTable = (props: BaseTableProps) => {
             key="bindAddress"
             placeholder="xxx.xxx.xxx.xxx"
             change={(v) => props.setConfig({ ...props.config, bindAddress: v })}
+            required={true}
           />
           <TableCell>
             <ResetButton
@@ -41,6 +42,7 @@ export const BaseTable = (props: BaseTableProps) => {
             change={(v) =>
               props.setConfig({ ...props.config, bindPort: parseInt(v) })
             }
+            required={true}
           />
           <TableCell>
             <ResetButton
@@ -63,6 +65,7 @@ export const BaseTable = (props: BaseTableProps) => {
             change={(v) =>
               props.setConfig({ ...props.config, publicAddress: v })
             }
+            required={true}
           />
           <TableCell>
             <ResetButton
@@ -86,6 +89,7 @@ export const BaseTable = (props: BaseTableProps) => {
             change={(v) =>
               props.setConfig({ ...props.config, publicPort: parseInt(v) })
             }
+            required={true}
           />
           <TableCell>
             <ResetButton

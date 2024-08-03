@@ -25,6 +25,7 @@ export const RconTable = (props: RconTableProps) => {
                 rcon: { ...props.config.rcon, address: v },
               })
             }
+            required={true}
           />
           <TableCell>
             <ResetButton
@@ -51,6 +52,7 @@ export const RconTable = (props: RconTableProps) => {
                 rcon: { ...props.config.rcon, port: parseInt(v) },
               })
             }
+            required={true}
           />
           <TableCell>
             <ResetButton
@@ -75,6 +77,7 @@ export const RconTable = (props: RconTableProps) => {
                 rcon: { ...props.config.rcon, password: v },
               })
             }
+            required={true}
           />
           <TableCell>
             <ResetButton
