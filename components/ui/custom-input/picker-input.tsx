@@ -15,23 +15,42 @@ import {
   CommandInput,
   CommandItem,
 } from "../command";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export const PickerInput = (props: PickerInputProps) => {
   const [value, setValue] = useState("");
   return (
-    <Popover open={props.open} onOpenChange={props.setOpen} aria-label={`Input for ${props.name}`}>
+    <Popover
+      open={props.open}
+      onOpenChange={props.setOpen}
+      aria-label={`Input for ${props.name}`}
+    >
       <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          role="combobox"
-          aria-expanded={props.open}
-          className="w-[200px] justify-between"
-        >
-          {value
-            ? props.parameters.find((x) => x === value)
-            : `Select ${props.name}`}
-          <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-        </Button>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="outline"
+                role="combobox"
+                aria-expanded={props.open}
+                className="w-[200px] justify-between"
+              >
+                {value
+                  ? props.parameters.find((x) => x === value)
+                  : `Select ${props.name}`}
+                <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{`Select ${props.name}`}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>

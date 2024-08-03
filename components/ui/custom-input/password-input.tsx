@@ -4,6 +4,12 @@ import { TableCell } from "../table";
 import { Input } from "../input";
 import { Button } from "../button";
 import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export const PasswordInput = (props: PasswordInputProps) => {
   const [show, setShow] = useState<boolean>(false);
@@ -24,13 +30,22 @@ export const PasswordInput = (props: PasswordInputProps) => {
             autoComplete="false"
             aria-label={`Input for ${props.name}`}
           ></Input>
-          <Button variant="outline" onClick={() => setShow(!show)}>
-            {show ? (
-              <EyeOpenIcon className="h-[1.2rem] w-[1.2rem]" />
-            ) : (
-              <EyeClosedIcon className="h-[1.2rem] w-[1.2rem]" />
-            )}
-          </Button>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline" onClick={() => setShow(!show)}>
+                  {show ? (
+                    <EyeOpenIcon className="h-[1.2rem] w-[1.2rem]" />
+                  ) : (
+                    <EyeClosedIcon className="h-[1.2rem] w-[1.2rem]" />
+                  )}
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{`${show ? "Hide" : "Show"} Password for ${props.name}`}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       </TableCell>
     </>

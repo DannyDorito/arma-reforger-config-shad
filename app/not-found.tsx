@@ -9,6 +9,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-evenly p-24">
@@ -21,9 +28,18 @@ export default function NotFound() {
         </CardHeader>
         <CardContent>Could not find requested resource</CardContent>
         <CardFooter className="flex justify-evenly">
-          <Button>
-            <Link href="/">Return Home</Link>
-          </Button>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button>
+                  <Link href="/">Return Home</Link>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Return Home</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </CardFooter>
       </Card>
     </div>

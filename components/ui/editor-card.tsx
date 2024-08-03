@@ -16,6 +16,12 @@ import { Loading } from "../loading";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { Navigator } from "./navigator";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const Editor = dynamic(() => import('../editor').then(editor => editor.Editor), {
   loading: () => <Loading />
@@ -57,22 +63,40 @@ export const EditorCard = (props: EditorCardProps) => {
       </CardContent>
       <CardFooter className="flex justify-between">
         <GitHubButton />
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={() => props.setConfig({} as Config)}
-          aria-label="Clear changes and pick a new file"
-        >
-          <TrashIcon className="h-[1.2rem] w-[1.2rem] red" />
-        </Button>
-        <Button
-          onClick={() => handleDownload()}
-          variant="outline"
-          size="icon"
-          aria-label="Download file"
-        >
-          <DownloadIcon className="h-[1.2rem] w-[1.2rem]" />
-        </Button>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => props.setConfig({} as Config)}
+                aria-label="Clear changes and pick a new file"
+              >
+                <TrashIcon className="h-[1.2rem] w-[1.2rem] red" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Clear changes and pick a new file</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                onClick={() => handleDownload()}
+                variant="outline"
+                size="icon"
+                aria-label="Download file"
+              >
+                <DownloadIcon className="h-[1.2rem] w-[1.2rem]" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Download file</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
         <ThemeToggle />
       </CardFooter>
     </Card>
