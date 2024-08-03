@@ -5,4 +5,5 @@ export interface PasswordInputProps
   key: string,
   placeholder?: string
   change: ( v: string ) => void;
+  required?: boolean;
 }

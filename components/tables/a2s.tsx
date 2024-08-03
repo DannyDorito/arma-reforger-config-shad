@@ -23,6 +23,7 @@ export const A2STable = (props: A2STableProps) => {
                 a2s: { ...props.config.a2s, address: v },
               })
             }
+            required={true}
           />
           <TableCell>
             <ResetButton
