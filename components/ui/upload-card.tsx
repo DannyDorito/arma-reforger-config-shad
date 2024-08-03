@@ -23,6 +23,12 @@ import { ThemeToggle } from "../theme-toggle";
 import { UploadCardProps } from "../props/UploadCardProps";
 import { Config } from "@/types/Config";
 import { useTheme } from "next-themes";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const Turnstile = dynamic(() => import("@marsidev/react-turnstile").then(turnstile => turnstile.Turnstile), {
   loading: () => <Skeleton className="h-[64.4px] w-[300px] rounded-none"></Skeleton>
@@ -109,15 +115,24 @@ export const UploadCard = (props: UploadCardProps) => {
             className="cursor-pointer"
             aria-label="Upload .json file"
           />
-          <Button
-            variant="outline"
-            size="icon"
-            disabled={props.file === undefined}
-            onClick={() => props.setFile(undefined)}
-            aria-label="Clear uploaded config file"
-          >
-            <TrashIcon className="h-[1.2rem] w-[1.2rem] red"></TrashIcon>
-          </Button>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  disabled={props.file === undefined}
+                  onClick={() => props.setFile(undefined)}
+                  aria-label="Clear uploaded config file"
+                >
+                  <TrashIcon className="h-[1.2rem] w-[1.2rem] red"></TrashIcon>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Clear uploaded config file</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
         <div className="flex justify-center space-y-1.5 px-6 p-top-1-5">
           <Turnstile
@@ -145,29 +160,43 @@ export const UploadCard = (props: UploadCardProps) => {
       </CardContent>
       <CardFooter className="flex justify-between">
         <GitHubButton />
-        {props.file === undefined ? (
-          <Button
-            variant="outline"
-            size="icon"
-            disabled={!turnstileComplete}
-            onClick={() => {
-              props.setConfig(new Config());
-              props.setFileName("config.json");
-            }}
-            aria-label="Create new config file"
-          >
-            <PlusIcon className="h-[1.2rem] w-[1.2rem]"></PlusIcon>
-          </Button>
-        ) : (
-          <Button
-            variant="outline"
-            size="icon"
-            disabled={props.file === undefined || !turnstileComplete}
-            onClick={() => readJson()}
-          >
-            <Pencil2Icon className="h-[1.2rem] w-[1.2rem]"></Pencil2Icon>
-          </Button>
-        )}
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              {props.file === undefined ? (
+                <Button
+                  variant="outline"
+                  size="icon"
+                  disabled={!turnstileComplete}
+                  onClick={() => {
+                    props.setConfig(new Config());
+                    props.setFileName("config.json");
+                  }}
+                  aria-label="Create new config file"
+                >
+                  <PlusIcon className="h-[1.2rem] w-[1.2rem]"></PlusIcon>
+                </Button>
+              ) : (
+                <Button
+                  variant="outline"
+                  size="icon"
+                  disabled={props.file === undefined || !turnstileComplete}
+                  onClick={() => readJson()}
+                  aria-label="Start editing uploaded file"
+                >
+                  <Pencil2Icon className="h-[1.2rem] w-[1.2rem]"></Pencil2Icon>
+                </Button>
+              )}
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>
+                {props.file === undefined
+                  ? "Create new config file and edit"
+                  : "Start editing uploaded file"}
+              </p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
         <ThemeToggle />
       </CardFooter>
     </Card>
