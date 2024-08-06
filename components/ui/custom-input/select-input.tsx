@@ -1,3 +1,5 @@
+"use client";
+
 import { SelectInputProps } from "@/components/props/SelectInputProps";
 import {
   Select,

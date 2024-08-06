@@ -1,3 +1,5 @@
+"use client";
+
 import { Rcon } from "@/types/Config";
 import { RconTableProps } from "../props/RconTableProps";
 import { ResetButton } from "../ui/buttons/reset-button";

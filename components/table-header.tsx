@@ -1,3 +1,5 @@
+"use client";
+
 import { TableHeaderProps } from "./props/TableHeaderProps";
 import { TableHead, TableHeader, TableRow } from "./ui/table";
 

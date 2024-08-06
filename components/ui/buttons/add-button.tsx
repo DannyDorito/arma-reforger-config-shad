@@ -1,3 +1,5 @@
+"use client";
+
 import { AddButtonProps } from "@/components/props/AddButtonProps";
 import { PlusIcon } from "@radix-ui/react-icons";
 import { Button } from "../button";

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ExclamationTriangleIcon,
   Pencil2Icon,

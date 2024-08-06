@@ -1,3 +1,5 @@
+"use client";
+
 import { Game, Platform } from "@/types/Config";
 import { GameTableProps } from "../props/GameTableProps";
 import { ResetButton } from "../ui/buttons/reset-button";

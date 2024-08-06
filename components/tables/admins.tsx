@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { AdminTableProps } from "../props/AdminTableProps";
 import { CustomTableHeader } from "../table-header";

@@ -1,3 +1,5 @@
+"use client";
+
 import { PasswordInputProps } from "@/components/props/PasswordInputProps";
 import { useState } from "react";
 import { TableCell } from "../table";

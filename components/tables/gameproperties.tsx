@@ -1,3 +1,5 @@
+"use client";
+
 import { GameProperties } from "@/types/Config";
 import { GamePropertiesTableProps } from "../props/GamePropertiesTableProps";
 import { ResetButton } from "../ui/buttons/reset-button";

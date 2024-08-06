@@ -1,3 +1,5 @@
+"use client";
+
 import { MultiSelectInputProps } from "@/components/props/MultiSelectInputProps";
 import { TableCell } from "../table";
 import MultipleSelector from "../multiple-selector";

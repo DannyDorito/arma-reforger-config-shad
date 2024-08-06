@@ -1,3 +1,5 @@
+"use client";
+
 import { DownloadIcon, TrashIcon } from "@radix-ui/react-icons";
 import { EditorCardProps } from "../props/EditorCardProps";
 import { Button } from "./button";

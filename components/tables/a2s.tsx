@@ -1,3 +1,5 @@
+"use client";
+
 import { A2s } from "@/types/Config";
 import { A2STableProps } from "../props/A2STableProps";
 import { CustomTableHeader } from "../table-header";

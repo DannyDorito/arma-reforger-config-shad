@@ -1,3 +1,5 @@
+"use client";
+
 import { SwitchInputProps } from "../../props/CheckboxInputProps";
 import { Switch } from "../switch";
 import { TableCell } from "../table";

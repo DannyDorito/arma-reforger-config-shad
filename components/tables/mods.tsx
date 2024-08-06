@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { ModsTableProps } from "../props/ModsTableProps";
 import { Mod } from "@/types/Config";

@@ -1,3 +1,5 @@
+"use client";
+
 import { Config } from "@/types/Config";
 import { ResetButton } from "../ui/buttons/reset-button";
 import { HelpButton } from "../ui/buttons/help-button";

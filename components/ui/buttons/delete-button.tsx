@@ -1,3 +1,5 @@
+"use client";
+
 import { DeleteButtonProps } from "@/components/props/DeleteButtonProps";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { Button } from "../button";

@@ -1,3 +1,5 @@
+"use client";
+
 import { Routes } from "@/types/Routes";
 import { NavigatorProps } from "../props/NavigatorProps";
 import {

@@ -1,3 +1,5 @@
+"use client";
+
 import { TextAreaInputProps } from "@/components/props/TextAreaInputProps";
 import { TableCell } from "../table";
 import { useCodeMirror } from "@uiw/react-codemirror";
