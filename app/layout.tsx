@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: 'swap', });
 
 export const metadata: Metadata = {
   title: "ARMA Reforger Server Config Editor",
