@@ -123,7 +123,6 @@ export const UploadCard = (props: UploadCardProps) => {
                 <Button
                   variant="outline"
                   size="icon"
-                  disabled={props.file === undefined}
                   onClick={() => props.setFile(undefined)}
                   aria-label="Clear uploaded config file"
                 >

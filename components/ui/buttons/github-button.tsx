@@ -23,6 +23,7 @@ export const GitHubButton = () => {
                 aria-label="Link to Danny Dorito's GitHub"
               >
                 <GitHubLogoIcon className="h-[1.2rem] w-[1.2rem]"></GitHubLogoIcon>
+                <span className="sr-only">Link to GitHub Repo</span>
               </Link>
             </Button>
         </TooltipTrigger>

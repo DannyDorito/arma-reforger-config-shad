@@ -23,6 +23,7 @@ export const AddButton = (props: AddButtonProps) => {
             onClick={props.add}
           >
             <PlusIcon className="h-[1.2rem] w-[1.2rem]" />
+            <span className="sr-only">Add {props.name}</span>
           </Button>
         </TooltipTrigger>
         <TooltipContent>
