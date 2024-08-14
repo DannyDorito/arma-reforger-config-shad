@@ -31,6 +31,7 @@ export const HelpButton = (props: HelpButtonProps) => {
               aria-label={`Open help wiki for ${props.parameterName}`}
             >
               <OpenInNewWindowIcon className="h-[1.2rem] w-[1.2rem]" />
+              <span className="sr-only">{`Open help wiki for ${props.parameterName}`}</span>
             </Link>
           </Button>
         </TooltipTrigger>

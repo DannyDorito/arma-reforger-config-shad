@@ -20,7 +20,7 @@ export const EditorInput = (props: EditorInputProps) => {
   return (
     <>
       {props.name && (
-        <TableCell className="font-medium">{props.name}{props.required && <span className="red">&nbsp;*</span>}</TableCell>
+        <TableCell className="font-medium">{props.name}{props.required && <span className="red font-extrabold">&nbsp;*</span>}</TableCell>
       )}
       <TableCell>
         <Input

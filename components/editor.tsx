@@ -30,7 +30,6 @@ const ModsTable = dynamic(() => import('../components/tables/mods').then((mods) 
 });
 
 export const Editor = (props: EditorProps) => {
-
   return (
     <>
       <h3 className="scroll-m-20 font-extrabold tracking-tight lg:text-2xl red">

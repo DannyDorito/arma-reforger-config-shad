@@ -33,7 +33,7 @@ import { Button } from "./button";
 
 export const Navigator = (props: NavigatorProps) => {
   const currentFormatting = (page: string) =>
-    props.current === page ? "red" : "";
+    props.current === page ? "text-foreground underline" : "";
 
   const [open, setOpen] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");

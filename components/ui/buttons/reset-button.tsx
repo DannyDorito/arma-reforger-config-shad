@@ -23,6 +23,7 @@ export const ResetButton = (props: ResetButtonProps) => {
             disabled={props.disabled}
           >
             <ResetIcon className="h-[1.2rem] w-[1.2rem]" />
+            <span className="sr-only">Reset to default value</span>
           </Button>
         </TooltipTrigger>
         <TooltipContent>
