@@ -4,28 +4,28 @@ import { EditorProps } from "./props/EditorProps";
 import dynamic from "next/dynamic";
 import { Loading } from "./loading";
 
-const BaseTable = dynamic(() => import('../components/tables/base').then((base) => base.BaseTable), {
+const BaseTable = dynamic(() => import('../components/tables/desktop/base').then((base) => base.BaseTable), {
   loading: () => <Loading />
 });
-const OperatingTable = dynamic(() => import('../components/tables/operating').then((operating) => operating.OperatingTable), {
+const OperatingTable = dynamic(() => import('../components/tables/desktop/operating').then((operating) => operating.OperatingTable), {
   loading: () => <Loading />
 });
-const A2STable = dynamic(() => import('../components/tables/a2s').then((a2s) => a2s.A2STable), {
+const A2STable = dynamic(() => import('../components/tables/desktop/a2s').then((a2s) => a2s.A2STable), {
   loading: () => <Loading />
 });
-const RconTable = dynamic(() => import('../components/tables/rcon').then((rcon) => rcon.RconTable), {
+const RconTable = dynamic(() => import('../components/tables/desktop/rcon').then((rcon) => rcon.RconTable), {
   loading: () => <Loading />
 });
-const GameTable = dynamic(() => import('../components/tables/game').then((game) => game.GameTable), {
+const GameTable = dynamic(() => import('../components/tables/desktop/game').then((game) => game.GameTable), {
   loading: () => <Loading />
 });
-const AdminTable = dynamic(() => import('../components/tables/admins').then((admins) => admins.AdminTable), {
+const AdminTable = dynamic(() => import('../components/tables/desktop/admins').then((admins) => admins.AdminTable), {
   loading: () => <Loading />
 });
-const GamePropertiesTable = dynamic(() => import('../components/tables/gameproperties').then((gameproperties) => gameproperties.GamePropertiesTable), {
+const GamePropertiesTable = dynamic(() => import('../components/tables/desktop/gameproperties').then((gameproperties) => gameproperties.GamePropertiesTable), {
   loading: () => <Loading />
 });
-const ModsTable = dynamic(() => import('../components/tables/mods').then((mods) => mods.ModsTable), {
+const ModsTable = dynamic(() => import('../components/tables/desktop/mods').then((mods) => mods.ModsTable), {
   loading: () => <Loading />
 });
 

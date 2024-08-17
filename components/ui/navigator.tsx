@@ -36,7 +36,7 @@ export const Navigator = (props: NavigatorProps) => {
     props.current === page ? "text-foreground underline" : "";
 
   const [open, setOpen] = useState(false);
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const isDesktop = useMediaQuery("(min-width: 960px)");
 
   const ITEMS_TO_DISPLAY = 3;
 

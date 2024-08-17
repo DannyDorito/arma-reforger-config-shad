@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { AdminTableProps } from "../props/AdminTableProps";
-import { CustomTableHeader } from "../table-header";
-import { EditorInput } from "../ui/custom-input/editor-input";
-import { Table, TableBody, TableCell, TableRow } from "../ui/table";
-import { HelpButton } from "../ui/buttons/help-button";
-import { AddButton } from "../ui/buttons/add-button";
-import { DeleteButton } from "../ui/buttons/delete-button";
+import { AdminTableProps } from "../../props/AdminTableProps";
+import { CustomTableHeader } from "../../table-header";
+import { EditorInput } from "../../ui/custom-input/editor-input";
+import { Table, TableBody, TableCell, TableRow } from "../../ui/table";
+import { HelpButton } from "../../ui/buttons/help-button";
+import { AddButton } from "../../ui/buttons/add-button";
+import { DeleteButton } from "../../ui/buttons/delete-button";
 
 export const AdminTable = (props: AdminTableProps) => {
   const [newAdmin, setNewAdmin] = useState<string>("");

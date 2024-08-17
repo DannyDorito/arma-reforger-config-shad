@@ -19,13 +19,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Separator } from "./ui/separator";
 
 export const ThemeToggle = () => {
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger>
+    <Popover>
+      <PopoverTrigger>
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -40,20 +42,34 @@ export const ThemeToggle = () => {
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuLabel>Theme</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+      </PopoverTrigger>
+      <PopoverContent align="end" className="w-30">
+        <div className="flex flex-col">
+          <span className="text-center">Theme</span>
+          <Separator />
+          <Button
+            variant="ghost"
+            onClick={() => setTheme("light")}
+            className={theme === "light" ? "underline" : ""}
+          >
+            Light
+          </Button>
+          <Button
+            variant="ghost"
+            onClick={() => setTheme("dark")}
+            className={theme === "dark" ? "underline" : ""}
+          >
+            Dark
+          </Button>
+          <Button
+            variant="ghost"
+            onClick={() => setTheme("system")}
+            className={theme === "system" ? "underline" : ""}
+          >
+            System
+          </Button>
+        </div>
+      </PopoverContent>
+    </Popover>
   );
 };
