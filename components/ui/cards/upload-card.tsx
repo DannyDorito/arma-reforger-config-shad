@@ -6,7 +6,7 @@ import {
   PlusIcon,
   TrashIcon,
 } from "@radix-ui/react-icons";
-import { Button } from "./button";
+import { Button } from "../button";
 import {
   Card,
   CardContent,
@@ -14,15 +14,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./card";
-import { Input } from "./input";
-import { Skeleton } from "./skeleton";
+} from "../card";
+import { Input } from "../input";
+import { Skeleton } from "../skeleton";
 import dynamic from "next/dynamic";
-import { Alert, AlertDescription, AlertTitle } from "./alert";
-import { GitHubButton } from "./buttons/github-button";
+import { Alert, AlertDescription, AlertTitle } from "../alert";
+import { GitHubButton } from "../buttons/github-button";
 import { useState } from "react";
-import { ThemeToggle } from "../theme-toggle";
-import { UploadCardProps } from "../props/UploadCardProps";
+import { ThemeToggle } from "../../theme-toggle";
+import { UploadCardProps } from "../../props/UploadCardProps";
 import { Config } from "@/types/Config";
 import { useTheme } from "next-themes";
 import {

@@ -1,9 +1,9 @@
 "use client";
 
 import { DownloadIcon, TrashIcon } from "@radix-ui/react-icons";
-import { EditorCardProps } from "../props/EditorCardProps";
-import { Button } from "./button";
-import { GitHubButton } from "./buttons/github-button";
+import { EditorCardProps } from "../../props/EditorCardProps";
+import { Button } from "../button";
+import { GitHubButton } from "../buttons/github-button";
 import {
   Card,
   CardContent,
@@ -11,10 +11,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./card";
-import { ThemeToggle } from "../theme-toggle";
+} from "../card";
+import { ThemeToggle } from "../../theme-toggle";
 import { Config } from "@/types/Config";
-import { Loading } from "../loading";
+import { Loading } from "../../loading";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { Navigator } from "./navigator";
@@ -25,9 +25,12 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-const Editor = dynamic(() => import('../editor').then(editor => editor.Editor), {
-  loading: () => <Loading />
-});
+const Editor = dynamic(
+  () => import("../../editor").then((editor) => editor.Editor),
+  {
+    loading: () => <Loading />,
+  }
+);
 
 export const EditorCard = (props: EditorCardProps) => {
   const handleDownload = () => {

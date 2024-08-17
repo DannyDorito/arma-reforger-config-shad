@@ -5,11 +5,11 @@ import { Config } from "@/types/Config";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
-const EditorCard = dynamic(() => import('@/components/ui/editor-card').then(editor => editor.EditorCard), {
+const EditorCard = dynamic(() => import('@/components/ui/cards/editor-card').then(editor => editor.EditorCard), {
   loading: () => <Loading />
 });
 
-const UploadCard = dynamic(() => import('@/components/ui/upload-card').then(upload => upload.UploadCard), {
+const UploadCard = dynamic(() => import('@/components/ui/cards/upload-card').then(upload => upload.UploadCard), {
   loading: () => <Loading />
 });
 

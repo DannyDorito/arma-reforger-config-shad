@@ -1,7 +1,7 @@
 "use client";
 
 import { Routes } from "@/types/Routes";
-import { NavigatorProps } from "../props/NavigatorProps";
+import { NavigatorProps } from "../../props/NavigatorProps";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -10,13 +10,13 @@ import {
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
   BreadcrumbPage,
-} from "./breadcrumb";
+} from "../breadcrumb";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "./dropdown-menu";
+} from "../dropdown-menu";
 import { useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import {
@@ -28,8 +28,8 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "./drawer";
-import { Button } from "./button";
+} from "../drawer";
+import { Button } from "../button";
 
 export const Navigator = (props: NavigatorProps) => {
   const currentFormatting = (page: string) =>
