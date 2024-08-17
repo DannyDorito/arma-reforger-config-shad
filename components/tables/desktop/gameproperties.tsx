@@ -1,14 +1,14 @@
 "use client";
 
+import { GamePropertiesTableProps } from "@/components/props/GamePropertiesTableProps";
+import { CustomTableHeader } from "@/components/table-header";
+import { HelpButton } from "@/components/ui/buttons/help-button";
+import { ResetButton } from "@/components/ui/buttons/reset-button";
+import { EditorInput } from "@/components/ui/custom-input/editor-input";
+import { SwitchInput } from "@/components/ui/custom-input/switch-input";
+import { TextAreaInput } from "@/components/ui/custom-input/textarea-input";
+import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { GameProperties } from "@/types/Config";
-import { GamePropertiesTableProps } from "../props/GamePropertiesTableProps";
-import { ResetButton } from "../ui/buttons/reset-button";
-import { HelpButton } from "../ui/buttons/help-button";
-import { CustomTableHeader } from "../table-header";
-import { EditorInput } from "../ui/custom-input/editor-input";
-import { Table, TableBody, TableCell, TableRow } from "../ui/table";
-import { SwitchInput } from "../ui/custom-input/switch-input";
-import { TextAreaInput } from "../ui/custom-input/textarea-input";
 
 export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
   return (

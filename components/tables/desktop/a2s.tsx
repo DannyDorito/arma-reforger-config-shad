@@ -1,12 +1,12 @@
 "use client";
 
+import { A2STableProps } from "@/components/props/A2STableProps";
+import { CustomTableHeader } from "@/components/table-header";
+import { HelpButton } from "@/components/ui/buttons/help-button";
+import { ResetButton } from "@/components/ui/buttons/reset-button";
+import { EditorInput } from "@/components/ui/custom-input/editor-input";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { A2s } from "@/types/Config";
-import { A2STableProps } from "../../props/A2STableProps";
-import { CustomTableHeader } from "../../table-header";
-import { EditorInput } from "../../ui/custom-input/editor-input";
-import { Table, TableBody, TableCell, TableRow } from "../../ui/table";
-import { ResetButton } from "../../ui/buttons/reset-button";
-import { HelpButton } from "../../ui/buttons/help-button";
 
 export const A2STable = (props: A2STableProps) => {
   return (

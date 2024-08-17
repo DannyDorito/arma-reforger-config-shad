@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { ModsTableProps } from "../props/ModsTableProps";
 import { Mod } from "@/types/Config";
-import { Table, TableBody, TableCell, TableRow } from "../ui/table";
-import { CustomTableHeader } from "../table-header";
-import { EditorInput } from "../ui/custom-input/editor-input";
-import { HelpButton } from "../ui/buttons/help-button";
-import { DeleteButton } from "../ui/buttons/delete-button";
-import { AddButton } from "../ui/buttons/add-button";
+import { ModsTableProps } from "@/components/props/ModsTableProps";
+import { CustomTableHeader } from "@/components/table-header";
+import { AddButton } from "@/components/ui/buttons/add-button";
+import { DeleteButton } from "@/components/ui/buttons/delete-button";
+import { HelpButton } from "@/components/ui/buttons/help-button";
+import { EditorInput } from "@/components/ui/custom-input/editor-input";
+import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 
 export const ModsTable = (props: ModsTableProps) => {
   const [newMod, setNewMod] = useState<Mod>(new Mod());

@@ -1,14 +1,14 @@
 "use client";
 
+import { RconTableProps } from "@/components/props/RconTableProps";
+import { CustomTableHeader } from "@/components/table-header";
+import { HelpButton } from "@/components/ui/buttons/help-button";
+import { ResetButton } from "@/components/ui/buttons/reset-button";
+import { EditorInput } from "@/components/ui/custom-input/editor-input";
+import { PasswordInput } from "@/components/ui/custom-input/password-input";
+import { SelectInput } from "@/components/ui/custom-input/select-input";
+import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { Rcon } from "@/types/Config";
-import { RconTableProps } from "../props/RconTableProps";
-import { ResetButton } from "../ui/buttons/reset-button";
-import { HelpButton } from "../ui/buttons/help-button";
-import { CustomTableHeader } from "../table-header";
-import { EditorInput } from "../ui/custom-input/editor-input";
-import { Table, TableBody, TableCell, TableRow } from "../ui/table";
-import { SelectInput } from "../ui/custom-input/select-input";
-import { PasswordInput } from "../ui/custom-input/password-input";
 
 export const RconTable = (props: RconTableProps) => {
   return (

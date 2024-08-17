@@ -1,16 +1,16 @@
 "use client";
 
+import { GameTableProps } from "@/components/props/GameTableProps";
+import { CustomTableHeader } from "@/components/table-header";
+import { HelpButton } from "@/components/ui/buttons/help-button";
+import { ResetButton } from "@/components/ui/buttons/reset-button";
+import { EditorInput } from "@/components/ui/custom-input/editor-input";
+import { MultiSelectInput } from "@/components/ui/custom-input/multiselect-input";
+import { PasswordInput } from "@/components/ui/custom-input/password-input";
+import { SwitchInput } from "@/components/ui/custom-input/switch-input";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Game, Platform } from "@/types/Config";
-import { GameTableProps } from "../props/GameTableProps";
-import { ResetButton } from "../ui/buttons/reset-button";
-import { HelpButton } from "../ui/buttons/help-button";
-import { CustomTableHeader } from "../table-header";
-import { EditorInput } from "../ui/custom-input/editor-input";
-import { Table, TableBody, TableCell, TableRow } from "../ui/table";
-import { PasswordInput } from "../ui/custom-input/password-input";
-import { SwitchInput } from "../ui/custom-input/switch-input";
 import { SupportedPlatforms } from "@/types/SupportedPlatforms";
-import { MultiSelectInput } from "../ui/custom-input/multiselect-input";
 
 export const GameTable = (props: GameTableProps) => {
   return (

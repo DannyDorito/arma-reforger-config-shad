@@ -1,14 +1,14 @@
 "use client";
 
+import { OperatingTableProps } from "@/components/props/OperatingTableProps";
+import { CustomTableHeader } from "@/components/table-header";
+import { HelpButton } from "@/components/ui/buttons/help-button";
+import { ResetButton } from "@/components/ui/buttons/reset-button";
+import { EditorInput } from "@/components/ui/custom-input/editor-input";
+import { SwitchInput } from "@/components/ui/custom-input/switch-input";
+import { TextAreaInput } from "@/components/ui/custom-input/textarea-input";
+import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { Operating } from "@/types/Config";
-import { ResetButton } from "../ui/buttons/reset-button";
-import { HelpButton } from "../ui/buttons/help-button";
-import { CustomTableHeader } from "../table-header";
-import { SwitchInput } from "../ui/custom-input/switch-input";
-import { Table, TableBody, TableCell, TableRow } from "../ui/table";
-import { EditorInput } from "../ui/custom-input/editor-input";
-import { OperatingTableProps } from "../props/OperatingTableProps";
-import { TextAreaInput } from "../ui/custom-input/textarea-input";
 
 export const OperatingTable = (props: OperatingTableProps) => {
   return (

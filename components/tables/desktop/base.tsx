@@ -1,12 +1,12 @@
 "use client";
 
+import { BaseTableProps } from "@/components/props/BaseTableProps";
+import { CustomTableHeader } from "@/components/table-header";
+import { HelpButton } from "@/components/ui/buttons/help-button";
+import { ResetButton } from "@/components/ui/buttons/reset-button";
+import { EditorInput } from "@/components/ui/custom-input/editor-input";
+import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { Config } from "@/types/Config";
-import { ResetButton } from "../ui/buttons/reset-button";
-import { HelpButton } from "../ui/buttons/help-button";
-import { CustomTableHeader } from "../table-header";
-import { EditorInput } from "../ui/custom-input/editor-input";
-import { Table, TableBody, TableCell, TableRow } from "../ui/table";
-import { BaseTableProps } from "../props/BaseTableProps";
 
 export const BaseTable = (props: BaseTableProps) => {
   return (
