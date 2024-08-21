@@ -16,8 +16,9 @@ import {
   CardTitle,
 } from "../card";
 import { Input } from "../input";
-import { Skeleton } from "../skeleton";
-import dynamic from "next/dynamic";
+// import { Skeleton } from "../skeleton";
+// import dynamic from "next/dynamic";
+import { Turnstile } from '@marsidev/react-turnstile'
 import { Alert, AlertDescription, AlertTitle } from "../alert";
 import { GitHubButton } from "../buttons/github-button";
 import { useState } from "react";
@@ -32,9 +33,9 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-const Turnstile = dynamic(() => import("@marsidev/react-turnstile").then(turnstile => turnstile.Turnstile), {
-  loading: () => <Skeleton className="h-[64.4px] w-[300px] rounded-none"></Skeleton>
-});
+// const Turnstile = dynamic(() => import("@marsidev/react-turnstile").then(turnstile => turnstile.Turnstile), {
+//   loading: () => <Skeleton className="h-[64.4px] w-[300px] rounded-none"></Skeleton>
+// });
 
 export const UploadCard = (props: UploadCardProps) => {
   const { theme } = useTheme();
