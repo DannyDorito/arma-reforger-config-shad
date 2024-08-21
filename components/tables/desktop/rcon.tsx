@@ -17,6 +17,7 @@ export const RconTable = (props: RconTableProps) => {
       <TableBody>
         <TableRow>
           <EditorInput
+          isDesktop={props.isDesktop}
             parameter={props.config.rcon?.address}
             name="Address"
             key="rcon.address"
@@ -43,6 +44,7 @@ export const RconTable = (props: RconTableProps) => {
         </TableRow>
         <TableRow>
           <EditorInput
+          isDesktop={props.isDesktop}
             parameter={props.config.rcon?.port}
             min={1}
             max={65535}
@@ -98,6 +100,7 @@ export const RconTable = (props: RconTableProps) => {
         </TableRow>
         <TableRow>
           <EditorInput
+          isDesktop={props.isDesktop}
             parameter={props.config.rcon?.maxClients}
             min={1}
             max={16}

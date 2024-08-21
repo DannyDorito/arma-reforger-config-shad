@@ -12,35 +12,22 @@ import { useState } from "react";
 export const AdminTable = (props: AdminTableProps) => {
   const [newAdmin, setNewAdmin] = useState<string>("");
 
-  return (
-    <Table>
-      <CustomTableHeader headers={["Name", "Value", "Actions"]} />
-      <TableBody>
-        {props.config.game?.admins.map((admin, index) => {
-          return (
-            <TableRow key={`Admin-${index}`}>
-              <EditorInput
-                key={`Admin-${index.toString()}`}
-                parameter={admin}
-                name={`Admin ${index + 1}`}
-                change={(v) => {
-                  const admins = props.config.game?.admins;
-                  admins[index] = v;
-                  props.setConfig({
-                    ...props.config,
-                    game: {
-                      ...props.config.game,
-                      admins: admins,
-                    },
-                  });
-                }}
-              />
-              <TableCell>
-                <DeleteButton
-                  click={() => {
-                    const admins = props.config.game?.admins.filter(
-                      (_, i) => i !== index
-                    );
+  if (props.isDesktop) {
+    return (
+      <Table>
+        <CustomTableHeader headers={["Name", "Value", "Actions"]} />
+        <TableBody>
+          {props.config.game?.admins.map((admin, index) => {
+            return (
+              <TableRow key={`Admin-${index}`}>
+                <EditorInput
+                  isDesktop={props.isDesktop}
+                  key={`Admin-${index.toString()}`}
+                  parameter={admin}
+                  name={`Admin ${index + 1}`}
+                  change={(v) => {
+                    const admins = props.config.game?.admins;
+                    admins[index] = v;
                     props.setConfig({
                       ...props.config,
                       game: {
@@ -49,24 +36,70 @@ export const AdminTable = (props: AdminTableProps) => {
                       },
                     });
                   }}
-                  name="Admin"
                 />
-                <HelpButton parameterName="admins" />
-              </TableCell>
-            </TableRow>
-          );
-        })}
-        <TableRow key={`Admin-New`}>
-          <EditorInput
-            key={`Admin-New`}
-            name={`New Admin`}
-            parameter={newAdmin}
-            change={(v) => setNewAdmin(v)}
-          />
-          <TableCell>
-            <AddButton
-              add={() => {
-                const admins = [...props.config.game?.admins, newAdmin];
+                <TableCell>
+                  <DeleteButton
+                    click={() => {
+                      const admins = props.config.game?.admins.filter(
+                        (_, i) => i !== index
+                      );
+                      props.setConfig({
+                        ...props.config,
+                        game: {
+                          ...props.config.game,
+                          admins: admins,
+                        },
+                      });
+                    }}
+                    name="Admin"
+                  />
+                  <HelpButton parameterName="admins" />
+                </TableCell>
+              </TableRow>
+            );
+          })}
+          <TableRow key={`Admin-New`}>
+            <EditorInput
+              isDesktop={props.isDesktop}
+              key={`Admin-New`}
+              name={`New Admin`}
+              parameter={newAdmin}
+              change={(v) => setNewAdmin(v)}
+            />
+            <TableCell>
+              <AddButton
+                add={() => {
+                  const admins = [...props.config.game?.admins, newAdmin];
+                  props.setConfig({
+                    ...props.config,
+                    game: {
+                      ...props.config.game,
+                      admins: admins,
+                    },
+                  });
+                  setNewAdmin("");
+                }}
+                name="Admin"
+              />
+              <HelpButton parameterName="admins" />
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    );
+  } else {
+    return (
+      <>
+        {props.config.game?.admins.map((admin, index) => {
+          return (
+            <EditorInput
+              isDesktop={props.isDesktop}
+              key={`Admin-${index.toString()}`}
+              parameter={admin}
+              name={`Admin ${index + 1}`}
+              change={(v) => {
+                const admins = props.config.game?.admins;
+                admins[index] = v;
                 props.setConfig({
                   ...props.config,
                   game: {
@@ -74,14 +107,18 @@ export const AdminTable = (props: AdminTableProps) => {
                     admins: admins,
                   },
                 });
-                setNewAdmin("");
               }}
-              name="Admin"
             />
-            <HelpButton parameterName="admins" />
-          </TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
-  );
+          );
+        })}
+        <EditorInput
+          isDesktop={props.isDesktop}
+          key={`Admin-New`}
+          name={`New Admin`}
+          parameter={newAdmin}
+          change={(v) => setNewAdmin(v)}
+        />
+      </>
+    );
+  }
 };

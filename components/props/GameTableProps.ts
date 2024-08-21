@@ -3,4 +3,5 @@ export interface GameTableProps
 {
   config: Config,
   setConfig: ( c: Config ) => void;
+  isDesktop: boolean;
 }

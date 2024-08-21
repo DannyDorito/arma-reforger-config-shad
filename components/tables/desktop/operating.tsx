@@ -106,6 +106,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
         </TableRow>
         <TableRow>
           <EditorInput
+            isDesktop={props.isDesktop}
             parameter={props.config.operating?.playerSaveTime}
             name="Player Save Time"
             key="operating.playerSaveTime"
@@ -136,6 +137,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
         </TableRow>
         <TableRow>
           <EditorInput
+            isDesktop={props.isDesktop}
             parameter={props.config.operating?.aiLimit}
             name="AI Limit"
             key="operating.aiLimit"
@@ -167,6 +169,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
         </TableRow>
         <TableRow>
           <EditorInput
+            isDesktop={props.isDesktop}
             parameter={props.config.operating?.slotReservationTimeout}
             min={5}
             max={300}

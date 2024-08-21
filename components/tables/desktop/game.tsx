@@ -19,6 +19,7 @@ export const GameTable = (props: GameTableProps) => {
       <TableBody>
         <TableRow>
           <EditorInput
+          isDesktop={props.isDesktop}
             parameter={props.config.game?.name}
             min={0}
             max={100}
@@ -101,6 +102,7 @@ export const GameTable = (props: GameTableProps) => {
         </TableRow>
         <TableRow>
           <EditorInput
+          isDesktop={props.isDesktop}
             parameter={props.config.game?.scenarioId}
             name="Scenario Id"
             key="game.scenarioId"
@@ -128,6 +130,7 @@ export const GameTable = (props: GameTableProps) => {
         </TableRow>
         <TableRow>
           <EditorInput
+          isDesktop={props.isDesktop}
             parameter={props.config.game?.maxPlayers}
             min={1}
             max={256}

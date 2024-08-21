@@ -20,6 +20,7 @@ export const ModsTable = (props: ModsTableProps) => {
           return (
             <TableRow key={`Mod-${index}`}>
               <EditorInput
+                isDesktop={props.isDesktop}
                 key={index.toString() + "ModID"}
                 parameter={mod.modId}
                 change={(v) => {
@@ -35,6 +36,7 @@ export const ModsTable = (props: ModsTableProps) => {
                 }}
               />
               <EditorInput
+                isDesktop={props.isDesktop}
                 key={index.toString() + "ModName"}
                 parameter={mod.name}
                 change={(v) => {
@@ -50,6 +52,7 @@ export const ModsTable = (props: ModsTableProps) => {
                 }}
               />
               <EditorInput
+                isDesktop={props.isDesktop}
                 key={index.toString() + "ModVersion"}
                 parameter={mod.version}
                 placeholder="Latest"
@@ -88,6 +91,7 @@ export const ModsTable = (props: ModsTableProps) => {
         })}
         <TableRow key={`Mod-New}`}>
           <EditorInput
+            isDesktop={props.isDesktop}
             key="New-ModID"
             parameter={newMod.modId}
             change={(v) => {
@@ -97,6 +101,7 @@ export const ModsTable = (props: ModsTableProps) => {
             }}
           />
           <EditorInput
+            isDesktop={props.isDesktop}
             key="New-ModName"
             parameter={newMod.name}
             change={(v) => {
@@ -106,6 +111,7 @@ export const ModsTable = (props: ModsTableProps) => {
             }}
           />
           <EditorInput
+            isDesktop={props.isDesktop}
             key="New-ModVersion"
             parameter={newMod.version}
             placeholder="Latest"

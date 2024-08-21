@@ -17,6 +17,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
       <TableBody>
         <TableRow>
           <EditorInput
+            isDesktop={props.isDesktop}
             parameter={props.config.game?.gameProperties.serverMaxViewDistance}
             min={500}
             max={10000}
@@ -56,6 +57,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
         </TableRow>
         <TableRow>
           <EditorInput
+            isDesktop={props.isDesktop}
             parameter={props.config.game?.gameProperties.serverMinGrassDistance}
             min={0}
             max={150}
@@ -95,6 +97,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
         </TableRow>
         <TableRow>
           <EditorInput
+            isDesktop={props.isDesktop}
             parameter={props.config.game?.gameProperties.networkViewDistance}
             min={500}
             max={5000}
