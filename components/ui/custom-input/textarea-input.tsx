@@ -32,7 +32,7 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
     if (editor.current) {
       setContainer(editor.current);
     }
-  }, [editor.current, setContainer]);
+  }, [setContainer]);
 
   return (
     <TableCell>
