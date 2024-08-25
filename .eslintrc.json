@@ -3,7 +3,6 @@
     "next",
     "prettier",
     "next/core-web-vitals",
-    "next/typescript",
     "plugin:@next/next/recommended"
   ]
 }
