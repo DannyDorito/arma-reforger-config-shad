@@ -3,4 +3,5 @@ export interface ModsTableProps
 {
   config: Config,
   setConfig: ( c: Config ) => void;
+  isDesktop: boolean;
 }

@@ -11,12 +11,14 @@ import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { Rcon } from "@/types/Config";
 
 export const RconTable = (props: RconTableProps) => {
+  //TODO: Mobile
   return (
     <Table>
       <CustomTableHeader headers={["Name", "Value", "Actions"]} />
       <TableBody>
         <TableRow>
           <EditorInput
+            isDesktop={props.isDesktop}
             parameter={props.config.rcon?.address}
             name="Address"
             key="rcon.address"
@@ -43,6 +45,7 @@ export const RconTable = (props: RconTableProps) => {
         </TableRow>
         <TableRow>
           <EditorInput
+            isDesktop={props.isDesktop}
             parameter={props.config.rcon?.port}
             min={1}
             max={65535}
@@ -70,6 +73,7 @@ export const RconTable = (props: RconTableProps) => {
         </TableRow>
         <TableRow>
           <PasswordInput
+            isDesktop={props.isDesktop}
             parameter={props.config.rcon?.password}
             name="Password"
             key="rcon.password"
@@ -98,6 +102,7 @@ export const RconTable = (props: RconTableProps) => {
         </TableRow>
         <TableRow>
           <EditorInput
+            isDesktop={props.isDesktop}
             parameter={props.config.rcon?.maxClients}
             min={1}
             max={16}
@@ -127,6 +132,7 @@ export const RconTable = (props: RconTableProps) => {
         </TableRow>
         <TableRow>
           <SelectInput
+            isDesktop={props.isDesktop}
             parameters={["admin", "monitor"]}
             name="Permission"
             selected={props.config.rcon?.permission}

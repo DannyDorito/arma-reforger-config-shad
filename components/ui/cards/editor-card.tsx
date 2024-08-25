@@ -24,6 +24,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useMediaQuery } from "usehooks-ts";
 
 const Editor = dynamic(
   () => import("../../editor").then((editor) => editor.Editor),
@@ -33,6 +34,8 @@ const Editor = dynamic(
 );
 
 export const EditorCard = (props: EditorCardProps) => {
+  const isDesktop = useMediaQuery("(min-width: 960px)");
+
   const handleDownload = () => {
     const doc = document.createElement("a");
     doc.href = URL.createObjectURL(
@@ -49,16 +52,14 @@ export const EditorCard = (props: EditorCardProps) => {
   const [current, setCurrent] = useState<string>("Base");
 
   return (
-    <Card className="grid">
+    <Card >
       <CardHeader>
-        <CardTitle className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-4xl text-center">
+        <CardTitle className="scroll-m-20 font-extrabold text-center">
           ARMA Reforger Server Config Editor
         </CardTitle>
-        <CardDescription>
-          <Navigator current={current} setCurrent={setCurrent} />
-        </CardDescription>
       </CardHeader>
       <CardContent>
+        <Navigator current={current} setCurrent={setCurrent} />
         <Editor
           config={props.config}
           fileName={props.fileName}
