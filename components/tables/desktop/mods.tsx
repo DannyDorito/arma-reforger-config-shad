@@ -12,6 +12,7 @@ import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 
 export const ModsTable = (props: ModsTableProps) => {
   const [newMod, setNewMod] = useState<Mod>(new Mod());
+  //TODO: Mobile
   return (
     <Table>
       <CustomTableHeader headers={["Id", "Name", "Value", "Actions"]} />

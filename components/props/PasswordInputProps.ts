@@ -6,4 +6,5 @@ export interface PasswordInputProps
   placeholder?: string
   change: ( v: string ) => void;
   required?: boolean;
+  isDesktop: boolean;
 }

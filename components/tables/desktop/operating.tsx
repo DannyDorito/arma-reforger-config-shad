@@ -11,12 +11,14 @@ import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { Operating } from "@/types/Config";
 
 export const OperatingTable = (props: OperatingTableProps) => {
+  //TODO: Mobile
   return (
     <Table>
       <CustomTableHeader headers={["Name", "Value", "Actions"]} />
       <TableBody>
         <TableRow>
           <SwitchInput
+            isDesktop={props.isDesktop}
             parameter={props.config.operating?.lobbyPlayerSynchronise}
             name="Lobby Player Synchronise"
             key="operating.lobbyPlayerSynchronise"
@@ -48,6 +50,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
         </TableRow>
         <TableRow>
           <SwitchInput
+            isDesktop={props.isDesktop}
             parameter={props.config.operating?.disableServerShutdown}
             name="Disable Server Shutdown"
             key="operating.disableServerShutdown"
@@ -79,6 +82,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
         </TableRow>
         <TableRow>
           <SwitchInput
+            isDesktop={props.isDesktop}
             parameter={props.config.operating?.disableAI}
             name="Disable AI"
             key="operating.disableAI"

@@ -11,6 +11,7 @@ import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { GameProperties } from "@/types/Config";
 
 export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
+  //TODO: Mobile
   return (
     <Table>
       <CustomTableHeader headers={["Name", "Value", "Actions"]} />
@@ -137,6 +138,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
         </TableRow>
         <TableRow>
           <SwitchInput
+            isDesktop={props.isDesktop}
             parameter={props.config.game?.gameProperties.disableThirdPerson}
             name="Disable Third Person"
             key="gameProperties.disableThirdPerson"
@@ -174,6 +176,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
         </TableRow>
         <TableRow>
           <SwitchInput
+            isDesktop={props.isDesktop}
             parameter={props.config.game?.gameProperties.fastValidation}
             name="Fast Validation"
             key="gameProperties.fastValidation"
@@ -210,6 +213,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
         </TableRow>
         <TableRow>
           <SwitchInput
+            isDesktop={props.isDesktop}
             parameter={props.config.game?.gameProperties.battlEye}
             name="BattleEye"
             key="gameProperties.battlEye"
@@ -246,6 +250,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
         </TableRow>
         <TableRow>
           <SwitchInput
+            isDesktop={props.isDesktop}
             parameter={props.config.game?.gameProperties.VONDisableUI}
             name="VON Disable UI"
             key="gameProperties.VONDisableUI"
@@ -282,6 +287,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
         </TableRow>
         <TableRow>
           <SwitchInput
+            isDesktop={props.isDesktop}
             parameter={
               props.config.game?.gameProperties.VONDisableDirectSpeechUI
             }
@@ -321,6 +327,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
         </TableRow>
         <TableRow>
           <SwitchInput
+            isDesktop={props.isDesktop}
             parameter={
               props.config.game?.gameProperties.VONCanTransmitCrossFaction
             }

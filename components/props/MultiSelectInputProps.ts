@@ -8,4 +8,5 @@ export interface MultiSelectInputProps
   options: Option[];
   selected: Option[];
   change: ( v: Option[] ) => void;
+  isDesktop: boolean;
 }
