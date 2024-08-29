@@ -66,7 +66,7 @@ export const Navigator = (props: NavigatorProps) => {
                   <DropdownMenuContent align="start">
                     {Routes.slice(1, -2).map((item, index) => (
                       <DropdownMenuItem
-                        key={index}
+                        key={`${index}-dd`}
                         onClick={() => props.setCurrent(item)}
                       >
                         <h2 className={currentFormatting(item)}>{item}</h2>
@@ -89,7 +89,7 @@ export const Navigator = (props: NavigatorProps) => {
                     <div className="grid gap-1 px-4">
                       {Routes.slice(1, -2).map((item, index) => (
                         <h2
-                          key={index}
+                          key={`${index}-drawer`}
                           className={currentFormatting(item)}
                           onClick={() => props.setCurrent(item)}
                         >
@@ -112,7 +112,7 @@ export const Navigator = (props: NavigatorProps) => {
         {Routes.slice(-ITEMS_TO_DISPLAY + 1).map((item, index) => (
           <>
             <BreadcrumbItem
-              key={index}
+              key={`${index}-display`}
               onClick={() => props.setCurrent(item)}
               className={currentFormatting(item)}
             >
