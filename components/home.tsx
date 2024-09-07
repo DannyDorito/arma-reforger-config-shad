@@ -1,3 +1,4 @@
+"use client";
 
 import { Loading } from "@/components/loading";
 import { Config } from "@/types/Config";
@@ -39,3 +40,5 @@ export const Home = () => {
     </>
   );
 }
+
+export default Home;

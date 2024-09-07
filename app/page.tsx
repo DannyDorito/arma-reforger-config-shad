@@ -1,9 +1,4 @@
-import { Loading } from "@/components/loading";
-import dynamic from "next/dynamic";
-
-const Home = dynamic(() => import("@/components/home").then((h) => h.Home), {
-  loading: () => <Loading />,
-});
+import Home from "@/components/home";
 
 export default function Page() {
   return <Home />;
