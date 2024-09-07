@@ -1,20 +1,22 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"cSpell.words": [
-			"Arland",
-			"CAH",
-			"clsx",
-			"cmdk",
-			"hsl",
-			"Navmesh",
-			"rcon",
-			"Rcon",
-			"vaul"
-		]
-	}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "cSpell.words": [
+      "Arland",
+      "CAH",
+      "clsx",
+      "cmdk",
+      "hsl",
+      "Navmesh",
+      "rcon",
+      "Rcon",
+      "selectables",
+      "shadcn",
+      "vaul"
+    ]
+  }
 }
