@@ -46,6 +46,12 @@ interface MultipleSelectorProps {
   triggerSearchOnFocus?: boolean;
   /** async search */
   onSearch?: (value: string) => Promise<Option[]>;
+  /**
+   * sync search. This search will not showing loadingIndicator.
+   * The rest props are the same as async search.
+   * i.e.: creatable, groupBy, delay.
+   **/
+  onSearchSync?: (value: string) => Option[];
   onChange?: (options: Option[]) => void;
   /** Limit the maximum number of selected options. */
   maxSelected?: number;
@@ -180,6 +186,7 @@ const MultipleSelector = React.forwardRef<
       options: arrayOptions,
       delay,
       onSearch,
+      onSearchSync,
       loadingIndicator,
       emptyIndicator,
       maxSelected = Number.MAX_SAFE_INTEGER,
@@ -200,8 +207,9 @@ const MultipleSelector = React.forwardRef<
   ) => {
     const inputRef = React.useRef<HTMLInputElement>(null);
     const [open, setOpen] = React.useState(false);
-    const mouseOn = React.useRef<boolean>(false);
+    const [onScrollbar, setOnScrollbar] = React.useState(false);
     const [isLoading, setIsLoading] = React.useState(false);
+    const dropdownRef = React.useRef<HTMLDivElement>(null); // Added this
 
     const [selected, setSelected] = React.useState<Option[]>(value || []);
     const [options, setOptions] = React.useState<GroupOption>(
@@ -219,6 +227,18 @@ const MultipleSelector = React.forwardRef<
       }),
       [selected]
     );
+
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        inputRef.current &&
+        !inputRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+        inputRef.current.blur();
+      }
+    };
 
     const handleUnselect = React.useCallback(
       (option: Option) => {
@@ -252,6 +272,21 @@ const MultipleSelector = React.forwardRef<
     );
 
     useEffect(() => {
+      if (open) {
+        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("touchend", handleClickOutside);
+      } else {
+        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("touchend", handleClickOutside);
+      }
+
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("touchend", handleClickOutside);
+      };
+    }, [open]);
+
+    useEffect(() => {
       if (value) {
         setSelected(value);
       }
@@ -269,6 +304,32 @@ const MultipleSelector = React.forwardRef<
     }, [arrayDefaultOptions, arrayOptions, groupBy, onSearch, options]);
 
     useEffect(() => {
+      /** sync search */
+
+      const doSearchSync = () => {
+        const res = onSearchSync?.(debouncedSearchTerm);
+        setOptions(transToGroupOption(res || [], groupBy));
+      };
+
+      const exec = async () => {
+        if (!onSearchSync || !open) return;
+
+        if (triggerSearchOnFocus) {
+          doSearchSync();
+        }
+
+        if (debouncedSearchTerm) {
+          doSearchSync();
+        }
+      };
+
+      void exec();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [debouncedSearchTerm, groupBy, open, triggerSearchOnFocus]);
+
+    useEffect(() => {
+      /** async search */
+
       const doSearch = async () => {
         setIsLoading(true);
         const res = await onSearch?.(debouncedSearchTerm);
@@ -374,6 +435,7 @@ const MultipleSelector = React.forwardRef<
 
     return (
       <Command
+        ref={dropdownRef}
         {...commandProps}
         onKeyDown={(e) => {
           handleKeyDown(e);
@@ -450,7 +512,7 @@ const MultipleSelector = React.forwardRef<
                 inputProps?.onValueChange?.(value);
               }}
               onBlur={(event) => {
-                if (mouseOn.current === false) {
+                if (!onScrollbar) {
                   setOpen(false);
                 }
                 inputProps?.onBlur?.(event);
@@ -499,10 +561,10 @@ const MultipleSelector = React.forwardRef<
             <CommandList
               className="absolute top-1 z-10 w-full rounded-md border bg-popover text-popover-foreground shadow-md outline-none animate-in"
               onMouseLeave={() => {
-                mouseOn.current = false;
+                setOnScrollbar(false);
               }}
               onMouseEnter={() => {
-                mouseOn.current = true;
+                setOnScrollbar(true);
               }}
               onMouseUp={() => {
                 inputRef.current?.focus();

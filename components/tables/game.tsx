@@ -351,7 +351,6 @@ export const GameTable = (props: GameTableProps) => {
         />
         <MultiSelectInput
           isDesktop={props.isDesktop}
-          disabled={true}
           name="Supported Platforms"
           options={SupportedPlatforms}
           selected={props.config.game?.supportedPlatforms.map((s) => ({
