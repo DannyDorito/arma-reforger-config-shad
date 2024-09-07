@@ -204,7 +204,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
             />
             <HelpButton parameterName="slotReservationTimeout" />
           </TableCell>
-        </TableRow>{" "}
+        </TableRow>
         <TableRow>
           <TableCell>Disable Navmesh Streaming</TableCell>
           <TextAreaInput
@@ -242,6 +242,73 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
             />
             <HelpButton parameterName="disableNavmeshStreaming" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <EditorInput
+            isDesktop={props.isDesktop}
+            parameter={props.config.operating?.joinQueue}
+            name="Join Queue"
+            key="operating.joinQueue"
+            min={0}
+            change={(v) =>
+              props.setConfig({
+                ...props.config,
+                operating: {
+                  ...props.config.operating,
+                  joinQueue: parseInt(v),
+                },
+              })
+            }
+          />
+          <TableCell>
+            <ResetButton
+              click={() =>
+                props.setConfig({
+                  ...props.config,
+                  operating: {
+                    ...props.config.operating,
+                    joinQueue: new Operating()
+                      .joinQueue,
+                  },
+                })
+              }
+            />
+            <HelpButton parameterName="joinQueue" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <EditorInput
+            isDesktop={props.isDesktop}
+            parameter={props.config.operating?.maxSize}
+            name="Max Size"
+            min={0}
+            max={50}
+            key="operating.maxSize"
+            change={(v) =>
+              props.setConfig({
+                ...props.config,
+                operating: {
+                  ...props.config.operating,
+                  maxSize: parseInt(v),
+                },
+              })
+            }
+          />
+          <TableCell>
+            <ResetButton
+              click={() =>
+                props.setConfig({
+                  ...props.config,
+                  operating: {
+                    ...props.config.operating,
+                    maxSize: new Operating()
+                      .maxSize,
+                  },
+                })
+              }
+            />
+            <HelpButton parameterName="maxSize" />
           </TableCell>
         </TableRow>
       </TableBody>

@@ -50,7 +50,7 @@ export const SelectInput = (props: SelectInputProps) => {
   } else {
     return (
       <>
-        {props.name && <Label htmlFor={props.name}>{props.name}</Label>}{" "}
+        {props.name && <Label htmlFor={props.name}>{props.name}</Label>}
         <Select
           disabled={props.disabled}
           onValueChange={(v) => props.change(v)}

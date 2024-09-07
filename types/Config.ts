@@ -19,6 +19,8 @@ export class Operating
   playerSaveTime: number = 120;
   aiLimit: number = -1;
   slotReservationTimeout: number = 60;
+  joinQueue: number = 30;
+  maxSize: number = 0;
 }
 
 export class Game

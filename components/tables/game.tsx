@@ -315,7 +315,7 @@ export const GameTable = (props: GameTableProps) => {
           isDesktop={props.isDesktop}
           parameter={props.config.game?.maxPlayers}
           min={1}
-          max={256}
+          max={128}
           name="Max Players"
           key="game.maxPlayers"
           change={(v) =>
