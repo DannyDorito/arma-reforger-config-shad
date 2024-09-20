@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"], display: 'swap', });
 
 export const metadata: Metadata = {
   title: "ARMA Reforger Server Config Editor",
-  description: "JSON Editor for ARMA Reforger Server Config",
+  description: "Arma Reforger Server Config Generator. JSON Editor for ARMA Reforger Server Config.",
 };
 
 export default function RootLayout({
