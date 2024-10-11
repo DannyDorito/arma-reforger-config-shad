@@ -17,7 +17,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../dropdown-menu";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import {
   Drawer,
@@ -69,7 +69,7 @@ export const Navigator = (props: NavigatorProps) => {
                         key={`${index}-dd`}
                         onClick={() => props.setCurrent(item)}
                       >
-                        <h2 className={currentFormatting(item)}>{item}</h2>
+                        <h2 className={currentFormatting(item)} key={`${index}-item`}>{item}</h2>
                       </DropdownMenuItem>
                     ))}
                   </DropdownMenuContent>
@@ -110,13 +110,14 @@ export const Navigator = (props: NavigatorProps) => {
           </>
         ) : null}
         {Routes.slice(-ITEMS_TO_DISPLAY + 1).map((item, index) => (
-          <>
+          <Fragment key={`${index}-${item}`}>
             <BreadcrumbItem
               key={`${index}-display`}
               onClick={() => props.setCurrent(item)}
               className={currentFormatting(item)}
             >
               <BreadcrumbPage
+                key={`${index}-page`}
                 className={`max-w-20 md:max-w-none cursor-pointer ${currentFormatting(
                   item
                 )}`}
@@ -124,8 +125,8 @@ export const Navigator = (props: NavigatorProps) => {
                 {item}
               </BreadcrumbPage>
             </BreadcrumbItem>
-            {item !== Routes[Routes.length - 1] && <BreadcrumbSeparator />}
-          </>
+            {item !== Routes[Routes.length - 1] && <BreadcrumbSeparator key={`${index}-separator`}/>}
+          </Fragment>
         ))}
       </BreadcrumbList>
     </Breadcrumb>

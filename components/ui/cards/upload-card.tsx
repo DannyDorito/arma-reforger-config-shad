@@ -105,8 +105,8 @@ export const UploadCard = (props: UploadCardProps) => {
       <CardHeader>
         <CardTitle>ARMA Reforger Server Config Editor</CardTitle>
         <CardDescription>
-          Upload and edit your config.json file here!
-          <p className="red">Update version {UpdateVersion}{isUpToDate() ? ' (Current)' :''}</p>
+          Upload and edit your config.json file here!<br/>
+          <span className="red">Update version {UpdateVersion}{isUpToDate() ? ' (Current)' :''}</span>
         </CardDescription>
       </CardHeader>
       <CardContent>

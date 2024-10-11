@@ -10,7 +10,8 @@ const EditorCard = dynamic(() => import('@/components/ui/cards/editor-card').the
 });
 
 const UploadCard = dynamic(() => import('@/components/ui/cards/upload-card').then(upload => upload.UploadCard), {
-  loading: () => <Loading />
+  loading: () => <Loading />,
+  ssr: false
 });
 
 export const Home = () => {
