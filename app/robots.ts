@@ -10,3 +10,5 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: 'https://reforger.jallison.co.uk/sitemap.xml',
   }
 }
+
+export const dynamic = 'force-static';

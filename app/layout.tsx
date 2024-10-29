@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: "Arma Reforger Server Config Generator. JSON Editor for ARMA Reforger Server Config.",
 };
 
+export const dynamic = 'force-static';
+
 export default function RootLayout({
   children,
 }: Readonly<{
