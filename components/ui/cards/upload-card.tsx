@@ -31,7 +31,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { isUpToDate, UpdateVersion } from "@/types/Version";
+import { CurrentVersion, isUpToDate, UpdateVersion } from "@/types/Version";
 
 const Turnstile = dynamic(() => import("@marsidev/react-turnstile").then(turnstile => turnstile.Turnstile), {
   loading: () => <Skeleton className="h-[64.4px] w-[300px] rounded-none"></Skeleton>
@@ -106,7 +106,7 @@ export const UploadCard = (props: UploadCardProps) => {
         <CardTitle>ARMA Reforger Server Config Editor</CardTitle>
         <CardDescription>
           Upload and edit your config.json file here!<br/>
-          <span className="red">Update version {UpdateVersion}{isUpToDate() ? ' (Current)' :''}</span>
+          <span className="red">Update Version {CurrentVersion}{isUpToDate() ? ' (Current)' : ` (Latest ${UpdateVersion})`}</span>
         </CardDescription>
       </CardHeader>
       <CardContent>
