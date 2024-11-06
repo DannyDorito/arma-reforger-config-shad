@@ -217,7 +217,7 @@ export const GameTable = (props: GameTableProps) => {
           <TableRow>
             <MultiSelectInput
               isDesktop={props.isDesktop}
-              disabled={true}
+              disabled={false}
               name="Supported Platforms"
               options={SupportedPlatforms}
               selected={props.config.game?.supportedPlatforms.map((s) => ({
@@ -225,17 +225,15 @@ export const GameTable = (props: GameTableProps) => {
                 value: s.toString(),
               }))}
               change={(v) => {
-                console.log(v);
                 props.setConfig({
                   ...props.config,
                   game: {
                     ...props.config.game,
                     supportedPlatforms: v.map(
-                      (p) => Platform[p.value as keyof typeof Platform]
+                      (p) => Platform[p as keyof typeof Platform]
                     ),
                   },
                 });
-                console.log(props.config.game?.supportedPlatforms);
               }}
             />
             <TableCell>
@@ -358,17 +356,15 @@ export const GameTable = (props: GameTableProps) => {
             value: s.toString(),
           }))}
           change={(v) => {
-            console.log(v);
             props.setConfig({
               ...props.config,
               game: {
                 ...props.config.game,
                 supportedPlatforms: v.map(
-                  (p) => Platform[p.value as keyof typeof Platform]
+                  (p) => Platform[p as keyof typeof Platform]
                 ),
               },
             });
-            console.log(props.config.game?.supportedPlatforms);
           }}
         />
       </>

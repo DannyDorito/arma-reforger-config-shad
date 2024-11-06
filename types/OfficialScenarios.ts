@@ -1,4 +1,4 @@
-import { Option } from "@/components/ui/multiple-selector";
+import { Option } from "@/components/ui/multi-select";
 
 export const OfficialScenarios: Option[] = [ {
   label: 'Conflict - Everon',

@@ -1,12 +1,12 @@
-import { Option } from "../ui/multiple-selector";
+import { OptionsInterface } from "../ui/multi-select";
 
 export interface MultiSelectInputProps
 {
   name?: string;
   disabled?: boolean;
   placeholder?: string;
-  options: Option[];
-  selected: Option[];
-  change: ( v: Option[] ) => void;
+  options: OptionsInterface[];
+  selected: OptionsInterface[];
+  change: ( v: string[] ) => void;
   isDesktop: boolean;
 }
