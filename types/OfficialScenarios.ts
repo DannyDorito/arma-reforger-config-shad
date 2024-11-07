@@ -1,6 +1,6 @@
-import { Option } from "@/components/ui/multi-select";
+import { OptionsInterface } from "@/components/ui/multi-select";
 
-export const OfficialScenarios: Option[] = [ {
+export const OfficialScenarios: OptionsInterface[] = [ {
   label: 'Conflict - Everon',
   value: '{ECC61978EDCC2B5A}Missions/23_Campaign.conf'
 },
@@ -30,7 +30,7 @@ export const OfficialScenarios: Option[] = [ {
   value: '{DFAC5FABD11F2390}Missions/26_CombatOpsEveron.conf'
 } ];
 
-export const WorkshopScenarios: Option[] = [ {
+export const WorkshopScenarios: OptionsInterface[] = [ {
   label: 'Capture & Hold - Military Base',
   value: '{6EA2E454519E5869}Missions/CAH_Military_Base.conf'
 },
