@@ -15,6 +15,7 @@ export class Operating
   lobbyPlayerSynchronise: boolean = true;
   disableNavmeshStreaming: string[] | null = null;
   disableServerShutdown: boolean = false;
+  disableCrashReporter: boolean = false;
   disableAI: boolean = false;
   playerSaveTime: number = 120;
   aiLimit: number = -1;
@@ -33,6 +34,7 @@ export class Game
   maxPlayers: number = 64;
   visible: boolean = true;
   crossPlatform: boolean = false;
+  modsRequiredByDefault: boolean = true;
   supportedPlatforms: Platform[] = [ Platform.PLATFORM_PC ];
   gameProperties: GameProperties = new GameProperties();
   mods: Mod[] = [];
@@ -49,6 +51,7 @@ export class Mod
   modId: string = "";
   name: string = "";
   version?: string;
+  required: boolean = false;
 }
 
 export class GameProperties

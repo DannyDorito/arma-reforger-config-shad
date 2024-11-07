@@ -215,6 +215,34 @@ export const GameTable = (props: GameTableProps) => {
             </TableCell>
           </TableRow>
           <TableRow>
+            <SwitchInput
+              isDesktop={props.isDesktop}
+              parameter={props.config.game?.modsRequiredByDefault}
+              name="Mods Required By Default"
+              key="game.modsRequiredByDefault"
+              change={(v) =>
+                props.setConfig({
+                  ...props.config,
+                  game: { ...props.config.game, modsRequiredByDefault: v },
+                })
+              }
+            />
+            <TableCell>
+              <ResetButton
+                click={() =>
+                  props.setConfig({
+                    ...props.config,
+                    game: {
+                      ...props.config.game,
+                      modsRequiredByDefault: new Game().modsRequiredByDefault,
+                    },
+                  })
+                }
+              />
+              <HelpButton parameterName="modsRequiredByDefault" />
+            </TableCell>
+          </TableRow>
+          <TableRow>
             <MultiSelectInput
               isDesktop={props.isDesktop}
               name="Supported Platforms"

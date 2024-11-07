@@ -9,13 +9,16 @@ import { DeleteButton } from "@/components/ui/buttons/delete-button";
 import { HelpButton } from "@/components/ui/buttons/help-button";
 import { EditorInput } from "@/components/ui/custom-input/editor-input";
 import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
+import { SwitchInput } from "../ui/custom-input/switch-input";
 
 export const ModsTable = (props: ModsTableProps) => {
   const [newMod, setNewMod] = useState<Mod>(new Mod());
   //TODO: Mobile
   return (
     <Table>
-      <CustomTableHeader headers={["Id", "Name", "Value", "Actions"]} />
+      <CustomTableHeader
+        headers={["Id", "Name", "Value", "Required", "Actions"]}
+      />
       <TableBody>
         {props.config.game?.mods.map((mod, index) => {
           return (
@@ -69,6 +72,22 @@ export const ModsTable = (props: ModsTableProps) => {
                   });
                 }}
               />
+              <SwitchInput
+                isDesktop={props.isDesktop}
+                key={index.toString() + "Required"}
+                parameter={mod.required}
+                change={(v) => {
+                  const mods = props.config.game?.mods;
+                  mods[index].required = v;
+                  props.setConfig({
+                    ...props.config,
+                    game: {
+                      ...props.config.game,
+                      mods: mods,
+                    },
+                  });
+                }}
+              />
               <TableCell>
                 <DeleteButton
                   name={"Mod"}
@@ -90,7 +109,7 @@ export const ModsTable = (props: ModsTableProps) => {
             </TableRow>
           );
         })}
-        <TableRow key={`Mod-New}`}>
+        <TableRow key={`Mod-New`}>
           <EditorInput
             isDesktop={props.isDesktop}
             key="New-ModID"
@@ -98,7 +117,8 @@ export const ModsTable = (props: ModsTableProps) => {
             change={(v) => {
               const mod = newMod;
               mod.modId = v;
-              setNewMod(mod);
+              newMod.modId = v;
+              setNewMod(newMod);
             }}
           />
           <EditorInput
@@ -108,6 +128,7 @@ export const ModsTable = (props: ModsTableProps) => {
             change={(v) => {
               const mod = newMod;
               mod.name = v;
+              newMod.name = v;
               setNewMod(mod);
             }}
           />
@@ -119,6 +140,17 @@ export const ModsTable = (props: ModsTableProps) => {
             change={(v) => {
               const mod = newMod;
               mod.version = v;
+              newMod.version = v;
+              setNewMod(mod);
+            }}
+          />
+          <SwitchInput
+            isDesktop={props.isDesktop}
+            key={"New-ModRequired"}
+            parameter={newMod.required}
+            change={(v) => {
+              const mod = newMod;
+              mod.required = v;
               setNewMod(mod);
             }}
           />

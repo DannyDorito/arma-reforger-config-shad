@@ -83,6 +83,38 @@ export const OperatingTable = (props: OperatingTableProps) => {
         <TableRow>
           <SwitchInput
             isDesktop={props.isDesktop}
+            parameter={props.config.operating?.disableCrashReporter}
+            name="Disable Crash Reporter"
+            key="operating.disableCrashReporter"
+            change={(v) =>
+              props.setConfig({
+                ...props.config,
+                operating: {
+                  ...props.config.operating,
+                  disableCrashReporter: v,
+                },
+              })
+            }
+          />
+          <TableCell>
+            <ResetButton
+              click={() =>
+                props.setConfig({
+                  ...props.config,
+                  operating: {
+                    ...props.config.operating,
+                    disableCrashReporter: new Operating()
+                      .disableCrashReporter,
+                  },
+                })
+              }
+            />
+            <HelpButton parameterName="disableCrashReporter" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <SwitchInput
+            isDesktop={props.isDesktop}
             parameter={props.config.operating?.disableAI}
             name="Disable AI"
             key="operating.disableAI"
