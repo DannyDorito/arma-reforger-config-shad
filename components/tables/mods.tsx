@@ -17,7 +17,7 @@ export const ModsTable = (props: ModsTableProps) => {
   return (
     <Table>
       <CustomTableHeader
-        headers={["Id", "Name", "Value", "Required", "Actions"]}
+        headers={["Id", "Name", "Version", "Required", "Actions"]}
       />
       <TableBody>
         {props.config.game?.mods.map((mod, index) => {
@@ -117,7 +117,6 @@ export const ModsTable = (props: ModsTableProps) => {
             change={(v) => {
               const mod = newMod;
               mod.modId = v;
-              newMod.modId = v;
               setNewMod(newMod);
             }}
           />
@@ -128,7 +127,6 @@ export const ModsTable = (props: ModsTableProps) => {
             change={(v) => {
               const mod = newMod;
               mod.name = v;
-              newMod.name = v;
               setNewMod(mod);
             }}
           />
@@ -140,13 +138,12 @@ export const ModsTable = (props: ModsTableProps) => {
             change={(v) => {
               const mod = newMod;
               mod.version = v;
-              newMod.version = v;
               setNewMod(mod);
             }}
           />
           <SwitchInput
             isDesktop={props.isDesktop}
-            key={"New-ModRequired"}
+            key="New-ModRequired"
             parameter={newMod.required}
             change={(v) => {
               const mod = newMod;
