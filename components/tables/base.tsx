@@ -5,14 +5,14 @@ import { CustomTableHeader } from "@/components/table-header";
 import { HelpButton } from "@/components/ui/buttons/help-button";
 import { ResetButton } from "@/components/ui/buttons/reset-button";
 import { EditorInput } from "@/components/ui/custom-input/editor-input";
-import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
+import { Table, TableBody, TableRow } from "@/components/ui/table";
 import { Config } from "@/types/Config";
 
 export const BaseTable = (props: BaseTableProps) => {
   if (props.isDesktop) {
     return (
       <Table>
-        <CustomTableHeader headers={["Name", "Value", "Actions"]} />
+        <CustomTableHeader headers={["Name", "Value"]} />
         <TableBody>
           <TableRow>
             <EditorInput
@@ -25,18 +25,18 @@ export const BaseTable = (props: BaseTableProps) => {
                 props.setConfig({ ...props.config, bindAddress: v })
               }
               required={true}
+              buttons={[
+                <ResetButton
+                  click={() =>
+                    props.setConfig({
+                      ...props.config,
+                      bindAddress: new Config().bindAddress,
+                    })
+                  }
+                />,
+                <HelpButton parameterName="bindAddress" />,
+              ]}
             />
-            <TableCell>
-              <ResetButton
-                click={() =>
-                  props.setConfig({
-                    ...props.config,
-                    bindAddress: new Config().bindAddress,
-                  })
-                }
-              />
-              <HelpButton parameterName="bindAddress" />
-            </TableCell>
           </TableRow>
           <TableRow>
             <EditorInput
@@ -50,18 +50,18 @@ export const BaseTable = (props: BaseTableProps) => {
                 props.setConfig({ ...props.config, bindPort: parseInt(v) })
               }
               required={true}
+              buttons={[
+                <ResetButton
+                  click={() =>
+                    props.setConfig({
+                      ...props.config,
+                      bindPort: new Config().bindPort,
+                    })
+                  }
+                />,
+                <HelpButton parameterName="bindPort" />,
+              ]}
             />
-            <TableCell>
-              <ResetButton
-                click={() =>
-                  props.setConfig({
-                    ...props.config,
-                    bindPort: new Config().bindPort,
-                  })
-                }
-              />
-              <HelpButton parameterName="bindPort" />
-            </TableCell>
           </TableRow>
           <TableRow>
             <EditorInput
@@ -74,18 +74,18 @@ export const BaseTable = (props: BaseTableProps) => {
                 props.setConfig({ ...props.config, publicAddress: v })
               }
               required={true}
+              buttons={[
+                <ResetButton
+                  click={() =>
+                    props.setConfig({
+                      ...props.config,
+                      publicAddress: new Config().publicAddress,
+                    })
+                  }
+                />,
+                <HelpButton parameterName="publicAddress" />,
+              ]}
             />
-            <TableCell>
-              <ResetButton
-                click={() =>
-                  props.setConfig({
-                    ...props.config,
-                    publicAddress: new Config().publicAddress,
-                  })
-                }
-              />
-              <HelpButton parameterName="publicAddress" />
-            </TableCell>
           </TableRow>
           <TableRow>
             <EditorInput
@@ -99,18 +99,18 @@ export const BaseTable = (props: BaseTableProps) => {
                 props.setConfig({ ...props.config, publicPort: parseInt(v) })
               }
               required={true}
+              buttons={[
+                <ResetButton
+                  click={() =>
+                    props.setConfig({
+                      ...props.config,
+                      publicPort: new Config().publicPort,
+                    })
+                  }
+                />,
+                <HelpButton parameterName="publicPort" />,
+              ]}
             />
-            <TableCell>
-              <ResetButton
-                click={() =>
-                  props.setConfig({
-                    ...props.config,
-                    publicPort: new Config().publicPort,
-                  })
-                }
-              />
-              <HelpButton parameterName="publicPort" />
-            </TableCell>
           </TableRow>
         </TableBody>
       </Table>
@@ -126,6 +126,17 @@ export const BaseTable = (props: BaseTableProps) => {
           placeholder="xxx.xxx.xxx.xxx"
           change={(v) => props.setConfig({ ...props.config, bindAddress: v })}
           required={true}
+          buttons={[
+            <ResetButton
+              click={() =>
+                props.setConfig({
+                  ...props.config,
+                  bindAddress: new Config().bindAddress,
+                })
+              }
+            />,
+            <HelpButton parameterName="bindAddress" />,
+          ]}
         />
         <EditorInput
           isDesktop={props.isDesktop}
@@ -138,6 +149,17 @@ export const BaseTable = (props: BaseTableProps) => {
             props.setConfig({ ...props.config, bindPort: parseInt(v) })
           }
           required={true}
+          buttons={[
+            <ResetButton
+              click={() =>
+                props.setConfig({
+                  ...props.config,
+                  bindPort: new Config().bindPort,
+                })
+              }
+            />,
+            <HelpButton parameterName="bindPort" />,
+          ]}
         />
         <EditorInput
           isDesktop={props.isDesktop}
@@ -147,6 +169,17 @@ export const BaseTable = (props: BaseTableProps) => {
           placeholder="xxx.xxx.xxx.xxx"
           change={(v) => props.setConfig({ ...props.config, publicAddress: v })}
           required={true}
+          buttons={[
+            <ResetButton
+              click={() =>
+                props.setConfig({
+                  ...props.config,
+                  publicAddress: new Config().publicAddress,
+                })
+              }
+            />,
+            <HelpButton parameterName="publicAddress" />,
+          ]}
         />
         <EditorInput
           isDesktop={props.isDesktop}
@@ -159,6 +192,17 @@ export const BaseTable = (props: BaseTableProps) => {
             props.setConfig({ ...props.config, publicPort: parseInt(v) })
           }
           required={true}
+          buttons={[
+            <ResetButton
+              click={() =>
+                props.setConfig({
+                  ...props.config,
+                  publicPort: new Config().publicPort,
+                })
+              }
+            />,
+            <HelpButton parameterName="publicPort" />,
+          ]}
         />
       </>
     );

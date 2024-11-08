@@ -23,6 +23,9 @@ export const MultiSelectInput = (props: MultiSelectInputProps) => {
             aria-label={`Input for ${props.name}`}
           />
         </TableCell>
+        {props.buttons?.map((button, index) => {
+          return <div key={`button-${props.name}-${index}`}>{button}</div>;
+        })}
       </>
     );
   } else {
@@ -38,6 +41,9 @@ export const MultiSelectInput = (props: MultiSelectInputProps) => {
           disabled={props.disabled}
           aria-label={`Input for ${props.name}`}
         />
+        {props.buttons?.map((button, index) => {
+          return <div key={`button-${props.name}-${index}`}>{button}</div>;
+        })}
       </>
     );
   }

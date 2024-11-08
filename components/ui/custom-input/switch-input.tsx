@@ -20,7 +20,10 @@ export const SwitchInput = (props: SwitchInputProps) => {
             disabled={props.disabled}
             aria-label={`Input for ${props.name}`}
           />
-        </TableCell>
+
+        </TableCell>          {props.buttons?.map((button, index) => {
+            return <div key={`button-${props.name}-${index}`}>{button}</div>;
+          })}
       </>
     );
   } else {
@@ -41,6 +44,9 @@ export const SwitchInput = (props: SwitchInputProps) => {
           disabled={props.disabled}
           aria-label={`Input for ${props.name}`}
         />
+        {props.buttons?.map((button, index) => {
+          return <div key={`button-${props.name}-${index}`}>{button}</div>;
+        })}
       </div>
     );
   }

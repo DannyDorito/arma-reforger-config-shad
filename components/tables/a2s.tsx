@@ -5,14 +5,14 @@ import { CustomTableHeader } from "@/components/table-header";
 import { HelpButton } from "@/components/ui/buttons/help-button";
 import { ResetButton } from "@/components/ui/buttons/reset-button";
 import { EditorInput } from "@/components/ui/custom-input/editor-input";
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import { Table, TableBody, TableRow } from "@/components/ui/table";
 import { A2s } from "@/types/Config";
 
 export const A2STable = (props: A2STableProps) => {
   if (props.isDesktop) {
     return (
       <Table>
-        <CustomTableHeader headers={["Name", "Value", "Actions"]} />
+        <CustomTableHeader headers={["Name", "Value"]} />
         <TableBody>
           <TableRow>
             <EditorInput
@@ -28,18 +28,18 @@ export const A2STable = (props: A2STableProps) => {
                 })
               }
               required={true}
+              buttons={[
+                <ResetButton
+                  click={() =>
+                    props.setConfig({
+                      ...props.config,
+                      a2s: { ...props.config.a2s, address: new A2s().address },
+                    })
+                  }
+                />,
+                <HelpButton parameterName="address" />,
+              ]}
             />
-            <TableCell>
-              <ResetButton
-                click={() =>
-                  props.setConfig({
-                    ...props.config,
-                    a2s: { ...props.config.a2s, address: new A2s().address },
-                  })
-                }
-              />
-              <HelpButton parameterName="address" />
-            </TableCell>
           </TableRow>
           <TableRow>
             <EditorInput
@@ -55,18 +55,18 @@ export const A2STable = (props: A2STableProps) => {
                   a2s: { ...props.config.a2s, port: parseInt(v) },
                 })
               }
+              buttons={[
+                <ResetButton
+                  click={() =>
+                    props.setConfig({
+                      ...props.config,
+                      a2s: { ...props.config.a2s, port: new A2s().port },
+                    })
+                  }
+                />,
+                <HelpButton parameterName="port" />,
+              ]}
             />
-            <TableCell>
-              <ResetButton
-                click={() =>
-                  props.setConfig({
-                    ...props.config,
-                    a2s: { ...props.config.a2s, port: new A2s().port },
-                  })
-                }
-              />
-              <HelpButton parameterName="port" />
-            </TableCell>
           </TableRow>
         </TableBody>
       </Table>
@@ -87,6 +87,17 @@ export const A2STable = (props: A2STableProps) => {
             })
           }
           required={true}
+          buttons={[
+            <ResetButton
+              click={() =>
+                props.setConfig({
+                  ...props.config,
+                  a2s: { ...props.config.a2s, address: new A2s().address },
+                })
+              }
+            />,
+            <HelpButton parameterName="address" />,
+          ]}
         />
         <EditorInput
           isDesktop={props.isDesktop}
@@ -101,6 +112,17 @@ export const A2STable = (props: A2STableProps) => {
               a2s: { ...props.config.a2s, port: parseInt(v) },
             })
           }
+          buttons={[
+            <HelpButton parameterName="port" />,
+            <ResetButton
+              click={() =>
+                props.setConfig({
+                  ...props.config,
+                  a2s: { ...props.config.a2s, port: new A2s().port },
+                })
+              }
+            />,
+          ]}
         />
       </>
     );

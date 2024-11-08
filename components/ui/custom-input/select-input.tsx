@@ -44,6 +44,9 @@ export const SelectInput = (props: SelectInputProps) => {
               </SelectGroup>
             </SelectContent>
           </Select>
+          {props.buttons?.map((button, index) => {
+            return <div key={`button-${props.name}-${index}`}>{button}</div>;
+          })}
         </TableCell>
       </>
     );
@@ -75,6 +78,9 @@ export const SelectInput = (props: SelectInputProps) => {
             </SelectGroup>
           </SelectContent>
         </Select>
+        {props.buttons?.map((button, index) => {
+          return <div key={`button-${props.name}-${index}`}>{button}</div>;
+        })}
       </>
     );
   }

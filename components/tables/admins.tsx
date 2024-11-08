@@ -6,7 +6,7 @@ import { AddButton } from "@/components/ui/buttons/add-button";
 import { DeleteButton } from "@/components/ui/buttons/delete-button";
 import { HelpButton } from "@/components/ui/buttons/help-button";
 import { EditorInput } from "@/components/ui/custom-input/editor-input";
-import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
+import { Table, TableBody, TableRow } from "@/components/ui/table";
 import { useState } from "react";
 
 export const AdminTable = (props: AdminTableProps) => {
@@ -15,7 +15,7 @@ export const AdminTable = (props: AdminTableProps) => {
   if (props.isDesktop) {
     return (
       <Table>
-        <CustomTableHeader headers={["Name", "Value", "Actions"]} />
+        <CustomTableHeader headers={["Name", "Value"]} />
         <TableBody>
           {props.config.game?.admins.map((admin, index) => {
             return (
@@ -36,25 +36,25 @@ export const AdminTable = (props: AdminTableProps) => {
                       },
                     });
                   }}
+                  buttons={[
+                    <DeleteButton
+                      click={() => {
+                        const admins = props.config.game?.admins.filter(
+                          (_, i) => i !== index
+                        );
+                        props.setConfig({
+                          ...props.config,
+                          game: {
+                            ...props.config.game,
+                            admins: admins,
+                          },
+                        });
+                      }}
+                      name="Admin"
+                    />,
+                    <HelpButton parameterName="admins" />,
+                  ]}
                 />
-                <TableCell>
-                  <DeleteButton
-                    click={() => {
-                      const admins = props.config.game?.admins.filter(
-                        (_, i) => i !== index
-                      );
-                      props.setConfig({
-                        ...props.config,
-                        game: {
-                          ...props.config.game,
-                          admins: admins,
-                        },
-                      });
-                    }}
-                    name="Admin"
-                  />
-                  <HelpButton parameterName="admins" />
-                </TableCell>
               </TableRow>
             );
           })}
@@ -65,24 +65,24 @@ export const AdminTable = (props: AdminTableProps) => {
               name={`New Admin`}
               parameter={newAdmin}
               change={(v) => setNewAdmin(v)}
+              buttons={[
+                <AddButton
+                  add={() => {
+                    const admins = [...props.config.game?.admins, newAdmin];
+                    props.setConfig({
+                      ...props.config,
+                      game: {
+                        ...props.config.game,
+                        admins: admins,
+                      },
+                    });
+                    setNewAdmin("");
+                  }}
+                  name="Admin"
+                />,
+                <HelpButton parameterName="admins" />,
+              ]}
             />
-            <TableCell>
-              <AddButton
-                add={() => {
-                  const admins = [...props.config.game?.admins, newAdmin];
-                  props.setConfig({
-                    ...props.config,
-                    game: {
-                      ...props.config.game,
-                      admins: admins,
-                    },
-                  });
-                  setNewAdmin("");
-                }}
-                name="Admin"
-              />
-              <HelpButton parameterName="admins" />
-            </TableCell>
           </TableRow>
         </TableBody>
       </Table>
@@ -108,6 +108,24 @@ export const AdminTable = (props: AdminTableProps) => {
                   },
                 });
               }}
+              buttons={[
+                <DeleteButton
+                  click={() => {
+                    const admins = props.config.game?.admins.filter(
+                      (_, i) => i !== index
+                    );
+                    props.setConfig({
+                      ...props.config,
+                      game: {
+                        ...props.config.game,
+                        admins: admins,
+                      },
+                    });
+                  }}
+                  name="Admin"
+                />,
+                <HelpButton parameterName="admins" />,
+              ]}
             />
           );
         })}
@@ -117,6 +135,23 @@ export const AdminTable = (props: AdminTableProps) => {
           name={`New Admin`}
           parameter={newAdmin}
           change={(v) => setNewAdmin(v)}
+          buttons={[
+            <AddButton
+              add={() => {
+                const admins = [...props.config.game?.admins, newAdmin];
+                props.setConfig({
+                  ...props.config,
+                  game: {
+                    ...props.config.game,
+                    admins: admins,
+                  },
+                });
+                setNewAdmin("");
+              }}
+              name="Admin"
+            />,
+            <HelpButton parameterName="admins" />,
+          ]}
         />
       </>
     );

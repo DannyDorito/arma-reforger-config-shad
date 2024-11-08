@@ -9,4 +9,5 @@ export interface MultiSelectInputProps
   selected: OptionsInterface[];
   change: ( v: string[] ) => void;
   isDesktop: boolean;
+  buttons?: JSX.Element[];
 }
