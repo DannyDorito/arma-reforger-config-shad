@@ -238,8 +238,9 @@ export const OperatingTable = (props: OperatingTableProps) => {
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Disable Navmesh Streaming</TableCell>
           <TextAreaInput
+            isDesktop={props.isDesktop}
+            name="Disable Navmesh Streaming"
             id="operating.disableNavmeshStreaming"
             parameter={
               props.config.operating?.disableNavmeshStreaming === null

@@ -16,7 +16,7 @@ export const GameTable = (props: GameTableProps) => {
   if (props.isDesktop) {
     return (
       <Table>
-        <CustomTableHeader headers={["Name", "Value", "Actions"]} />
+        <CustomTableHeader headers={["Name", "Value"]} />
         <TableBody>
           <TableRow>
             <EditorInput

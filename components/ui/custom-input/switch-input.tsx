@@ -13,17 +13,19 @@ export const SwitchInput = (props: SwitchInputProps) => {
           {props.name}
         </TableCell>
         <TableCell>
-          <Switch
-            id={props.name}
-            checked={props.parameter}
-            onCheckedChange={(e) => props.change(e)}
-            disabled={props.disabled}
-            aria-label={`Input for ${props.name}`}
-          />
-
-        </TableCell>          {props.buttons?.map((button, index) => {
-            return <div key={`button-${props.name}-${index}`}>{button}</div>;
-          })}
+          <div className="flex items-center space-x-2 shrink-0">
+            <Switch
+              id={props.name}
+              checked={props.parameter}
+              onCheckedChange={(e) => props.change(e)}
+              disabled={props.disabled}
+              aria-label={`Input for ${props.name}`}
+            />
+            {props.buttons?.map((button, index) => {
+              return <div key={`button-${props.name}-${index}`}>{button}</div>;
+            })}
+          </div>
+        </TableCell>
       </>
     );
   } else {
@@ -37,16 +39,18 @@ export const SwitchInput = (props: SwitchInputProps) => {
             {props.name}
           </Label>
         )}
-        <Switch
-          id={props.name}
-          checked={props.parameter}
-          onCheckedChange={(e) => props.change(e)}
-          disabled={props.disabled}
-          aria-label={`Input for ${props.name}`}
-        />
-        {props.buttons?.map((button, index) => {
-          return <div key={`button-${props.name}-${index}`}>{button}</div>;
-        })}
+        <div className="flex items-center space-x-2 shrink-0">
+          <Switch
+            id={props.name}
+            checked={props.parameter}
+            onCheckedChange={(e) => props.change(e)}
+            disabled={props.disabled}
+            aria-label={`Input for ${props.name}`}
+          />
+          {props.buttons?.map((button, index) => {
+            return <div key={`button-${props.name}-${index}`}>{button}</div>;
+          })}
+        </div>
       </div>
     );
   }

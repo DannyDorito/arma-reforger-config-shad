@@ -7,6 +7,7 @@ import { xcodeLight, xcodeDark } from "@uiw/codemirror-theme-xcode";
 import { json } from "@codemirror/lang-json";
 import { useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
+import { Label } from "../label";
 
 const extensions = [json()];
 
@@ -35,8 +36,27 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
   }, [setContainer]);
 
   return (
-    <TableCell>
-      <div ref={editor} />
-    </TableCell>
+    <>
+      {props.isDesktop
+        ? props.name && <TableCell>{props.name}</TableCell>
+        : props.name && <Label htmlFor={props.name}>{props.name}</Label>}
+      {props.isDesktop ? (
+        <div className="flex items-center space-x-2">
+          <TableCell>
+            <div ref={editor} />
+          </TableCell>
+          {props.buttons?.map((button, index) => {
+            return <div key={`button-${props.name}-${index}`}>{button}</div>;
+          })}
+        </div>
+      ) : (
+        <div className="flex items-center space-x-2">
+          <div ref={editor} />
+          {props.buttons?.map((button, index) => {
+            return <div key={`button-${props.name}-${index}`}>{button}</div>;
+          })}
+        </div>
+      )}
+    </>
   );
 };
