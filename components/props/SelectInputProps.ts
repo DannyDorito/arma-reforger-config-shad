@@ -6,4 +6,5 @@ export interface SelectInputProps
   selected: string;
   change: ( v: string ) => void;
   isDesktop: boolean;
+  buttons?: JSX.Element[];
 }

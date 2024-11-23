@@ -30,26 +30,31 @@ export const EditorInput = (props: EditorInputProps) => {
           </TableCell>
         )}
         <TableCell>
-          <Input
-            id={props.name}
-            type={inputType}
-            value={props.parameter}
-            min={props.min}
-            max={props.max}
-            onChange={(e) => {
-              props.change(e.target.value);
-              setError(e.target.validationMessage);
-            }}
-            placeholder={props.placeholder}
-            disabled={props.disabled}
-            aria-label={`Input for ${props.name}`}
-          ></Input>
           {error && (
             <Alert variant="destructive">
               <ExclamationTriangleIcon className="h-4 w-4" />
               <AlertTitle>{error}</AlertTitle>
             </Alert>
           )}
+          <div className="flex items-center space-x-2">
+            <Input
+              id={props.name}
+              type={inputType}
+              value={props.parameter}
+              min={props.min}
+              max={props.max}
+              onChange={(e) => {
+                props.change(e.target.value);
+                setError(e.target.validationMessage);
+              }}
+              placeholder={props.placeholder}
+              disabled={props.disabled}
+              aria-label={`Input for ${props.name}`}
+            ></Input>
+            {props.buttons?.map((button, index) => {
+              return <div key={`button-${props.name}-${index}`}>{button}</div>;
+            })}
+          </div>
         </TableCell>
       </>
     );
@@ -64,26 +69,31 @@ export const EditorInput = (props: EditorInputProps) => {
             )}
           </Label>
         )}
-        <Input
-          id={props.name}
-          type={inputType}
-          value={props.parameter}
-          min={props.min}
-          max={props.max}
-          onChange={(e) => {
-            props.change(e.target.value);
-            setError(e.target.validationMessage);
-          }}
-          placeholder={props.placeholder}
-          disabled={props.disabled}
-          aria-label={`Input for ${props.name}`}
-        ></Input>
         {error && (
           <Alert variant="destructive">
             <ExclamationTriangleIcon className="h-4 w-4" />
             <AlertTitle>{error}</AlertTitle>
           </Alert>
         )}
+        <div className="flex items-center space-x-2 shrink-0">
+          <Input
+            id={props.name}
+            type={inputType}
+            value={props.parameter}
+            min={props.min}
+            max={props.max}
+            onChange={(e) => {
+              props.change(e.target.value);
+              setError(e.target.validationMessage);
+            }}
+            placeholder={props.placeholder}
+            disabled={props.disabled}
+            aria-label={`Input for ${props.name}`}
+          ></Input>
+          {props.buttons?.map((button, index) => {
+            return <div key={`button-${props.name}-${index}`}>{button}</div>;
+          })}
+        </div>
       </>
     );
   }

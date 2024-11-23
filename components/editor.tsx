@@ -36,7 +36,7 @@ export const Editor = (props: EditorProps) => {
   return (
     <>
       <h3 className="scroll-m-20 font-extrabold tracking-tight lg:text-2xl red">
-        {props.current}{isDesktop ? '' : ' (Currently mobile is WIP, please use the desktop version.)'}
+        {props.current}
       </h3>
       {props.current === "Base" && (
         <BaseTable config={props.config} setConfig={props.setConfig} isDesktop={isDesktop}/>

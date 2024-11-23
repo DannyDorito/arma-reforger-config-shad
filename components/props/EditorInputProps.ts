@@ -10,5 +10,6 @@ export interface EditorInputProps
   disabled?: boolean;
   required?: boolean;
   isDesktop: boolean;
+  buttons?: JSX.Element[];
 }
 

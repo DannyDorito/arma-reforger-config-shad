@@ -34,6 +34,7 @@ export const PasswordInput = (props: PasswordInputProps) => {
               autoComplete="false"
               aria-label={`Input for ${props.name}`}
             ></Input>
+
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -51,7 +52,9 @@ export const PasswordInput = (props: PasswordInputProps) => {
                   }`}</p>
                 </TooltipContent>
               </Tooltip>
-            </TooltipProvider>
+            </TooltipProvider>{props.buttons?.map((button, index) => {
+              return <div key={`button-${props.name}-${index}`}>{button}</div>;
+            })}
           </div>
         </TableCell>
       </>
@@ -77,6 +80,9 @@ export const PasswordInput = (props: PasswordInputProps) => {
             autoComplete="false"
             aria-label={`Input for ${props.name}`}
           ></Input>
+          {props.buttons?.map((button, index) => {
+            return <div key={`button-${props.name}-${index}`}>{button}</div>;
+          })}
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>

@@ -7,4 +7,5 @@ export interface PasswordInputProps
   change: ( v: string ) => void;
   required?: boolean;
   isDesktop: boolean;
+  buttons?: JSX.Element[];
 }
