@@ -38,6 +38,7 @@ export const AdminTable = (props: AdminTableProps) => {
                   }}
                   buttons={[
                     <DeleteButton
+                      key={`Admin-${index.toString()}-delete`}
                       click={() => {
                         const admins = props.config.game?.admins.filter(
                           (_, i) => i !== index
@@ -52,7 +53,10 @@ export const AdminTable = (props: AdminTableProps) => {
                       }}
                       name="Admin"
                     />,
-                    <HelpButton parameterName="admins" />,
+                    <HelpButton
+                      parameterName="admins"
+                      key={`Admin-${index.toString()}-help`}
+                    />,
                   ]}
                 />
               </TableRow>
@@ -67,6 +71,7 @@ export const AdminTable = (props: AdminTableProps) => {
               change={(v) => setNewAdmin(v)}
               buttons={[
                 <AddButton
+                  key={`Admin-New-add`}
                   add={() => {
                     const admins = [...props.config.game?.admins, newAdmin];
                     props.setConfig({
@@ -80,7 +85,7 @@ export const AdminTable = (props: AdminTableProps) => {
                   }}
                   name="Admin"
                 />,
-                <HelpButton parameterName="admins" />,
+                <HelpButton parameterName="admins" key={`Admin-New=help`} />,
               ]}
             />
           </TableRow>
@@ -110,6 +115,7 @@ export const AdminTable = (props: AdminTableProps) => {
               }}
               buttons={[
                 <DeleteButton
+                  key={`Admin-${index.toString()}-delete`}
                   click={() => {
                     const admins = props.config.game?.admins.filter(
                       (_, i) => i !== index
@@ -124,7 +130,10 @@ export const AdminTable = (props: AdminTableProps) => {
                   }}
                   name="Admin"
                 />,
-                <HelpButton parameterName="admins" />,
+                <HelpButton
+                  parameterName="admins"
+                  key={`Admin-${index.toString()}-help`}
+                />,
               ]}
             />
           );
@@ -137,6 +146,7 @@ export const AdminTable = (props: AdminTableProps) => {
           change={(v) => setNewAdmin(v)}
           buttons={[
             <AddButton
+              key={`Admin-New-add`}
               add={() => {
                 const admins = [...props.config.game?.admins, newAdmin];
                 props.setConfig({
@@ -150,7 +160,7 @@ export const AdminTable = (props: AdminTableProps) => {
               }}
               name="Admin"
             />,
-            <HelpButton parameterName="admins" />,
+            <HelpButton parameterName="admins" key={`Admin-New-help`} />,
           ]}
         />
       </>
