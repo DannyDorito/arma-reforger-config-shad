@@ -27,6 +27,7 @@ export const BaseTable = (props: BaseTableProps) => {
               required={true}
               buttons={[
                 <ResetButton
+                  key="bindAddress-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -34,7 +35,10 @@ export const BaseTable = (props: BaseTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="bindAddress" />,
+                <HelpButton
+                  parameterName="bindAddress"
+                  key="bindAddress-help"
+                />,
               ]}
             />
           </TableRow>
@@ -52,6 +56,7 @@ export const BaseTable = (props: BaseTableProps) => {
               required={true}
               buttons={[
                 <ResetButton
+                  key="bindPort-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -59,7 +64,7 @@ export const BaseTable = (props: BaseTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="bindPort" />,
+                <HelpButton parameterName="bindPort" key="bindPort-help" />,
               ]}
             />
           </TableRow>
@@ -76,6 +81,7 @@ export const BaseTable = (props: BaseTableProps) => {
               required={true}
               buttons={[
                 <ResetButton
+                  key="publicAddress-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -83,7 +89,10 @@ export const BaseTable = (props: BaseTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="publicAddress" />,
+                <HelpButton
+                  parameterName="publicAddress"
+                  key="publicAddress-help"
+                />,
               ]}
             />
           </TableRow>
@@ -101,6 +110,7 @@ export const BaseTable = (props: BaseTableProps) => {
               required={true}
               buttons={[
                 <ResetButton
+                  key="publicPort-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -108,7 +118,7 @@ export const BaseTable = (props: BaseTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="publicPort" />,
+                <HelpButton parameterName="publicPort" key="publicPort-help" />,
               ]}
             />
           </TableRow>
@@ -128,6 +138,7 @@ export const BaseTable = (props: BaseTableProps) => {
           required={true}
           buttons={[
             <ResetButton
+              key="bindAddress-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -135,7 +146,7 @@ export const BaseTable = (props: BaseTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="bindAddress" />,
+            <HelpButton parameterName="bindAddress" key="bindAddress-help" />,
           ]}
         />
         <EditorInput
@@ -151,6 +162,7 @@ export const BaseTable = (props: BaseTableProps) => {
           required={true}
           buttons={[
             <ResetButton
+              key="bindPort-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -158,7 +170,7 @@ export const BaseTable = (props: BaseTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="bindPort" />,
+            <HelpButton parameterName="bindPort" key="bindPort-help" />,
           ]}
         />
         <EditorInput
@@ -171,6 +183,7 @@ export const BaseTable = (props: BaseTableProps) => {
           required={true}
           buttons={[
             <ResetButton
+              key="publicAddress-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -178,7 +191,10 @@ export const BaseTable = (props: BaseTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="publicAddress" />,
+            <HelpButton
+              parameterName="publicAddress"
+              key="publicAddress-help"
+            />,
           ]}
         />
         <EditorInput
@@ -194,6 +210,7 @@ export const BaseTable = (props: BaseTableProps) => {
           required={true}
           buttons={[
             <ResetButton
+              key="publicPort-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -201,7 +218,7 @@ export const BaseTable = (props: BaseTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="publicPort" />,
+            <HelpButton parameterName="publicPort" key="publicPort-help" />,
           ]}
         />
       </>
