@@ -8,7 +8,7 @@ import { EditorInput } from "@/components/ui/custom-input/editor-input";
 import { MultiSelectInput } from "@/components/ui/custom-input/multiselect-input";
 import { PasswordInput } from "@/components/ui/custom-input/password-input";
 import { SwitchInput } from "@/components/ui/custom-input/switch-input";
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import { Table, TableBody, TableRow } from "@/components/ui/table";
 import { Game, Platform } from "@/types/Config";
 import { SupportedPlatforms } from "@/types/SupportedPlatforms";
 
