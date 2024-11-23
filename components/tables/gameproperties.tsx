@@ -40,6 +40,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="gameProperties.serverMaxViewDistance-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -54,7 +55,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="serverMaxViewDistance" />,
+                <HelpButton
+                  parameterName="serverMaxViewDistance"
+                  key="gameProperties.serverMaxViewDistance-help"
+                />,
               ]}
             />
           </TableRow>
@@ -82,6 +86,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="gameProperties.serverMinGrassDistance-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -96,7 +101,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="serverMinGrassDistance" />,
+                <HelpButton
+                  parameterName="serverMinGrassDistance"
+                  key="gameProperties.serverMinGrassDistance-help"
+                />,
               ]}
             />
           </TableRow>
@@ -122,6 +130,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="gameProperties.networkViewDistance-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -136,7 +145,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="networkViewDistance" />,
+                <HelpButton
+                  parameterName="networkViewDistance"
+                  key="gameProperties.networkViewDistance-help"
+                />,
               ]}
             />
           </TableRow>
@@ -160,6 +172,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="gameProperties.disableThirdPerson-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -174,7 +187,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="disableThirdPerson" />,
+                <HelpButton
+                  parameterName="disableThirdPerson"
+                  key="gameProperties.disableThirdPerson-help"
+                />,
               ]}
             />
           </TableRow>
@@ -198,6 +214,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="gameProperties.fastValidation-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -211,7 +228,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="fastValidation" />,
+                <HelpButton
+                  parameterName="fastValidation"
+                  key="gameProperties.fastValidation-help"
+                />,
               ]}
             />
           </TableRow>
@@ -235,6 +255,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="gameProperties.battlEye-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -248,7 +269,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="battlEye" />,
+                <HelpButton
+                  parameterName="battlEye"
+                  key="gameProperties.battlEye-help"
+                />,
               ]}
             />
           </TableRow>
@@ -272,6 +296,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="gameProperties.VONDisableUI-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -285,7 +310,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="VONDisableUI" />,
+                <HelpButton
+                  parameterName="VONDisableUI"
+                  key="gameProperties.VONDisableUI-help"
+                />,
               ]}
             />
           </TableRow>
@@ -311,6 +339,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="gameProperties.VONDisableDirectSpeechUI-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -325,7 +354,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="VONDisableDirectSpeechUI" />,
+                <HelpButton
+                  parameterName="VONDisableDirectSpeechUI"
+                  key="gameProperties.VONDisableDirectSpeechUI-help"
+                />,
               ]}
             />
           </TableRow>
@@ -351,6 +383,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="gameProperties.VONCanTransmitCrossFaction-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -365,7 +398,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="VONCanTransmitCrossFaction" />,
+                <HelpButton
+                  parameterName="VONCanTransmitCrossFaction"
+                  key="gameProperties.VONCanTransmitCrossFaction-help"
+                />,
               ]}
             />
           </TableRow>
@@ -393,6 +429,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="gameProperties.missionHeader-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -406,7 +443,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="missionHeader" />,
+                <HelpButton
+                  parameterName="missionHeader"
+                  key="gameProperties.missionHeader-help"
+                />,
               ]}
             />
           </TableRow>
@@ -437,6 +477,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="gameProperties.serverMaxViewDistance-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -451,7 +492,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="serverMaxViewDistance" />,
+            <HelpButton
+              parameterName="serverMaxViewDistance"
+              key="gameProperties.serverMaxViewDistance-help"
+            />,
           ]}
         />
         <EditorInput
@@ -475,6 +519,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="gameProperties.serverMinGrassDistance-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -489,7 +534,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="serverMinGrassDistance" />,
+            <HelpButton
+              parameterName="serverMinGrassDistance"
+              key="gameProperties.serverMinGrassDistance-help"
+            />,
           ]}
         />
         <EditorInput
@@ -513,6 +561,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="gameProperties.networkViewDistance-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -527,7 +576,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="networkViewDistance" />,
+            <HelpButton
+              parameterName="networkViewDistance"
+              key="gameProperties.networkViewDistance-help"
+            />,
           ]}
         />
         <SwitchInput
@@ -549,6 +601,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="gameProperties.disableThirdPerson-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -563,7 +616,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="disableThirdPerson" />,
+            <HelpButton
+              parameterName="disableThirdPerson"
+              key="gameProperties.disableThirdPerson-help"
+            />,
           ]}
         />
         <SwitchInput
@@ -585,6 +641,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="gameProperties.fastValidation-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -598,7 +655,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="fastValidation" />,
+            <HelpButton
+              parameterName="fastValidation"
+              key="gameProperties.fastValidation-help"
+            />,
           ]}
         />
         <SwitchInput
@@ -620,6 +680,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="gameProperties.battlEye-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -633,7 +694,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="battlEye" />,
+            <HelpButton
+              parameterName="battlEye"
+              key="gameProperties.battlEye-help"
+            />,
           ]}
         />
         <SwitchInput
@@ -655,6 +719,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="gameProperties.VONDisableUI-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -668,7 +733,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="VONDisableUI" />,
+            <HelpButton
+              parameterName="VONDisableUI"
+              key="gameProperties.VONDisableUI-help"
+            />,
           ]}
         />
         <SwitchInput
@@ -690,6 +758,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="gameProperties.VONDisableDirectSpeechUI-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -704,7 +773,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="VONDisableDirectSpeechUI" />,
+            <HelpButton
+              parameterName="VONDisableDirectSpeechUI"
+              key="gameProperties.VONDisableDirectSpeechUI-help"
+            />,
           ]}
         />
         <SwitchInput
@@ -728,6 +800,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="gameProperties.VONCanTransmitCrossFaction-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -742,7 +815,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="VONCanTransmitCrossFaction" />,
+            <HelpButton
+              parameterName="VONCanTransmitCrossFaction"
+              key="gameProperties.VONCanTransmitCrossFaction-help"
+            />,
           ]}
         />
         <TextAreaInput
@@ -768,6 +844,7 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="gameProperties.missionHeader-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -781,7 +858,10 @@ export const GamePropertiesTable = (props: GamePropertiesTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="missionHeader" />,
+            <HelpButton
+              parameterName="missionHeader"
+              key="gameProperties.missionHeader-help"
+            />,
           ]}
         />
       </>
