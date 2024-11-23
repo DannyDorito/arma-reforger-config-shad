@@ -35,6 +35,7 @@ export const GameTable = (props: GameTableProps) => {
               required={true}
               buttons={[
                 <ResetButton
+                  key="game.name-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -42,7 +43,7 @@ export const GameTable = (props: GameTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="name" />,
+                <HelpButton parameterName="name" key="game.name-help" />,
               ]}
             />
           </TableRow>
@@ -60,6 +61,7 @@ export const GameTable = (props: GameTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="game.password-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -70,7 +72,10 @@ export const GameTable = (props: GameTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="password" />,
+                <HelpButton
+                  parameterName="password"
+                  key="game.password-help"
+                />,
               ]}
             />
           </TableRow>
@@ -89,6 +94,7 @@ export const GameTable = (props: GameTableProps) => {
               required={true}
               buttons={[
                 <ResetButton
+                  key="game.passwordAdmin-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -99,7 +105,10 @@ export const GameTable = (props: GameTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="passwordAdmin" />,
+                <HelpButton
+                  parameterName="passwordAdmin"
+                  key="game.passwordAdmin-help"
+                />,
               ]}
             />
           </TableRow>
@@ -117,6 +126,7 @@ export const GameTable = (props: GameTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="game.scenarioId-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -127,7 +137,10 @@ export const GameTable = (props: GameTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="scenarioId" />,
+                <HelpButton
+                  parameterName="scenarioId"
+                  key="game.scenarioId-help"
+                />,
               ]}
             />
           </TableRow>
@@ -147,6 +160,7 @@ export const GameTable = (props: GameTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="game.maxPlayers-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -157,7 +171,10 @@ export const GameTable = (props: GameTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="maxPlayers" />,
+                <HelpButton
+                  parameterName="maxPlayers"
+                  key="game.maxPlayers-help"
+                />,
               ]}
             />
           </TableRow>
@@ -175,6 +192,7 @@ export const GameTable = (props: GameTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="game.visible-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -185,7 +203,7 @@ export const GameTable = (props: GameTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="visible" />,
+                <HelpButton parameterName="visible" key="game.visible-help" />,
               ]}
             />
           </TableRow>
@@ -203,6 +221,7 @@ export const GameTable = (props: GameTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="game.crossPlatform-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -213,7 +232,10 @@ export const GameTable = (props: GameTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="crossPlatform" />,
+                <HelpButton
+                  parameterName="crossPlatform"
+                  key="game.crossPlatform-help"
+                />,
               ]}
             />
           </TableRow>
@@ -231,6 +253,7 @@ export const GameTable = (props: GameTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="game.modsRequiredByDefault-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -241,7 +264,10 @@ export const GameTable = (props: GameTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="modsRequiredByDefault" />,
+                <HelpButton
+                  parameterName="modsRequiredByDefault"
+                  key="game.modsRequiredByDefault-help"
+                />,
               ]}
             />
           </TableRow>
@@ -267,6 +293,7 @@ export const GameTable = (props: GameTableProps) => {
               }}
               buttons={[
                 <ResetButton
+                  key="game.supportedPlatforms-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -277,7 +304,10 @@ export const GameTable = (props: GameTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="supportedPlatforms" />,
+                <HelpButton
+                  parameterName="supportedPlatforms"
+                  key="game.supportedPlatforms-help"
+                />,
               ]}
             />
           </TableRow>
@@ -303,6 +333,7 @@ export const GameTable = (props: GameTableProps) => {
           required={true}
           buttons={[
             <ResetButton
+              key="game.name-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -310,7 +341,7 @@ export const GameTable = (props: GameTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="name" />,
+            <HelpButton parameterName="name" key="game.name-help" />,
           ]}
         />
         <PasswordInput
@@ -326,6 +357,7 @@ export const GameTable = (props: GameTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="game.password-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -336,7 +368,7 @@ export const GameTable = (props: GameTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="password" />,
+            <HelpButton parameterName="password" key="game.password-help" />,
           ]}
         />
         <PasswordInput
@@ -353,6 +385,7 @@ export const GameTable = (props: GameTableProps) => {
           required={true}
           buttons={[
             <ResetButton
+              key="game.passwordAdmin-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -363,7 +396,10 @@ export const GameTable = (props: GameTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="passwordAdmin" />,
+            <HelpButton
+              parameterName="passwordAdmin"
+              key="game.passwordAdmin-help"
+            />,
           ]}
         />
         <EditorInput
@@ -379,6 +415,7 @@ export const GameTable = (props: GameTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="game.scenarioId-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -389,7 +426,10 @@ export const GameTable = (props: GameTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="scenarioId" />,
+            <HelpButton
+              parameterName="scenarioId"
+              key="game.scenarioId-help"
+            />,
           ]}
         />
         <EditorInput
@@ -407,6 +447,7 @@ export const GameTable = (props: GameTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="game.maxPlayers-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -417,7 +458,10 @@ export const GameTable = (props: GameTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="maxPlayers" />,
+            <HelpButton
+              parameterName="maxPlayers"
+              key="game.maxPlayers-help"
+            />,
           ]}
         />
         <SwitchInput
@@ -433,6 +477,7 @@ export const GameTable = (props: GameTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="game.visible-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -443,7 +488,7 @@ export const GameTable = (props: GameTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="visible" />,
+            <HelpButton parameterName="visible" key="game.visible-help" />,
           ]}
         />
         <SwitchInput
@@ -459,6 +504,7 @@ export const GameTable = (props: GameTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="game.crossPlatform-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -469,7 +515,10 @@ export const GameTable = (props: GameTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="crossPlatform" />,
+            <HelpButton
+              parameterName="crossPlatform"
+              key="game.crossPlatform-help"
+            />,
           ]}
         />
         <SwitchInput
@@ -485,6 +534,7 @@ export const GameTable = (props: GameTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="game.modsRequiredByDefault-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -495,7 +545,10 @@ export const GameTable = (props: GameTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="modsRequiredByDefault" />,
+            <HelpButton
+              parameterName="modsRequiredByDefault"
+              key="game.modsRequiredByDefault-help"
+            />,
           ]}
         />
         <MultiSelectInput
@@ -519,6 +572,7 @@ export const GameTable = (props: GameTableProps) => {
           }}
           buttons={[
             <ResetButton
+              key="game.supportedPlatforms-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -529,7 +583,10 @@ export const GameTable = (props: GameTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="supportedPlatforms" />,
+            <HelpButton
+              parameterName="supportedPlatforms"
+              key="game.supportedPlatforms-help"
+            />,
           ]}
         />
       </>
