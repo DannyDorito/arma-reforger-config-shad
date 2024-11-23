@@ -30,6 +30,7 @@ export const A2STable = (props: A2STableProps) => {
               required={true}
               buttons={[
                 <ResetButton
+                  key="a2s.address-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -37,7 +38,7 @@ export const A2STable = (props: A2STableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="address" />,
+                <HelpButton parameterName="address" key="a2s.address-help" />,
               ]}
             />
           </TableRow>
@@ -57,6 +58,7 @@ export const A2STable = (props: A2STableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="a2s.port-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -64,7 +66,7 @@ export const A2STable = (props: A2STableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="port" />,
+                <HelpButton parameterName="port" key="a2s.port-reset" />,
               ]}
             />
           </TableRow>
@@ -89,6 +91,7 @@ export const A2STable = (props: A2STableProps) => {
           required={true}
           buttons={[
             <ResetButton
+              key="a2s.address-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -96,7 +99,7 @@ export const A2STable = (props: A2STableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="address" />,
+            <HelpButton parameterName="address" key="a2s.address-help" />,
           ]}
         />
         <EditorInput
@@ -113,8 +116,8 @@ export const A2STable = (props: A2STableProps) => {
             })
           }
           buttons={[
-            <HelpButton parameterName="port" />,
             <ResetButton
+              key="a2s.port-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -122,6 +125,7 @@ export const A2STable = (props: A2STableProps) => {
                 })
               }
             />,
+            <HelpButton parameterName="port" key="a2s.port-help" />,
           ]}
         />
       </>
