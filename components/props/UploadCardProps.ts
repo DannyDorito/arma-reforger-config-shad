@@ -6,4 +6,5 @@ export interface UploadCardProps
   setFile: ( f: File | undefined ) => void;
   setFileName: ( n: string ) => void;
   file: File | undefined;
+  isDesktop: boolean;
 }

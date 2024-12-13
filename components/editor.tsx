@@ -2,7 +2,6 @@
 
 import { EditorProps } from "./props/EditorProps";
 import dynamic from "next/dynamic";
-import { useMediaQuery } from "usehooks-ts";
 import { Loading } from "./loading";
 
 const BaseTable = dynamic(() => import('./tables/base').then((base) => base.BaseTable), {
@@ -31,40 +30,38 @@ const ModsTable = dynamic(() => import('./tables/mods').then((mods) => mods.Mods
 });
 
 export const Editor = (props: EditorProps) => {
-  const isDesktop = useMediaQuery("(min-width: 960px)");
-
   return (
     <>
       <h3 className="scroll-m-20 font-extrabold tracking-tight lg:text-2xl red">
         {props.current}
       </h3>
       {props.current === "Base" && (
-        <BaseTable config={props.config} setConfig={props.setConfig} isDesktop={isDesktop}/>
+        <BaseTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
       )}
       {props.current === "Operating" && (
-        <OperatingTable config={props.config} setConfig={props.setConfig} isDesktop={isDesktop}/>
+        <OperatingTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
       )}
       {props.current === "A2S" && (
-        <A2STable config={props.config} setConfig={props.setConfig} isDesktop={isDesktop}/>
+        <A2STable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
       )}
       {props.current === "RCON" && (
-        <RconTable config={props.config} setConfig={props.setConfig} isDesktop={isDesktop}/>
+        <RconTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
       )}
       {props.current === "Game" && (
-        <GameTable config={props.config} setConfig={props.setConfig} isDesktop={isDesktop}/>
+        <GameTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
       )}
       {props.current === "Admins" && (
-        <AdminTable config={props.config} setConfig={props.setConfig} isDesktop={isDesktop}/>
+        <AdminTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
       )}
       {props.current === "Game Properties" && (
         <GamePropertiesTable
           config={props.config}
           setConfig={props.setConfig}
-          isDesktop={isDesktop}
+          isDesktop={props.isDesktop}
         />
       )}
       {props.current === "Mods" && (
-        <ModsTable config={props.config} setConfig={props.setConfig} isDesktop={isDesktop}/>
+        <ModsTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
       )}
     </>
   );

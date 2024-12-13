@@ -24,7 +24,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useMediaQuery } from "usehooks-ts";
 
 const Editor = dynamic(
   () => import("../../editor").then((editor) => editor.Editor),
@@ -34,8 +33,6 @@ const Editor = dynamic(
 );
 
 export const EditorCard = (props: EditorCardProps) => {
-  const isDesktop = useMediaQuery("(min-width: 960px)");
-
   const handleDownload = () => {
     const doc = document.createElement("a");
     doc.href = URL.createObjectURL(
@@ -65,6 +62,7 @@ export const EditorCard = (props: EditorCardProps) => {
           fileName={props.fileName}
           setConfig={props.setConfig}
           current={current}
+          isDesktop={props.isDesktop}
         ></Editor>
       </CardContent>
       <CardFooter className="flex justify-between">

@@ -7,4 +7,5 @@ export interface EditorProps
   fileName: string;
   setConfig: Dispatch<SetStateAction<Config>>;
   current: string;
+  isDesktop: boolean;
 }
