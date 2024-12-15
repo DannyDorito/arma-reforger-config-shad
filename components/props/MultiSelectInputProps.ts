@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { OptionsInterface } from "../ui/multi-select";
 
 export interface MultiSelectInputProps

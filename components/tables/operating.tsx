@@ -149,7 +149,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="disableAI" />,
+                <HelpButton
+                  parameterName="disableAI"
+                  key="operating.disableAI-help"
+                />,
               ]}
             />
           </TableRow>
@@ -181,7 +184,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="playerSaveTime" />,
+                <HelpButton
+                  parameterName="playerSaveTime"
+                  key="operating.playerSaveTime-help"
+                />,
               ]}
             />
           </TableRow>
@@ -214,7 +220,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="aiLimit" />,
+                <HelpButton
+                  parameterName="aiLimit"
+                  key="operating.aiLimit-help"
+                />,
               ]}
             />
           </TableRow>
@@ -249,7 +258,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="slotReservationTimeout" />,
+                <HelpButton
+                  parameterName="slotReservationTimeout"
+                  key="operating.slotReservationTimeout-help"
+                />,
               ]}
             />
           </TableRow>
@@ -290,7 +302,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="disableNavmeshStreaming" />,
+                <HelpButton
+                  parameterName="disableNavmeshStreaming"
+                  key="operating.disableNavmeshStreaming-help"
+                />,
               ]}
             />
           </TableRow>
@@ -323,7 +338,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="joinQueue" />,
+                <HelpButton
+                  parameterName="joinQueue"
+                  key="operating.joinQueue-help"
+                />,
               ]}
             />
           </TableRow>
@@ -357,7 +375,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="maxSize" />,
+                <HelpButton
+                  parameterName="maxSize"
+                  key="operating.maxSize-help"
+                />,
               ]}
             />
           </TableRow>
@@ -383,6 +404,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="operating.lobbyPlayerSynchronise-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -394,7 +416,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="lobbyPlayerSynchronise" />,
+            <HelpButton
+              parameterName="lobbyPlayerSynchronise"
+              key="operating.lobbyPlayerSynchronise-help"
+            />,
           ]}
         />
         <SwitchInput
@@ -413,6 +438,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="operating.disableServerShutdown-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -424,7 +450,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="disableServerShutdown" />,
+            <HelpButton
+              parameterName="disableServerShutdown"
+              key="operating.disableServerShutdown-help"
+            />,
           ]}
         />
         <SwitchInput
