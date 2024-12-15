@@ -315,7 +315,7 @@ export const RconTable = (props: RconTableProps) => {
     );
   } else {
     return (
-      <>
+      <div>
         <EditorInput
           isDesktop={props.isDesktop}
           parameter={props.config.rcon?.address}
@@ -455,41 +455,43 @@ export const RconTable = (props: RconTableProps) => {
           ]}
         />
         {props.config.rcon?.whitelist.map((whitelisted, index) => {
-          <EditorInput
-            isDesktop={props.isDesktop}
-            key={`Whitelist-${index.toString()}`}
-            parameter={whitelisted}
-            name={`Whitelisted ${index + 1}`}
-            change={(v) => {
-              const whitelist = props.config.rcon?.whitelist;
-              whitelist[index] = v;
-              props.setConfig({
-                ...props.config,
-                rcon: {
-                  ...props.config.rcon,
-                  whitelist: whitelist,
-                },
-              });
-            }}
-            buttons={[
-              <DeleteButton
-                click={() => {
-                  const whitelist = props.config.rcon?.whitelist.filter(
-                    (_, i) => i !== index
-                  );
-                  props.setConfig({
-                    ...props.config,
-                    rcon: {
-                      ...props.config.rcon,
-                      whitelist: whitelist,
-                    },
-                  });
-                }}
-                name="Whitelist"
-              />,
-              <HelpButton parameterName="Whitelist" />,
-            ]}
-          />;
+          return (
+            <EditorInput
+              isDesktop={props.isDesktop}
+              key={`Whitelist-${index.toString()}`}
+              parameter={whitelisted}
+              name={`Whitelisted ${index + 1}`}
+              change={(v) => {
+                const whitelist = props.config.rcon?.whitelist;
+                whitelist[index] = v;
+                props.setConfig({
+                  ...props.config,
+                  rcon: {
+                    ...props.config.rcon,
+                    whitelist: whitelist,
+                  },
+                });
+              }}
+              buttons={[
+                <DeleteButton
+                  click={() => {
+                    const whitelist = props.config.rcon?.whitelist.filter(
+                      (_, i) => i !== index
+                    );
+                    props.setConfig({
+                      ...props.config,
+                      rcon: {
+                        ...props.config.rcon,
+                        whitelist: whitelist,
+                      },
+                    });
+                  }}
+                  name="Whitelist"
+                />,
+                <HelpButton parameterName="Whitelist" />,
+              ]}
+            />
+          );
         })}
         <EditorInput
           isDesktop={props.isDesktop}
@@ -519,41 +521,43 @@ export const RconTable = (props: RconTableProps) => {
           ]}
         />
         {props.config.rcon?.blacklist.map((blacklisted, index) => {
-          <EditorInput
-            isDesktop={props.isDesktop}
-            key={`Blacklist-${index.toString()}`}
-            parameter={blacklisted}
-            name={`Blacklist ${index + 1}`}
-            change={(v) => {
-              const blacklist = props.config.rcon?.blacklist;
-              blacklist[index] = v;
-              props.setConfig({
-                ...props.config,
-                rcon: {
-                  ...props.config.rcon,
-                  blacklist: blacklist,
-                },
-              });
-            }}
-            buttons={[
-              <DeleteButton
-                click={() => {
-                  const blacklist = props.config.rcon?.blacklist.filter(
-                    (_, i) => i !== index
-                  );
-                  props.setConfig({
-                    ...props.config,
-                    rcon: {
-                      ...props.config.rcon,
-                      blacklist: blacklist,
-                    },
-                  });
-                }}
-                name="Admin"
-              />,
-              <HelpButton parameterName="blacklist" />,
-            ]}
-          />;
+          return (
+            <EditorInput
+              isDesktop={props.isDesktop}
+              key={`Blacklist-${index.toString()}`}
+              parameter={blacklisted}
+              name={`Blacklist ${index + 1}`}
+              change={(v) => {
+                const blacklist = props.config.rcon?.blacklist;
+                blacklist[index] = v;
+                props.setConfig({
+                  ...props.config,
+                  rcon: {
+                    ...props.config.rcon,
+                    blacklist: blacklist,
+                  },
+                });
+              }}
+              buttons={[
+                <DeleteButton
+                  click={() => {
+                    const blacklist = props.config.rcon?.blacklist.filter(
+                      (_, i) => i !== index
+                    );
+                    props.setConfig({
+                      ...props.config,
+                      rcon: {
+                        ...props.config.rcon,
+                        blacklist: blacklist,
+                      },
+                    });
+                  }}
+                  name="Admin"
+                />,
+                <HelpButton parameterName="blacklist" />,
+              ]}
+            />
+          );
         })}
         <EditorInput
           isDesktop={props.isDesktop}
@@ -582,7 +586,7 @@ export const RconTable = (props: RconTableProps) => {
             <HelpButton parameterName="blacklist" />,
           ]}
         />
-      </>
+      </div>
     );
   }
 };

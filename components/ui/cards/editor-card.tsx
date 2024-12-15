@@ -49,14 +49,18 @@ export const EditorCard = (props: EditorCardProps) => {
   const [current, setCurrent] = useState<string>("Base");
 
   return (
-    <Card >
+    <Card>
       <CardHeader>
         <CardTitle className="scroll-m-20 font-extrabold text-center">
           ARMA Reforger Server Config Editor
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <Navigator current={current} setCurrent={setCurrent} />
+        <Navigator
+          current={current}
+          setCurrent={setCurrent}
+          isDesktop={props.isDesktop}
+        />
         <Editor
           config={props.config}
           fileName={props.fileName}

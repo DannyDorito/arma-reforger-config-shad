@@ -18,7 +18,6 @@ import {
   DropdownMenuTrigger,
 } from "../dropdown-menu";
 import { Fragment, useState } from "react";
-import { useMediaQuery } from "usehooks-ts";
 import {
   Drawer,
   DrawerClose,
@@ -36,7 +35,6 @@ export const Navigator = (props: NavigatorProps) => {
     props.current === page ? "text-foreground underline" : "";
 
   const [open, setOpen] = useState(false);
-  const isDesktop = useMediaQuery("(min-width: 960px)");
 
   const ITEMS_TO_DISPLAY = 3;
 
@@ -55,7 +53,7 @@ export const Navigator = (props: NavigatorProps) => {
         {Routes.length > ITEMS_TO_DISPLAY ? (
           <>
             <BreadcrumbItem>
-              {isDesktop ? (
+              {props.isDesktop ? (
                 <DropdownMenu open={open} onOpenChange={setOpen}>
                   <DropdownMenuTrigger
                     className="flex items-center gap-1"

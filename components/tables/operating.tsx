@@ -33,6 +33,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="operating.lobbyPlayerSynchronise-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -44,7 +45,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="lobbyPlayerSynchronise" />,
+                <HelpButton
+                  parameterName="lobbyPlayerSynchronise"
+                  key="operating.lobbyPlayerSynchronise-help"
+                />,
               ]}
             />
           </TableRow>
@@ -65,6 +69,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="operating.disableServerShutdown-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -76,7 +81,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="disableServerShutdown" />,
+                <HelpButton
+                  parameterName="disableServerShutdown"
+                  key="operating.disableServerShutdown-help"
+                />,
               ]}
             />
           </TableRow>
@@ -97,6 +105,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="operating.disableCrashReporter-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -108,7 +117,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="disableCrashReporter" />,
+                <HelpButton
+                  parameterName="disableCrashReporter"
+                  key="operating.disableCrashReporter-help"
+                />,
               ]}
             />
           </TableRow>
@@ -126,6 +138,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="operating.disableAI-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -157,6 +170,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="operating.playerSaveTime-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -189,6 +203,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="operating.aiLimit-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -222,6 +237,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="operating.slotReservationTimeout-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -262,6 +278,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="operating.disableNavmeshStreaming-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -295,6 +312,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="operating.joinQueue-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -328,6 +346,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="operating.maxSize-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,

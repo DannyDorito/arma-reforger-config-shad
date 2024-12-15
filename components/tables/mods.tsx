@@ -246,6 +246,7 @@ export const ModsTable = (props: ModsTableProps) => {
                 }}
                 buttons={[
                   <DeleteButton
+                    key={`game.mod-${index}-delete`}
                     name={"Mod"}
                     click={() => {
                       const mods = props.config.game?.mods.filter(
@@ -260,7 +261,10 @@ export const ModsTable = (props: ModsTableProps) => {
                       });
                     }}
                   />,
-                  <HelpButton parameterName="mods" />,
+                  <HelpButton
+                    parameterName="mods"
+                    key={`game.mod-${index}-help`}
+                  />,
                 ]}
               />
             </>
@@ -312,6 +316,7 @@ export const ModsTable = (props: ModsTableProps) => {
           }}
           buttons={[
             <AddButton
+              key={`game.mod-add`}
               name={"Mod"}
               add={() => {
                 const mods = [...props.config.game.mods, newMod];
@@ -325,7 +330,7 @@ export const ModsTable = (props: ModsTableProps) => {
                 setNewMod(new Mod());
               }}
             />,
-            <HelpButton parameterName="mods" />,
+            <HelpButton parameterName="mods" key={`game.mod-help`} />,
           ]}
         />
       </>
