@@ -28,7 +28,8 @@
 		"crossPlatform": true,
 		"supportedPlatforms": [
 			"PLATFORM_PC",
-			"PLATFORM_XBL"
+			"PLATFORM_XBL",
+			"PLATFORM_PSN"
 		],
 		"gameProperties": {
 			"serverMaxViewDistance": 2500,

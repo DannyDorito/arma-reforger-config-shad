@@ -44,6 +44,7 @@ export enum Platform
 {
   PLATFORM_PC = "PLATFORM_PC",
   PLATFORM_XBL = "PLATFORM_XBL",
+  PLATFORM_PSN = "PLATFORM_PSN"
 }
 
 export class Mod
