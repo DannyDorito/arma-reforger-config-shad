@@ -19,7 +19,12 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { CheckIcon, ChevronDownIcon, Cross2Icon, MagicWandIcon } from "@radix-ui/react-icons";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  Cross2Icon,
+  MagicWandIcon,
+} from "@radix-ui/react-icons";
 
 /**
  * Variants for the multi-select component to handle different styles.

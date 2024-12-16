@@ -472,6 +472,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="operating.disableCrashReporter-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -482,7 +483,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="disableCrashReporter" />,
+            <HelpButton
+              parameterName="disableCrashReporter"
+              key="operating.disableCrashReporter-help"
+            />,
           ]}
         />
         <SwitchInput
@@ -498,6 +502,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="operating.disableAI-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -508,7 +513,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="disableAI" />,
+            <HelpButton
+              parameterName="disableAI"
+              key="operating.disableAI-help"
+            />,
           ]}
         />
         <EditorInput
@@ -527,6 +535,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="operating.playerSaveTime-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -537,7 +546,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="playerSaveTime" />,
+            <HelpButton
+              parameterName="playerSaveTime"
+              key="operating.playerSaveTime-help"
+            />,
           ]}
         />
         <EditorInput
@@ -557,6 +569,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="operating.aiLimit-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -567,7 +580,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="aiLimit" />,
+            <HelpButton parameterName="aiLimit" key="operating.aiLimit-help" />,
           ]}
         />
         <EditorInput
@@ -588,6 +601,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="operating.slotReservationTimeout-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -599,7 +613,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="slotReservationTimeout" />,
+            <HelpButton
+              parameterName="slotReservationTimeout"
+              key="operating.slotReservationTimeout-help"
+            />,
           ]}
         />
         <TextAreaInput
@@ -626,6 +643,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="operating.disableNavmeshStreaming-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -637,7 +655,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="disableNavmeshStreaming" />,
+            <HelpButton
+              parameterName="disableNavmeshStreaming"
+              key="operating.disableNavmeshStreaming-help"
+            />,
           ]}
         />
         <EditorInput
@@ -657,6 +678,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="operating.joinQueue-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -667,7 +689,10 @@ export const OperatingTable = (props: OperatingTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="joinQueue" />,
+            <HelpButton
+              parameterName="joinQueue"
+              key="operating.joinQueue-help"
+            />,
           ]}
         />
         <EditorInput
@@ -688,6 +713,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="operating.maxSize-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -698,7 +724,7 @@ export const OperatingTable = (props: OperatingTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="maxSize" />,
+            <HelpButton parameterName="maxSize" key="operating.maxSize-help" />,
           ]}
         />
       </>

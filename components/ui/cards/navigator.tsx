@@ -67,7 +67,12 @@ export const Navigator = (props: NavigatorProps) => {
                         key={`${index}-dd`}
                         onClick={() => props.setCurrent(item)}
                       >
-                        <h2 className={currentFormatting(item)} key={`${index}-item`}>{item}</h2>
+                        <h2
+                          className={currentFormatting(item)}
+                          key={`${index}-item`}
+                        >
+                          {item}
+                        </h2>
                       </DropdownMenuItem>
                     ))}
                   </DropdownMenuContent>
@@ -123,7 +128,9 @@ export const Navigator = (props: NavigatorProps) => {
                 {item}
               </BreadcrumbPage>
             </BreadcrumbItem>
-            {item !== Routes[Routes.length - 1] && <BreadcrumbSeparator key={`${index}-separator`}/>}
+            {item !== Routes[Routes.length - 1] && (
+              <BreadcrumbSeparator key={`${index}-separator`} />
+            )}
           </Fragment>
         ))}
       </BreadcrumbList>

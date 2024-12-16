@@ -1,4 +1,4 @@
 export interface HelpButtonProps
 {
-  parameterName: string
+  parameterName: string;
 }

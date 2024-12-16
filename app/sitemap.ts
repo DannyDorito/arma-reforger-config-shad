@@ -1,14 +1,15 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default function sitemap (): MetadataRoute.Sitemap
+{
   return [
     {
-      url: 'https://reforger.jallison.co.uk',
+      url: "https://reforger.jallison.co.uk",
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: "yearly",
       priority: 1,
-    }
-  ]
+    },
+  ];
 }
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";

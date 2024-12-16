@@ -5,14 +5,26 @@ import { Config } from "@/types/Config";
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 
-const EditorCard = dynamic(() => import('@/components/ui/cards/editor-card').then(editor => editor.EditorCard), {
-  loading: () => <Loading />
-});
+const EditorCard = dynamic(
+  () =>
+    import("@/components/ui/cards/editor-card").then(
+      (editor) => editor.EditorCard
+    ),
+  {
+    loading: () => <Loading />,
+  }
+);
 
-const UploadCard = dynamic(() => import('@/components/ui/cards/upload-card').then(upload => upload.UploadCard), {
-  loading: () => <Loading />,
-  ssr: false
-});
+const UploadCard = dynamic(
+  () =>
+    import("@/components/ui/cards/upload-card").then(
+      (upload) => upload.UploadCard
+    ),
+  {
+    loading: () => <Loading />,
+    ssr: false,
+  }
+);
 
 export const Home = () => {
   const [config, setConfig] = useState<Config>({} as Config);
@@ -30,7 +42,7 @@ export const Home = () => {
     }, [mediaQuery]);
 
     return match;
-  }
+  };
 
   const isDesktop = useMediaQuery("(min-width: 960px)");
 
@@ -58,6 +70,6 @@ export const Home = () => {
       )}
     </>
   );
-}
+};
 
 export default Home;

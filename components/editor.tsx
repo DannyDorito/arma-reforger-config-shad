@@ -4,30 +4,58 @@ import { EditorProps } from "./props/EditorProps";
 import dynamic from "next/dynamic";
 import { Loading } from "./loading";
 
-const BaseTable = dynamic(() => import('./tables/base').then((base) => base.BaseTable), {
-  loading: () => <Loading />
-});
-const OperatingTable = dynamic(() => import('./tables/operating').then((operating) => operating.OperatingTable), {
-  loading: () => <Loading />
-});
-const A2STable = dynamic(() => import('./tables/a2s').then((a2s) => a2s.A2STable), {
-  loading: () => <Loading />
-});
-const RconTable = dynamic(() => import('./tables/rcon').then((rcon) => rcon.RconTable), {
-  loading: () => <Loading />
-});
-const GameTable = dynamic(() => import('./tables/game').then((game) => game.GameTable), {
-  loading: () => <Loading />
-});
-const AdminTable = dynamic(() => import('./tables/admins').then((admins) => admins.AdminTable), {
-  loading: () => <Loading />
-});
-const GamePropertiesTable = dynamic(() => import('./tables/gameproperties').then((gameproperties) => gameproperties.GamePropertiesTable), {
-  loading: () => <Loading />
-});
-const ModsTable = dynamic(() => import('./tables/mods').then((mods) => mods.ModsTable), {
-  loading: () => <Loading />
-});
+const BaseTable = dynamic(
+  () => import("./tables/base").then((base) => base.BaseTable),
+  {
+    loading: () => <Loading />,
+  }
+);
+const OperatingTable = dynamic(
+  () =>
+    import("./tables/operating").then((operating) => operating.OperatingTable),
+  {
+    loading: () => <Loading />,
+  }
+);
+const A2STable = dynamic(
+  () => import("./tables/a2s").then((a2s) => a2s.A2STable),
+  {
+    loading: () => <Loading />,
+  }
+);
+const RconTable = dynamic(
+  () => import("./tables/rcon").then((rcon) => rcon.RconTable),
+  {
+    loading: () => <Loading />,
+  }
+);
+const GameTable = dynamic(
+  () => import("./tables/game").then((game) => game.GameTable),
+  {
+    loading: () => <Loading />,
+  }
+);
+const AdminTable = dynamic(
+  () => import("./tables/admins").then((admins) => admins.AdminTable),
+  {
+    loading: () => <Loading />,
+  }
+);
+const GamePropertiesTable = dynamic(
+  () =>
+    import("./tables/gameproperties").then(
+      (gameproperties) => gameproperties.GamePropertiesTable
+    ),
+  {
+    loading: () => <Loading />,
+  }
+);
+const ModsTable = dynamic(
+  () => import("./tables/mods").then((mods) => mods.ModsTable),
+  {
+    loading: () => <Loading />,
+  }
+);
 
 export const Editor = (props: EditorProps) => {
   return (
@@ -36,22 +64,46 @@ export const Editor = (props: EditorProps) => {
         {props.current}
       </h3>
       {props.current === "Base" && (
-        <BaseTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
+        <BaseTable
+          config={props.config}
+          setConfig={props.setConfig}
+          isDesktop={props.isDesktop}
+        />
       )}
       {props.current === "Operating" && (
-        <OperatingTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
+        <OperatingTable
+          config={props.config}
+          setConfig={props.setConfig}
+          isDesktop={props.isDesktop}
+        />
       )}
       {props.current === "A2S" && (
-        <A2STable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
+        <A2STable
+          config={props.config}
+          setConfig={props.setConfig}
+          isDesktop={props.isDesktop}
+        />
       )}
       {props.current === "RCON" && (
-        <RconTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
+        <RconTable
+          config={props.config}
+          setConfig={props.setConfig}
+          isDesktop={props.isDesktop}
+        />
       )}
       {props.current === "Game" && (
-        <GameTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
+        <GameTable
+          config={props.config}
+          setConfig={props.setConfig}
+          isDesktop={props.isDesktop}
+        />
       )}
       {props.current === "Admins" && (
-        <AdminTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
+        <AdminTable
+          config={props.config}
+          setConfig={props.setConfig}
+          isDesktop={props.isDesktop}
+        />
       )}
       {props.current === "Game Properties" && (
         <GamePropertiesTable
@@ -61,7 +113,11 @@ export const Editor = (props: EditorProps) => {
         />
       )}
       {props.current === "Mods" && (
-        <ModsTable config={props.config} setConfig={props.setConfig} isDesktop={props.isDesktop}/>
+        <ModsTable
+          config={props.config}
+          setConfig={props.setConfig}
+          isDesktop={props.isDesktop}
+        />
       )}
     </>
   );

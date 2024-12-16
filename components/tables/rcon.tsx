@@ -38,6 +38,7 @@ export const RconTable = (props: RconTableProps) => {
               required={true}
               buttons={[
                 <ResetButton
+                  key="rcon.address-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -48,7 +49,7 @@ export const RconTable = (props: RconTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="rcon" />,
+                <HelpButton parameterName="rcon" key="rcon.address-help" />,
               ]}
             />
           </TableRow>
@@ -69,6 +70,7 @@ export const RconTable = (props: RconTableProps) => {
               required={true}
               buttons={[
                 <ResetButton
+                  key="rcon.port-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -76,7 +78,7 @@ export const RconTable = (props: RconTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="rcon" />,
+                <HelpButton parameterName="rcon" key="rcon.port-help" />,
               ]}
             />
           </TableRow>
@@ -95,6 +97,7 @@ export const RconTable = (props: RconTableProps) => {
               required={true}
               buttons={[
                 <ResetButton
+                  key="rcon.password-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -105,7 +108,10 @@ export const RconTable = (props: RconTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="password" />,
+                <HelpButton
+                  parameterName="password"
+                  key="rcon.password=help"
+                />,
               ]}
             />
           </TableRow>
@@ -125,6 +131,7 @@ export const RconTable = (props: RconTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="rcon.maxClients-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -135,7 +142,10 @@ export const RconTable = (props: RconTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="maxClients" />,
+                <HelpButton
+                  parameterName="maxClients"
+                  key="rcon.maxClients-help"
+                />,
               ]}
             />
           </TableRow>
@@ -156,6 +166,7 @@ export const RconTable = (props: RconTableProps) => {
               }
               buttons={[
                 <ResetButton
+                  key="rcon.permission-reset"
                   click={() =>
                     props.setConfig({
                       ...props.config,
@@ -166,7 +177,10 @@ export const RconTable = (props: RconTableProps) => {
                     })
                   }
                 />,
-                <HelpButton parameterName="permission" />,
+                <HelpButton
+                  parameterName="permission"
+                  key="rcon.permission-help"
+                />,
               ]}
             />
           </TableRow>
@@ -191,6 +205,7 @@ export const RconTable = (props: RconTableProps) => {
                   }}
                   buttons={[
                     <DeleteButton
+                      key={`rcon.whitelist-${index}-delete`}
                       click={() => {
                         const whitelist = props.config.rcon?.whitelist.filter(
                           (_, i) => i !== index
@@ -205,7 +220,10 @@ export const RconTable = (props: RconTableProps) => {
                       }}
                       name="Whitelist"
                     />,
-                    <HelpButton parameterName="Whitelist" />,
+                    <HelpButton
+                      parameterName="Whitelist"
+                      key={`rcon.whitelist-${index}-help`}
+                    />,
                   ]}
                 />
               </TableRow>
@@ -220,6 +238,7 @@ export const RconTable = (props: RconTableProps) => {
               change={(v) => setNewWhitelist(v)}
               buttons={[
                 <AddButton
+                  key="rcon.whitelist-new-add"
                   add={() => {
                     const whitelist = [
                       ...props.config.rcon?.whitelist,
@@ -236,7 +255,10 @@ export const RconTable = (props: RconTableProps) => {
                   }}
                   name="Whitelist"
                 />,
-                <HelpButton parameterName="whitelist" />,
+                <HelpButton
+                  parameterName="whitelist"
+                  key="rcon.whitelist-new-help"
+                />,
               ]}
             />
           </TableRow>
@@ -261,6 +283,7 @@ export const RconTable = (props: RconTableProps) => {
                   }}
                   buttons={[
                     <DeleteButton
+                      key={`rcon.blacklist-${index}-delete`}
                       click={() => {
                         const blacklist = props.config.rcon?.blacklist.filter(
                           (_, i) => i !== index
@@ -275,7 +298,10 @@ export const RconTable = (props: RconTableProps) => {
                       }}
                       name="Admin"
                     />,
-                    <HelpButton parameterName="blacklist" />,
+                    <HelpButton
+                      parameterName="blacklist"
+                      key={`rcon.blacklist-${index}-help`}
+                    />,
                   ]}
                 />
               </TableRow>
@@ -290,6 +316,7 @@ export const RconTable = (props: RconTableProps) => {
               change={(v) => setNewBlacklist(v)}
               buttons={[
                 <AddButton
+                  key="rcon.blacklist-new-add"
                   add={() => {
                     const blacklist = [
                       ...props.config.rcon?.blacklist,
@@ -306,7 +333,10 @@ export const RconTable = (props: RconTableProps) => {
                   }}
                   name="Blacklist"
                 />,
-                <HelpButton parameterName="blacklist" />,
+                <HelpButton
+                  parameterName="blacklist"
+                  key="rcon.blacklist-new-help"
+                />,
               ]}
             />
           </TableRow>
@@ -331,6 +361,7 @@ export const RconTable = (props: RconTableProps) => {
           required={true}
           buttons={[
             <ResetButton
+              key="rcon.address-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -341,7 +372,7 @@ export const RconTable = (props: RconTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="rcon" />,
+            <HelpButton parameterName="rcon" key="rcon.address-delete" />,
           ]}
         />
         <EditorInput
@@ -360,6 +391,7 @@ export const RconTable = (props: RconTableProps) => {
           required={true}
           buttons={[
             <ResetButton
+              key="rcon.port-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -367,7 +399,7 @@ export const RconTable = (props: RconTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="rcon" />,
+            <HelpButton parameterName="rcon" key="rcon.port-help" />,
           ]}
         />
         <PasswordInput
@@ -384,6 +416,7 @@ export const RconTable = (props: RconTableProps) => {
           required={true}
           buttons={[
             <ResetButton
+              key="rcon.password-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -394,7 +427,7 @@ export const RconTable = (props: RconTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="password" />,
+            <HelpButton parameterName="password" key="rcon.password-help" />,
           ]}
         />
         <EditorInput
@@ -412,6 +445,7 @@ export const RconTable = (props: RconTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="rcon.maxClients-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -422,7 +456,10 @@ export const RconTable = (props: RconTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="maxClients" />,
+            <HelpButton
+              parameterName="maxClients"
+              key="rcon.maxClients-help"
+            />,
           ]}
         />
         <SelectInput
@@ -441,6 +478,7 @@ export const RconTable = (props: RconTableProps) => {
           }
           buttons={[
             <ResetButton
+              key="rcon.permissions-reset"
               click={() =>
                 props.setConfig({
                   ...props.config,
@@ -451,7 +489,10 @@ export const RconTable = (props: RconTableProps) => {
                 })
               }
             />,
-            <HelpButton parameterName="permission" />,
+            <HelpButton
+              parameterName="permission"
+              key="rcon.permissions-reset-help"
+            />,
           ]}
         />
         {props.config.rcon?.whitelist.map((whitelisted, index) => {
@@ -474,6 +515,7 @@ export const RconTable = (props: RconTableProps) => {
               }}
               buttons={[
                 <DeleteButton
+                  key={`rcon.whitelist-${index}-delete`}
                   click={() => {
                     const whitelist = props.config.rcon?.whitelist.filter(
                       (_, i) => i !== index
@@ -488,7 +530,10 @@ export const RconTable = (props: RconTableProps) => {
                   }}
                   name="Whitelist"
                 />,
-                <HelpButton parameterName="Whitelist" />,
+                <HelpButton
+                  parameterName="Whitelist"
+                  key={`rcon.whitelist-${index}-help`}
+                />,
               ]}
             />
           );
@@ -501,6 +546,7 @@ export const RconTable = (props: RconTableProps) => {
           change={(v) => setNewWhitelist(v)}
           buttons={[
             <AddButton
+              key="rcon.whitelist-new-add"
               add={() => {
                 const whitelist = [
                   ...props.config.rcon?.whitelist,
@@ -517,7 +563,10 @@ export const RconTable = (props: RconTableProps) => {
               }}
               name="Whitelist"
             />,
-            <HelpButton parameterName="whitelist" />,
+            <HelpButton
+              parameterName="whitelist"
+              key="rcon.whitelist-new-help"
+            />,
           ]}
         />
         {props.config.rcon?.blacklist.map((blacklisted, index) => {
@@ -540,6 +589,7 @@ export const RconTable = (props: RconTableProps) => {
               }}
               buttons={[
                 <DeleteButton
+                  key={`rcon.blacklist-${index}-delete`}
                   click={() => {
                     const blacklist = props.config.rcon?.blacklist.filter(
                       (_, i) => i !== index
@@ -554,7 +604,10 @@ export const RconTable = (props: RconTableProps) => {
                   }}
                   name="Admin"
                 />,
-                <HelpButton parameterName="blacklist" />,
+                <HelpButton
+                  parameterName="blacklist"
+                  key={`rcon.blacklist-${index}-help`}
+                />,
               ]}
             />
           );
@@ -567,6 +620,7 @@ export const RconTable = (props: RconTableProps) => {
           change={(v) => setNewBlacklist(v)}
           buttons={[
             <AddButton
+              key="rcon.blacklist-new-add"
               add={() => {
                 const blacklist = [
                   ...props.config.rcon?.blacklist,
@@ -583,7 +637,10 @@ export const RconTable = (props: RconTableProps) => {
               }}
               name="Blacklist"
             />,
-            <HelpButton parameterName="blacklist" />,
+            <HelpButton
+              parameterName="blacklist"
+              key="rcon.blacklist-new-help"
+            />,
           ]}
         />
       </div>

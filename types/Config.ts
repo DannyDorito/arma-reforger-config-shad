@@ -65,7 +65,7 @@ export class GameProperties
   VONDisableUI: boolean = false;
   VONDisableDirectSpeechUI: boolean = false;
   VONCanTransmitCrossFaction: boolean = false;
-  missionHeader: string = '';
+  missionHeader: string = "";
 }
 
 export class Rcon

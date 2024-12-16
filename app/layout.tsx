@@ -3,14 +3,15 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], display: 'swap', });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "ARMA Reforger Server Config Editor",
-  description: "Arma Reforger Server Config Generator. JSON Editor for ARMA Reforger Server Config.",
+  description:
+    "Arma Reforger Server Config Generator. JSON Editor for ARMA Reforger Server Config.",
 };
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
 export default function RootLayout({
   children,

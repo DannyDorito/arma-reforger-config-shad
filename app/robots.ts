@@ -1,14 +1,15 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
-export default function robots(): MetadataRoute.Robots {
+export default function robots (): MetadataRoute.Robots
+{
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: '/private/',
+      userAgent: "*",
+      allow: "/",
+      disallow: "/private/",
     },
-    sitemap: 'https://reforger.jallison.co.uk/sitemap.xml',
-  }
+    sitemap: "https://reforger.jallison.co.uk/sitemap.xml",
+  };
 }
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
