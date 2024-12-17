@@ -55,7 +55,7 @@ export const EditorCard = (props: EditorCardProps) => {
           ARMA Reforger Server Config Editor
         </CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="w-full">
         <Navigator
           current={current}
           setCurrent={setCurrent}
