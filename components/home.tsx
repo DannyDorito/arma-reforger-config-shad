@@ -59,7 +59,7 @@ export const Home = () => {
           />
         </main>
       ) : (
-        <main className="flex min-h-screen justify-evenly p-24">
+        <main className={`flex min-h-screen justify-evenly ${isDesktop ? 'p-24' : 'pt-12 pb-12'}`}>
           <EditorCard
             config={config}
             fileName={fileName}
