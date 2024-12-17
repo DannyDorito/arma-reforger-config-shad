@@ -24,6 +24,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import FileSaver from "file-saver";
 
 const Editor = dynamic(
   () => import("../../editor").then((editor) => editor.Editor),
@@ -34,16 +35,15 @@ const Editor = dynamic(
 
 export const EditorCard = (props: EditorCardProps) => {
   const handleDownload = () => {
-    const doc = document.createElement("a");
-    doc.href = URL.createObjectURL(
-      new Blob([JSON.stringify(props.config, null, 2)], {
-        type: "application/json",
-      })
-    );
-    doc.setAttribute("download", props.fileName);
-    document.body.appendChild(doc);
-    doc.click();
-    document.body.removeChild(doc);
+    try {
+      const isFileSaverSupported = !!new Blob();
+      if (isFileSaverSupported) {
+        const blob = new Blob([JSON.stringify(props.config, null, 2)], {
+          type: "application/json",
+        });
+        FileSaver.saveAs(blob, props.fileName);
+      }
+    } catch (e) {}
   };
 
   const [current, setCurrent] = useState<string>("Base");
