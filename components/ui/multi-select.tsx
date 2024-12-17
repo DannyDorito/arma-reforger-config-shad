@@ -1,5 +1,11 @@
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  Cross2Icon,
+  MagicWandIcon,
+} from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
@@ -19,12 +25,6 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  Cross2Icon,
-  MagicWandIcon,
-} from "@radix-ui/react-icons";
 
 /**
  * Variants for the multi-select component to handle different styles.
@@ -201,7 +201,7 @@ export const MultiSelect = React.forwardRef<
             {...props}
             onClick={handleTogglePopover}
             className={cn(
-              "flex w-full p-1 rounded-md border min-h-10 h-auto items-center justify-between bg-inherit hover:bg-inherit",
+              "flex w-full p-1 rounded-md border min-h-10 h-auto items-center justify-between bg-inherit hover:bg-inherit [&_svg]:pointer-events-auto",
               className
             )}
           >
