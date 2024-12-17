@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { OpenInNewWindowIcon } from "@radix-ui/react-icons";
 import { HelpButtonProps } from "@/components/props/HelpButtonProps";
 import { Button } from "../button";
 import {
@@ -10,6 +9,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { ExternalLink } from "lucide-react";
 
 const helpLink = (parameter: string) =>
   `https://community.bistudio.com/wiki/Arma_Reforger:Server_Config#${parameter}`;
@@ -30,7 +30,7 @@ export const HelpButton = (props: HelpButtonProps) => {
               target="_blank"
               aria-label={`Open help wiki for ${props.parameterName}`}
             >
-              <OpenInNewWindowIcon className="h-[1.2rem] w-[1.2rem]" />
+              <ExternalLink className="h-[1.2rem] w-[1.2rem]" />
               <span className="sr-only">{`Open help wiki for ${props.parameterName}`}</span>
             </Link>
           </Button>

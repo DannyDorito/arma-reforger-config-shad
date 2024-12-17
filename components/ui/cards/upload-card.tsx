@@ -1,11 +1,5 @@
 "use client";
 
-import {
-  ExclamationTriangleIcon,
-  Pencil2Icon,
-  PlusIcon,
-  TrashIcon,
-} from "@radix-ui/react-icons";
 import { Button } from "../button";
 import {
   Card,
@@ -32,6 +26,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { CurrentVersion, isUpToDate, UpdateVersion } from "@/types/Version";
+import { Pencil, Plus, Trash2, TriangleAlert } from "lucide-react";
 
 const Turnstile = dynamic(
   () =>
@@ -128,7 +123,7 @@ export const UploadCard = (props: UploadCardProps) => {
             accept="application/json"
             type="file"
             onChange={(event) => handleUploadJson(event.target.files)}
-            className="cursor-pointer"
+            className="cursor-pointer text-foreground"
             aria-label="Upload .json file"
           />
           <TooltipProvider>
@@ -140,7 +135,7 @@ export const UploadCard = (props: UploadCardProps) => {
                   onClick={() => props.setFile(undefined)}
                   aria-label="Clear uploaded config file"
                 >
-                  <TrashIcon className="h-[1.2rem] w-[1.2rem] red"></TrashIcon>
+                  <Trash2 className="h-[1.2rem] w-[1.2rem] red"></Trash2>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -166,7 +161,7 @@ export const UploadCard = (props: UploadCardProps) => {
         {error && (
           <div className="flex justify-center p-top-1-5">
             <Alert variant="destructive">
-              <ExclamationTriangleIcon className="h-4 w-4" />
+              <TriangleAlert className="h-4 w-4" />
               <AlertTitle>Error</AlertTitle>
               <AlertDescription>{error}</AlertDescription>
             </Alert>
@@ -189,7 +184,7 @@ export const UploadCard = (props: UploadCardProps) => {
                   }}
                   aria-label="Create new config file"
                 >
-                  <PlusIcon className="h-[1.2rem] w-[1.2rem]"></PlusIcon>
+                  <Plus className="h-[1.2rem] w-[1.2rem]"></Plus>
                 </Button>
               ) : (
                 <Button
@@ -199,7 +194,7 @@ export const UploadCard = (props: UploadCardProps) => {
                   onClick={() => readJson()}
                   aria-label="Start editing uploaded file"
                 >
-                  <Pencil2Icon className="h-[1.2rem] w-[1.2rem]"></Pencil2Icon>
+                  <Pencil className="h-[1.2rem] w-[1.2rem]"></Pencil>
                 </Button>
               )}
             </TooltipTrigger>

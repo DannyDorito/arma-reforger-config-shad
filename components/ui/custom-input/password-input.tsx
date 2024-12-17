@@ -5,7 +5,6 @@ import { useState } from "react";
 import { TableCell } from "../table";
 import { Input } from "../input";
 import { Button } from "../button";
-import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import {
   Tooltip,
   TooltipContent,
@@ -13,6 +12,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Label } from "@radix-ui/react-label";
+import { Eye, EyeClosed } from "lucide-react";
 
 export const PasswordInput = (props: PasswordInputProps) => {
   const [show, setShow] = useState<boolean>(false);
@@ -39,9 +39,9 @@ export const PasswordInput = (props: PasswordInputProps) => {
                 <TooltipTrigger asChild>
                   <Button variant="outline" onClick={() => setShow(!show)}>
                     {show ? (
-                      <EyeOpenIcon className="h-[1.2rem] w-[1.2rem]" />
+                      <Eye className="h-[1.2rem] w-[1.2rem]" />
                     ) : (
-                      <EyeClosedIcon className="h-[1.2rem] w-[1.2rem]" />
+                      <EyeClosed className="h-[1.2rem] w-[1.2rem]" />
                     )}
                   </Button>
                 </TooltipTrigger>
@@ -88,9 +88,9 @@ export const PasswordInput = (props: PasswordInputProps) => {
               <TooltipTrigger asChild>
                 <Button variant="outline" onClick={() => setShow(!show)}>
                   {show ? (
-                    <EyeOpenIcon className="h-[1.2rem] w-[1.2rem]" />
+                    <Eye className="h-[1.2rem] w-[1.2rem]" />
                   ) : (
-                    <EyeClosedIcon className="h-[1.2rem] w-[1.2rem]" />
+                    <EyeClosed className="h-[1.2rem] w-[1.2rem]" />
                   )}
                 </Button>
               </TooltipTrigger>

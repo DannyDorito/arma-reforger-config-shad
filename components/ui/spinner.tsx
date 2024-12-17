@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { VariantProps, cva } from "class-variance-authority";
-import { UpdateIcon } from "@radix-ui/react-icons";
+import { RefreshCw } from "lucide-react";
 
 const spinnerVariants = cva("flex-col items-center justify-center", {
   variants: {
@@ -43,7 +43,7 @@ export function Spinner({
 }: SpinnerContentProps) {
   return (
     <span className={spinnerVariants({ show })}>
-      <UpdateIcon className={cn(loaderVariants({ size }), className)} />
+      <RefreshCw className={cn(loaderVariants({ size }), className)} />
       {children}
     </span>
   );

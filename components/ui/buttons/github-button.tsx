@@ -1,6 +1,5 @@
 "use client";
 
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { Button } from "../button";
 import {
@@ -9,6 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../tooltip";
+import { Github } from "lucide-react";
 
 export const GitHubButton = () => {
   return (
@@ -22,7 +22,7 @@ export const GitHubButton = () => {
               target="_blank"
               aria-label="Link to Danny Dorito's GitHub"
             >
-              <GitHubLogoIcon className="h-[1.2rem] w-[1.2rem]"></GitHubLogoIcon>
+              <Github className="h-[1.2rem] w-[1.2rem]"></Github>
               <span className="sr-only">Link to GitHub Repo</span>
             </Link>
           </Button>

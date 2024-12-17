@@ -1,11 +1,14 @@
+// src/components/multi-select.tsx
+
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import {
   CheckIcon,
-  ChevronDownIcon,
-  Cross2Icon,
-  MagicWandIcon,
-} from "@radix-ui/react-icons";
+  XCircle,
+  ChevronDown,
+  XIcon,
+  WandSparkles,
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
@@ -50,15 +53,6 @@ const multiSelectVariants = cva(
   }
 );
 
-export interface OptionsInterface {
-  /** The text to display for the option. */
-  label: string;
-  /** The unique value associated with the option. */
-  value: string;
-  /** Optional icon component to display alongside the option. */
-  icon?: React.ComponentType<{ className?: string }>;
-}
-
 /**
  * Props for MultiSelect component
  */
@@ -69,7 +63,14 @@ interface MultiSelectProps
    * An array of option objects to be displayed in the multi-select component.
    * Each option object has a label, value, and an optional icon.
    */
-  options: OptionsInterface[];
+  options: {
+    /** The text to display for the option. */
+    label: string;
+    /** The unique value associated with the option. */
+    value: string;
+    /** Optional icon component to display alongside the option. */
+    icon?: React.ComponentType<{ className?: string }>;
+  }[];
 
   /**
    * Callback function triggered when the selected values change.
@@ -224,7 +225,7 @@ export const MultiSelect = React.forwardRef<
                           <IconComponent className="h-4 w-4 mr-2" />
                         )}
                         {option?.label}
-                        <Cross2Icon
+                        <XCircle
                           className="ml-2 h-4 w-4 cursor-pointer"
                           onClick={(event) => {
                             event.stopPropagation();
@@ -244,7 +245,7 @@ export const MultiSelect = React.forwardRef<
                       style={{ animationDuration: `${animation}s` }}
                     >
                       {`+ ${selectedValues.length - maxCount} more`}
-                      <Cross2Icon
+                      <XCircle
                         className="ml-2 h-4 w-4 cursor-pointer"
                         onClick={(event) => {
                           event.stopPropagation();
@@ -255,7 +256,7 @@ export const MultiSelect = React.forwardRef<
                   )}
                 </div>
                 <div className="flex items-center justify-between">
-                  <Cross2Icon
+                  <XIcon
                     className="h-4 mx-2 cursor-pointer text-muted-foreground"
                     onClick={(event) => {
                       event.stopPropagation();
@@ -266,7 +267,7 @@ export const MultiSelect = React.forwardRef<
                     orientation="vertical"
                     className="flex min-h-6 h-full"
                   />
-                  <ChevronDownIcon className="h-4 mx-2 cursor-pointer text-muted-foreground" />
+                  <ChevronDown className="h-4 mx-2 cursor-pointer text-muted-foreground" />
                 </div>
               </div>
             ) : (
@@ -274,7 +275,7 @@ export const MultiSelect = React.forwardRef<
                 <span className="text-sm text-muted-foreground mx-3">
                   {placeholder}
                 </span>
-                <ChevronDownIcon className="h-4 cursor-pointer text-muted-foreground mx-2" />
+                <ChevronDown className="h-4 cursor-pointer text-muted-foreground mx-2" />
               </div>
             )}
           </Button>
@@ -364,7 +365,7 @@ export const MultiSelect = React.forwardRef<
           </Command>
         </PopoverContent>
         {animation > 0 && selectedValues.length > 0 && (
-          <MagicWandIcon
+          <WandSparkles
             className={cn(
               "cursor-pointer my-2 text-foreground bg-background w-3 h-3",
               isAnimating ? "" : "text-muted-foreground"

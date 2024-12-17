@@ -1,7 +1,6 @@
 "use client";
 
 import { ResetButtonProps } from "@/components/props/ResetButtonProps";
-import { ResetIcon } from "@radix-ui/react-icons";
 import { Button } from "../button";
 import {
   Tooltip,
@@ -9,6 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { RotateCcw } from "lucide-react";
 
 export const ResetButton = (props: ResetButtonProps) => {
   return (
@@ -22,7 +22,7 @@ export const ResetButton = (props: ResetButtonProps) => {
             aria-label="Reset to default value"
             disabled={props.disabled}
           >
-            <ResetIcon className="h-[1.2rem] w-[1.2rem]" />
+            <RotateCcw className="h-[1.2rem] w-[1.2rem]" />
             <span className="sr-only">Reset to default value</span>
           </Button>
         </TooltipTrigger>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Loading } from "@/components/loading";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { Config } from "@/types/Config";
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
@@ -30,26 +31,13 @@ export const Home = () => {
   const [config, setConfig] = useState<Config>({} as Config);
   const [fileName, setFileName] = useState<string>("");
   const [file, setFile] = useState<File | undefined>(undefined);
-  const useMediaQuery = (query: string) => {
-    const mediaQuery = useMemo(() => window.matchMedia(query), [query]);
-    const [match, setMatch] = useState(mediaQuery.matches);
 
-    useEffect(() => {
-      const onChange = () => setMatch(mediaQuery.matches);
-      mediaQuery.addEventListener("change", onChange);
-
-      return () => mediaQuery.removeEventListener("change", onChange);
-    }, [mediaQuery]);
-
-    return match;
-  };
-
-  const isDesktop = useMediaQuery("(min-width: 960px)");
-
+  const isDesktop = useIsMobile();
+  
   return (
     <>
       {Object.keys(config).length === 0 ? (
-        <main className="flex min-h-screen items-center justify-evenly p-24">
+        <main className={`flex min-h-screen items-center justify-evenly ${isDesktop ? 'p-24' : 'pt-12 pb-12'}`}>
           <UploadCard
             setConfig={setConfig}
             setFile={setFile}

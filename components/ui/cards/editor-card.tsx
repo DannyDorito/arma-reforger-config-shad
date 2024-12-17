@@ -1,17 +1,9 @@
 "use client";
 
-import { DownloadIcon, TrashIcon } from "@radix-ui/react-icons";
 import { EditorCardProps } from "../../props/EditorCardProps";
 import { Button } from "../button";
 import { GitHubButton } from "../buttons/github-button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../card";
 import { ThemeToggle } from "../../theme-toggle";
 import { Config } from "@/types/Config";
 import { Loading } from "../../loading";
@@ -25,6 +17,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import FileSaver from "file-saver";
+import { HardDriveDownload, Trash2 } from "lucide-react";
 
 const Editor = dynamic(
   () => import("../../editor").then((editor) => editor.Editor),
@@ -80,7 +73,7 @@ export const EditorCard = (props: EditorCardProps) => {
                 onClick={() => props.setConfig({} as Config)}
                 aria-label="Clear changes and pick a new file"
               >
-                <TrashIcon className="h-[1.2rem] w-[1.2rem] red" />
+                <Trash2 className="h-[1.2rem] w-[1.2rem] red" />
               </Button>
             </TooltipTrigger>
             <TooltipContent>
@@ -97,7 +90,7 @@ export const EditorCard = (props: EditorCardProps) => {
                 size="icon"
                 aria-label="Download file"
               >
-                <DownloadIcon className="h-[1.2rem] w-[1.2rem]" />
+                <HardDriveDownload className="h-[1.2rem] w-[1.2rem]" />
               </Button>
             </TooltipTrigger>
             <TooltipContent>

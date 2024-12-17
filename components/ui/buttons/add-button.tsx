@@ -1,7 +1,6 @@
 "use client";
 
 import { AddButtonProps } from "@/components/props/AddButtonProps";
-import { PlusIcon } from "@radix-ui/react-icons";
 import { Button } from "../button";
 import {
   Tooltip,
@@ -9,6 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../tooltip";
+import { Plus } from "lucide-react";
 
 export const AddButton = (props: AddButtonProps) => {
   return (
@@ -22,7 +22,7 @@ export const AddButton = (props: AddButtonProps) => {
             aria-label={`Add new ${props.name}`}
             onClick={props.add}
           >
-            <PlusIcon className="h-[1.2rem] w-[1.2rem]" />
+            <Plus className="h-[1.2rem] w-[1.2rem]" />
             <span className="sr-only">Add {props.name}</span>
           </Button>
         </TooltipTrigger>

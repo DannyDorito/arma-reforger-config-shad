@@ -1,12 +1,12 @@
 "use client";
 
-import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import { EditorInputProps } from "../../props/EditorInputProps";
 import { Alert, AlertTitle } from "../alert";
 import { Input } from "../input";
 import { TableCell } from "../table";
 import { useState } from "react";
 import { Label } from "../label";
+import { TriangleAlert } from "lucide-react";
 
 export const EditorInput = (props: EditorInputProps) => {
   const parameterType = typeof props.parameter;
@@ -32,7 +32,7 @@ export const EditorInput = (props: EditorInputProps) => {
         <TableCell>
           {error && (
             <Alert variant="destructive">
-              <ExclamationTriangleIcon className="h-4 w-4" />
+              <TriangleAlert className="h-4 w-4" />
               <AlertTitle>{error}</AlertTitle>
             </Alert>
           )}
@@ -71,7 +71,7 @@ export const EditorInput = (props: EditorInputProps) => {
         )}
         {error && (
           <Alert variant="destructive">
-            <ExclamationTriangleIcon className="h-4 w-4" />
+            <TriangleAlert className="h-4 w-4" />
             <AlertTitle>{error}</AlertTitle>
           </Alert>
         )}
