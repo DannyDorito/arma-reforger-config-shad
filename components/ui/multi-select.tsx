@@ -1,5 +1,3 @@
-// src/components/multi-select.tsx
-
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import {
@@ -53,6 +51,15 @@ const multiSelectVariants = cva(
   }
 );
 
+export interface OptionsInterface {
+  /** The text to display for the option. */
+  label: string;
+  /** The unique value associated with the option. */
+  value: string;
+  /** Optional icon component to display alongside the option. */
+  icon?: React.ComponentType<{ className?: string }>;
+}
+
 /**
  * Props for MultiSelect component
  */
@@ -63,14 +70,7 @@ interface MultiSelectProps
    * An array of option objects to be displayed in the multi-select component.
    * Each option object has a label, value, and an optional icon.
    */
-  options: {
-    /** The text to display for the option. */
-    label: string;
-    /** The unique value associated with the option. */
-    value: string;
-    /** Optional icon component to display alongside the option. */
-    icon?: React.ComponentType<{ className?: string }>;
-  }[];
+  options: OptionsInterface[];
 
   /**
    * Callback function triggered when the selected values change.
