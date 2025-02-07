@@ -10,7 +10,9 @@ import { PasswordInput } from "@/components/ui/custom-input/password-input";
 import { SwitchInput } from "@/components/ui/custom-input/switch-input";
 import { Table, TableBody, TableRow } from "@/components/ui/table";
 import { Game, Platform } from "@/types/Config";
+import { AllScenarios } from "@/types/OfficialScenarios";
 import { SupportedPlatforms } from "@/types/SupportedPlatforms";
+import { SelectInput } from "../ui/custom-input/select-input";
 
 export const GameTable = (props: GameTableProps) => {
   if (props.isDesktop) {
@@ -113,11 +115,11 @@ export const GameTable = (props: GameTableProps) => {
             />
           </TableRow>
           <TableRow>
-            <EditorInput
+            <SelectInput
               isDesktop={props.isDesktop}
-              parameter={props.config.game?.scenarioId}
-              name="Scenario Id"
-              key="game.scenarioId"
+              parameters={AllScenarios.map((as) => as.value)}
+              name="Scenario"
+              selected={props.config.game?.scenarioId}
               change={(v) =>
                 props.setConfig({
                   ...props.config,
@@ -402,11 +404,11 @@ export const GameTable = (props: GameTableProps) => {
             />,
           ]}
         />
-        <EditorInput
+        <SelectInput
           isDesktop={props.isDesktop}
-          parameter={props.config.game?.scenarioId}
-          name="Scenario Id"
-          key="game.scenarioId"
+          parameters={AllScenarios.map((as) => as.value)}
+          name="Scenario"
+          selected={props.config.game?.scenarioId}
           change={(v) =>
             props.setConfig({
               ...props.config,
