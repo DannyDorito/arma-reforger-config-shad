@@ -67,56 +67,48 @@ export const Editor = (props: EditorProps) => {
         <BaseTable
           config={props.config}
           setConfig={props.setConfig}
-          isDesktop={props.isDesktop}
         />
       )}
       {props.current === "Operating" && (
         <OperatingTable
           config={props.config}
           setConfig={props.setConfig}
-          isDesktop={props.isDesktop}
         />
       )}
       {props.current === "A2S" && (
         <A2STable
           config={props.config}
           setConfig={props.setConfig}
-          isDesktop={props.isDesktop}
         />
       )}
       {props.current === "RCON" && (
         <RconTable
           config={props.config}
           setConfig={props.setConfig}
-          isDesktop={props.isDesktop}
         />
       )}
       {props.current === "Game" && (
         <GameTable
           config={props.config}
           setConfig={props.setConfig}
-          isDesktop={props.isDesktop}
         />
       )}
       {props.current === "Admins" && (
         <AdminTable
           config={props.config}
           setConfig={props.setConfig}
-          isDesktop={props.isDesktop}
         />
       )}
       {props.current === "Game Properties" && (
         <GamePropertiesTable
           config={props.config}
           setConfig={props.setConfig}
-          isDesktop={props.isDesktop}
         />
       )}
       {props.current === "Mods" && (
         <ModsTable
           config={props.config}
           setConfig={props.setConfig}
-          isDesktop={props.isDesktop}
         />
       )}
     </>

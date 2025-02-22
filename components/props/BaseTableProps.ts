@@ -4,5 +4,4 @@ export interface BaseTableProps
 {
   config: Config;
   setConfig: ( c: Config ) => void;
-  isDesktop: boolean;
 }

@@ -49,17 +49,12 @@ export const EditorCard = (props: EditorCardProps) => {
         </CardTitle>
       </CardHeader>
       <CardContent className="w-full">
-        <Navigator
-          current={current}
-          setCurrent={setCurrent}
-          isDesktop={props.isDesktop}
-        />
+        <Navigator current={current} setCurrent={setCurrent} />
         <Editor
           config={props.config}
           fileName={props.fileName}
           setConfig={props.setConfig}
           current={current}
-          isDesktop={props.isDesktop}
         ></Editor>
       </CardContent>
       <CardFooter className="flex justify-between">

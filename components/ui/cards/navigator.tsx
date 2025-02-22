@@ -29,12 +29,15 @@ import {
   DrawerTrigger,
 } from "../drawer";
 import { Button } from "../button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const Navigator = (props: NavigatorProps) => {
   const currentFormatting = (page: string) =>
     props.current === page ? "text-foreground underline" : "";
 
   const [open, setOpen] = useState(false);
+
+  const isDesktop = useIsMobile();
 
   const ITEMS_TO_DISPLAY = 3;
 
@@ -53,7 +56,7 @@ export const Navigator = (props: NavigatorProps) => {
         {Routes.length > ITEMS_TO_DISPLAY ? (
           <>
             <BreadcrumbItem>
-              {props.isDesktop ? (
+              {isDesktop ? (
                 <DropdownMenu open={open} onOpenChange={setOpen}>
                   <DropdownMenuTrigger
                     className="flex items-center gap-1"

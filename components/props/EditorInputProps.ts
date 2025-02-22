@@ -11,6 +11,5 @@ export interface EditorInputProps
   change: ( v: string ) => void;
   disabled?: boolean;
   required?: boolean;
-  isDesktop: boolean;
   buttons?: JSX.Element[];
 }

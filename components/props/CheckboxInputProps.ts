@@ -8,6 +8,5 @@ export interface SwitchInputProps
   placeholder?: string;
   change: ( v: boolean ) => void;
   disabled?: boolean;
-  isDesktop: boolean;
   buttons?: JSX.Element[];
 }

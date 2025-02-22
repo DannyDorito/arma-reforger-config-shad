@@ -4,5 +4,4 @@ export interface OperatingTableProps
 {
   config: Config;
   setConfig: ( c: Config ) => void;
-  isDesktop: boolean;
 }

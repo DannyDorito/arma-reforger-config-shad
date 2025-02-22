@@ -37,26 +37,13 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
 
   return (
     <>
-      {props.isDesktop
-        ? props.name && <TableCell>{props.name}</TableCell>
-        : props.name && <Label htmlFor={props.name}>{props.name}</Label>}
-      {props.isDesktop ? (
-        <div className="flex items-center space-x-2">
-          <TableCell>
-            <div ref={editor} />
-          </TableCell>
-          {props.buttons?.map((button, index) => {
-            return <div key={`button-${props.name}-${index}`}>{button}</div>;
-          })}
-        </div>
-      ) : (
-        <div className="flex items-center space-x-2">
-          <div ref={editor} />
-          {props.buttons?.map((button, index) => {
-            return <div key={`button-${props.name}-${index}`}>{button}</div>;
-          })}
-        </div>
-      )}
+      {props.name && <Label htmlFor={props.name}>{props.name}</Label>}
+      <div className="flex items-center space-x-2">
+        <div ref={editor} />
+        {props.buttons?.map((button, index) => {
+          return <div key={`button-${props.name}-${index}`}>{button}</div>;
+        })}
+      </div>
     </>
   );
 };
