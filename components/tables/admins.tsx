@@ -5,10 +5,91 @@ import { AddButton } from "@/components/ui/buttons/add-button";
 import { DeleteButton } from "@/components/ui/buttons/delete-button";
 import { HelpButton } from "@/components/ui/buttons/help-button";
 import { EditorInput } from "@/components/ui/custom-input/editor-input";
-import { useState } from "react";
+import { NamedAdmin } from "@/types/NamedAdmin";
+import { useEffect, useState } from "react";
 
 export const AdminTable = (props: AdminTableProps) => {
   const [newAdmin, setNewAdmin] = useState<string>("");
+  const [adminNames, setAdminNames] = useState<NamedAdmin[]>([]);
+  const useAdminService = process.env.NEXT_PUBLIC_USE_ADMIN_SERVICE === "true";
+
+  const resolveName = async (
+    id: string,
+    index: number
+  ): Promise<NamedAdmin | undefined> => {
+    if (adminNames.map((a) => a.Id).includes(id)) return;
+    if (id.trim() === "") return;
+
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_NAME_RESOLVER_URL}nameresolver?id=${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          "Access-Control-Allow-Origin": document.URL,
+          "Access-Control-Allow-Methods": "GET",
+        },
+      }
+    );
+
+    if (!response.ok) {
+      return { Id: id, Name: `Admin-${index.toString()}` };
+    }
+
+    const name = await response.text();
+    const newAdmin = { Id: id, Name: name };
+
+    const newAdminNames = adminNames;
+    newAdminNames.push(newAdmin);
+    setAdminNames(newAdminNames);
+
+    return newAdmin;
+  };
+
+  const addAdmin = async () => {
+    const admins = [...props.config.game?.admins, newAdmin];
+    props.setConfig({
+      ...props.config,
+      game: {
+        ...props.config.game,
+        admins: admins,
+      },
+    });
+    setNewAdmin("");
+    await resolveName(newAdmin, props.config.game?.admins.length + 1);
+  };
+
+  const getAdminName = (id: string, index: number) => {
+    const admin = adminNames.filter((an) => an.Id === id);
+
+    if (admin.length !== 1) {
+      return `Admin ${index.toString()}`;
+    } else {
+      return admin[0].Name;
+    }
+  };
+
+  const getCurrentAdminNames = async () => {
+    fetch(`${process.env.NEXT_PUBLIC_NAME_RESOLVER_URL}`, {
+      method: "POST",
+      body: JSON.stringify(props.config?.game.admins),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        "Access-Control-Allow-Origin": document.URL,
+        "Access-Control-Allow-Methods": "POST",
+      },
+    })
+      .then((response) => response.json())
+      .then((responseJson) => {
+        const admins = JSON.parse(JSON.stringify(responseJson)) as NamedAdmin[];
+
+        setAdminNames(admins);
+      });
+  };
+
+  useEffect(() => {
+    if (useAdminService) getCurrentAdminNames();
+  }, []);
 
   return (
     <>
@@ -17,7 +98,7 @@ export const AdminTable = (props: AdminTableProps) => {
           <EditorInput
             key={`Admin-${index.toString()}`}
             parameter={admin}
-            name={`Admin ${index + 1}`}
+            name={getAdminName(admin, index)}
             change={(v) => {
               const admins = props.config.game?.admins;
               admins[index] = v;
@@ -62,17 +143,7 @@ export const AdminTable = (props: AdminTableProps) => {
         buttons={[
           <AddButton
             key={`Admin-New-add`}
-            add={() => {
-              const admins = [...props.config.game?.admins, newAdmin];
-              props.setConfig({
-                ...props.config,
-                game: {
-                  ...props.config.game,
-                  admins: admins,
-                },
-              });
-              setNewAdmin("");
-            }}
+            add={() => addAdmin()}
             name="Admin"
           />,
           <HelpButton parameterName="admins" key={`Admin-New-help`} />,
