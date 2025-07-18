@@ -47,7 +47,7 @@ export const AdminTable = (props: AdminTableProps) => {
   };
 
   const addAdmin = async () => {
-    const admins = [...props.config.game?.admins, newAdmin];
+    const admins = [...(props.config.game?.admins ?? []), newAdmin];
     props.setConfig({
       ...props.config,
       game: {

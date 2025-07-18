@@ -177,7 +177,7 @@ export const RconTable = (props: RconTableProps) => {
             }}
             buttons={[
               <DeleteButton
-                key={`rcon.whitelist-${index}-delete`}
+                key={`rcon.whitelist-${whitelisted}-delete`}
                 click={() => {
                   const whitelist = props.config.rcon?.whitelist.filter(
                     (_, i) => i !== index
@@ -194,7 +194,7 @@ export const RconTable = (props: RconTableProps) => {
               />,
               <HelpButton
                 parameterName="Whitelist"
-                key={`rcon.whitelist-${index}-help`}
+                key={`rcon.whitelist-${whitelisted}-help`}
               />,
             ]}
           />
@@ -209,7 +209,7 @@ export const RconTable = (props: RconTableProps) => {
           <AddButton
             key="rcon.whitelist-new-add"
             add={() => {
-              const whitelist = [...props.config.rcon?.whitelist, newWhitelist];
+              const whitelist = [...(props.config.rcon?.whitelist ?? []), newWhitelist];
               props.setConfig({
                 ...props.config,
                 rcon: {
@@ -246,7 +246,7 @@ export const RconTable = (props: RconTableProps) => {
             }}
             buttons={[
               <DeleteButton
-                key={`rcon.blacklist-${index}-delete`}
+                key={`rcon.blacklist-${blacklisted}-delete`}
                 click={() => {
                   const blacklist = props.config.rcon?.blacklist.filter(
                     (_, i) => i !== index
@@ -263,7 +263,7 @@ export const RconTable = (props: RconTableProps) => {
               />,
               <HelpButton
                 parameterName="blacklist"
-                key={`rcon.blacklist-${index}-help`}
+                key={`rcon.blacklist-${blacklisted}-help`}
               />,
             ]}
           />
@@ -278,7 +278,7 @@ export const RconTable = (props: RconTableProps) => {
           <AddButton
             key="rcon.blacklist-new-add"
             add={() => {
-              const blacklist = [...props.config.rcon?.blacklist, newWhitelist];
+              const blacklist = [...(props.config.rcon?.blacklist ?? []), newBlacklist];
               props.setConfig({
                 ...props.config,
                 rcon: {

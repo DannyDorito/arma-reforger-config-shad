@@ -19,12 +19,12 @@ import {
 export default function GlobalError({
   error,
   reset,
-}: {
+}: Readonly<{
   error: Error & { digest?: string };
   reset: () => void;
-}) {
+}>) {
   return (
-    <html>
+    <html lang="en">
       <body>
         <div className="flex min-h-screen flex-col items-center justify-evenly p-24">
           <Card>

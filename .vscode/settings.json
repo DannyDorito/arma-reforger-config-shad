@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["CAH", "Reforger"]
+  "cSpell.words": ["CAH", "Reforger"],
+  "sonarlint.connectedMode.project": {
+    "connectionId": "dannydorito",
+    "projectKey": "DannyDorito_arma-reforger-config-shad"
+  }
 }
