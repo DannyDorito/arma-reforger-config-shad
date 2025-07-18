@@ -1,7 +1,6 @@
 "use client";
 
 import { TextAreaInputProps } from "@/components/props/TextAreaInputProps";
-import { TableCell } from "../table";
 import { useCodeMirror } from "@uiw/react-codemirror";
 import { xcodeLight, xcodeDark } from "@uiw/codemirror-theme-xcode";
 import { json } from "@codemirror/lang-json";
