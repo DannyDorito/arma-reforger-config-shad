@@ -8,7 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../tooltip";
-import { Github } from "lucide-react";
+import { CodeXml } from "lucide-react";
 
 export const GitHubButton = () => {
   return (
@@ -22,7 +22,7 @@ export const GitHubButton = () => {
               target="_blank"
               aria-label="Link to Danny Dorito's GitHub"
             >
-              <Github className="h-[1.2rem] w-[1.2rem]"></Github>
+              <CodeXml className="h-[1.2rem] w-[1.2rem]"></CodeXml>
               <span className="sr-only">Link to GitHub Repo</span>
             </Link>
           </Button>
